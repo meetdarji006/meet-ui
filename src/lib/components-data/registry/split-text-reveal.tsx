@@ -10,6 +10,53 @@ export const splitTextRevealMeta = {
     tags: ['motion', 'text', 'reveal'],
 }
 
+// Props for documentation table
+export const splitTextRevealTableProps = [
+    { name: 'text', type: 'string', default: '"Hello"' },
+    { name: 'duration', type: 'number', default: '1.5' },
+    { name: 'stagger', type: 'number', default: '0.05' },
+    { name: 'delay', type: 'number', default: '0' },
+    { name: 'once', type: 'boolean', default: 'false' },
+]
+
+// Editable props for playground
+export const splitTextRevealEditableProps = [
+    { name: 'text', type: 'string' as const, default: 'ELEGANT' },
+    {
+        name: 'duration',
+        type: 'number' as const,
+        default: 1.5,
+        min: 0.5,
+        max: 5,
+        step: 0.1,
+        description: 'Animation duration per letter'
+    },
+    {
+        name: 'stagger',
+        type: 'number' as const,
+        default: 0.05,
+        min: 0.01,
+        max: 0.5,
+        step: 0.01,
+        description: 'Delay between each letter'
+    },
+    {
+        name: 'delay',
+        type: 'number' as const,
+        default: 0,
+        min: 0,
+        max: 3,
+        step: 0.1,
+        description: 'Initial delay before animation starts'
+    },
+    {
+        name: 'once',
+        type: 'boolean' as const,
+        default: false,
+        description: 'Run animation only once'
+    }
+]
+
 // Small preview for grid
 export const splitTextRevealPreview = () => (
     <SplitTextReveal

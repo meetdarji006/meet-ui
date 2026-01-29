@@ -100,6 +100,10 @@
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     @apply bg-background text-foreground antialiased;
     background: radial-gradient(ellipse at 20% 0%, #0f0020 0%, #060010 50%, #020008 100%);

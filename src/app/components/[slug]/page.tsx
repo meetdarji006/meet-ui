@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import { useState, use } from "react"
-import { ChevronRight, Eye, Code, Sparkles, Layers, Sliders, RotateCcw, RotateCw } from "lucide-react"
-import { sidebarComponents, componentsList, componentCodes, componentProps, editableProps, dynamicPreviews } from "@/lib/components-data"
+import { ChevronRight, Eye, Code, Sparkles, Layers, Sliders, RotateCcw, RotateCw, MousePointer, Box, ArrowUpRight } from "lucide-react"
+import { sidebarComponents, sidebarCategories, componentsList, componentCodes, componentProps, editableProps, dynamicPreviews } from "@/lib/components-data"
 import { CodeBlock } from "@/components/ui/code-block"
 import { PropsEditor } from "@/components/ui/props-editor"
 
@@ -57,23 +57,59 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
                 <div className="flex gap-10">
 
                     {/* Sidebar */}
-                    <aside className="hidden lg:block w-56 shrink-0">
-                        <nav className="sticky top-32 space-y-1">
-                            <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-4 flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500" />
-                                Components
-                            </p>
-                            {sidebarComponents.map((item) => (
-                                <Link
-                                    key={item.slug}
-                                    href={`/components/${item.slug}`}
-                                    className={`block px-3 py-2 rounded-lg text-sm transition-all ${item.slug === slug
-                                        ? 'bg-white/10 text-white font-medium'
-                                        : 'text-neutral-400 hover:text-white hover:bg-white/5 hover:translate-x-1'
-                                        }`}
-                                >
-                                    {item.name}
-                                </Link>
+                    <aside className="hidden lg:block w-60 shrink-0">
+                        <nav className="sticky top-32 space-y-6">
+                            {/* Header */}
+                            <div className="flex items-center justify-between px-1">
+                                <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+                                    Components
+                                </p>
+                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-neutral-400 border border-white/10">
+                                    {sidebarComponents.length}
+                                </span>
+                            </div>
+
+                            {/* Categories */}
+                            {sidebarCategories.map((category) => (
+                                <div key={category.id} className="space-y-2">
+                                    {/* Category Header */}
+                                    <p className="text-[10px] font-medium text-neutral-600 uppercase tracking-wider px-1">
+                                        {category.label}
+                                    </p>
+
+                                    {/* Category Components */}
+                                    {category.components.length > 0 ? (
+                                        <div className="space-y-0.5">
+                                            {category.components.map((item) => (
+                                                <Link
+                                                    key={item.slug}
+                                                    href={`/components/${item.slug}`}
+                                                    className={`group flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all duration-200 ${item.slug === slug
+                                                        ? 'bg-white/10 text-white font-medium'
+                                                        : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                                                        }`}
+                                                >
+                                                    {/* Active indicator bar */}
+                                                    <span className={`w-0.5 h-4 rounded-full transition-all ${item.slug === slug
+                                                        ? 'bg-indigo-500'
+                                                        : 'bg-transparent group-hover:bg-white/20'
+                                                        }`} />
+                                                    <span className="flex-1">{item.name}</span>
+                                                    <ChevronRight className={`w-4 h-4 transition-all ${item.slug === slug
+                                                        ? 'opacity-50'
+                                                        : 'opacity-0 group-hover:opacity-50'
+                                                        }`} />
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <div className="px-3 py-2 rounded-lg border border-dashed border-white/10 text-xs text-neutral-500 flex items-center gap-2">
+                                            <Sparkles className="w-3 h-3" />
+                                            Coming Soon
+                                        </div>
+                                    )}
+                                </div>
                             ))}
                         </nav>
                     </aside>
@@ -131,8 +167,8 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
                                     <button
                                         onClick={() => setLanguage('ts')}
                                         className={`px-3 py-1 rounded-md text-xs font-medium transition-all ${language === 'ts'
-                                                ? 'bg-indigo-500/20 text-indigo-300 shadow-sm'
-                                                : 'text-neutral-400 hover:text-neutral-200'
+                                            ? 'bg-indigo-500/20 text-indigo-300 shadow-sm'
+                                            : 'text-neutral-400 hover:text-neutral-200'
                                             }`}
                                     >
                                         TypeScript
@@ -140,8 +176,8 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
                                     <button
                                         onClick={() => setLanguage('js')}
                                         className={`px-3 py-1 rounded-md text-xs font-medium transition-all ${language === 'js'
-                                                ? 'bg-indigo-500/20 text-indigo-300 shadow-sm'
-                                                : 'text-neutral-400 hover:text-neutral-200'
+                                            ? 'bg-indigo-500/20 text-indigo-300 shadow-sm'
+                                            : 'text-neutral-400 hover:text-neutral-200'
                                             }`}
                                     >
                                         JavaScript
@@ -155,7 +191,7 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
                             <div className="space-y-6">
                                 {/* Preview Area */}
                                 <div className="relative group">
-                                    <div className="absolute -inset-px bg-gradient-to-r from-indigo-500/50 via-purple-500/50 to-indigo-500/50 rounded-2xl blur-sm opacity-50" />
+                                    <div className="absolute -inset-px bg-gradient-to-r from-indigo-500/50 via-purple-500/50 to-indigo-500/50 rounded-2xl blur-sm opacity-20" />
                                     <div className="relative aspect-video w-full rounded-2xl bg-[#060010] border border-white/10 flex items-center justify-center overflow-hidden">
 
                                         {/* Radial gradient overlay */}

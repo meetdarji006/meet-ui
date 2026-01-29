@@ -74,7 +74,7 @@ export function Hero() {
 
                     {/* Left Card */}
                     <motion.div
-                        className="absolute left-[10%] bottom-[30%] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-2xl w-48 shadow-2xl"
+                        className="absolute left-[5%] bottom-[5%] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-2xl w-48 shadow-2xl"
                         animate={{ y: [0, -10, 0] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                     >
@@ -90,7 +90,7 @@ export function Hero() {
 
                     {/* Right Card */}
                     <motion.div
-                        className="absolute right-[15%] bottom-[20%] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-2xl w-40 shadow-2xl"
+                        className="absolute right-[5%] bottom-[65%] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-2xl w-40 shadow-2xl"
                         animate={{ y: [0, -15, 0] }}
                         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                     >

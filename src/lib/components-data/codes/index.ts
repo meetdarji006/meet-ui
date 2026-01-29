@@ -3,6 +3,7 @@
 
 import { splitTextRevealCodeTS, splitTextRevealCodeJS } from './split-text-reveal'
 import { stretchTextCodeTS, stretchTextCodeJS } from './stretch-text'
+import { scrollFillTextCodeTS, scrollFillTextCodeJS } from './scroll-fill-text'
 
 export interface ComponentCode {
     ts: string
@@ -13,6 +14,7 @@ export interface ComponentCode {
 export const componentCodes: Record<string, ComponentCode> = {
     'split-text-reveal': { ts: splitTextRevealCodeTS, js: splitTextRevealCodeJS },
     'stretch-text': { ts: stretchTextCodeTS, js: stretchTextCodeJS },
+    'scroll-fill-text': { ts: scrollFillTextCodeTS, js: scrollFillTextCodeJS },
 }
 
 // Also export individual codes for direct import
@@ -21,4 +23,6 @@ export {
     splitTextRevealCodeJS,
     stretchTextCodeTS,
     stretchTextCodeJS,
+    scrollFillTextCodeTS,
+    scrollFillTextCodeJS,
 }

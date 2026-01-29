@@ -7,9 +7,32 @@ export const componentFilters = [
     { id: '3d', label: '3D Elements', icon: Box },
 ]
 
-// Sidebar navigation items
-export const sidebarComponents = [
-    { name: 'Split Text Reveal', slug: 'split-text-reveal' },
-    { name: 'Stretch Text', slug: 'stretch-text' },
-    // Add more components here
+// Sidebar categories with their components
+export const sidebarCategories = [
+    {
+        id: 'text-animations',
+        label: 'Text Animations',
+        components: [
+            { name: 'Split Text Reveal', slug: 'split-text-reveal' },
+            { name: 'Stretch Text', slug: 'stretch-text' },
+            { name: 'Scroll Fill Text', slug: 'scroll-fill-text' },
+        ]
+    },
+    {
+        id: 'components',
+        label: 'Components',
+        components: [
+            // Add UI components here
+        ]
+    },
+    {
+        id: 'backgrounds',
+        label: 'Backgrounds',
+        components: [
+            // Add background components here
+        ]
+    },
 ]
+
+// Flat list for backward compatibility
+export const sidebarComponents = sidebarCategories.flatMap(cat => cat.components)

@@ -2,7 +2,6 @@
 
 import { StretchText } from "@/components/ui/stretch-text"
 
-// Metadata for listing page
 export const stretchTextMeta = {
     name: 'Stretch Text',
     slug: 'stretch-text',
@@ -10,6 +9,42 @@ export const stretchTextMeta = {
     description: 'Text that stretches vertically as you hover over each character with smooth spring physics.',
     tags: ['React', 'Motion'],
 }
+
+// Props for documentation table
+export const stretchTextTableProps = [
+    { name: 'text', type: 'string', default: '"Hello"' },
+    { name: 'className', type: 'string', default: '""' },
+    { name: 'stretchIntensity', type: 'number', default: '1.5' },
+    { name: 'stretchRange', type: 'number', default: '200' },
+]
+
+// Editable props for playground
+export const stretchTextEditableProps = [
+    {
+        name: 'text',
+        type: 'string' as const,
+        default: 'STRETCH ME',
+        description: 'Text to display'
+    },
+    {
+        name: 'stretchIntensity',
+        type: 'number' as const,
+        default: 1.5,
+        min: 1,
+        max: 3,
+        step: 0.1,
+        description: 'How much the text stretches'
+    },
+    {
+        name: 'stretchRange',
+        type: 'number' as const,
+        default: 200,
+        min: 50,
+        max: 400,
+        step: 10,
+        description: 'Range of the stretch effect in pixels'
+    },
+]
 
 // Small preview for components listing grid
 export const stretchTextPreview = () => (
