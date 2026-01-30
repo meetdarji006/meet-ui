@@ -80,7 +80,7 @@ export const scrollFillTextEditableProps = [
 // Small preview for grid (static version)
 export const scrollFillTextPreview = () => (
     <div className="text-center">
-        <span className="text-2xl font-medium">
+        <span className="text-4xl font-black">
             <span style={{ color: '#ffffff' }}>SCROLL</span>
             <span style={{ color: '#2f2f2f' }}> FILL</span>
         </span>
@@ -97,6 +97,6 @@ export const scrollFillTextDynamicPreview = (props: any) => (
         end={props.end ?? 0.2}
         easing={props.easing || "easeOut"}
         stagger={props.stagger ?? 0}
-        className="text-3xl md:text-5xl font-medium text-center max-w-4xl px-8"
+        className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-center max-w-4xl px-4 sm:px-6 md:px-8"
     />
 )

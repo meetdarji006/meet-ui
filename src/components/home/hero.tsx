@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/button"
 import { ArrowUpRight, Sparkles } from "lucide-react"
 import { HeroBackground } from "./hero-background"
 

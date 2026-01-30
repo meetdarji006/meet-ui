@@ -52,7 +52,7 @@ export const stretchTextPreview = () => (
         text="HOVER"
         stretchIntensity={1.4}
         stretchRange={100}
-        className="text-2xl font-black text-white tracking-tight"
+        className="text-4xl font-black text-white tracking-tight"
     />
 )
 
@@ -62,6 +62,6 @@ export const stretchTextDynamicPreview = (props: Record<string, any>) => (
         text={props.text || "STRETCH ME"}
         stretchIntensity={props.stretchIntensity ?? 1.5}
         stretchRange={props.stretchRange ?? 200}
-        className="text-6xl font-black text-white tracking-tight"
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight"
     />
 )

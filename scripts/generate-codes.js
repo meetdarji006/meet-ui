@@ -12,6 +12,18 @@ const __dirname = path.dirname(__filename)
 const componentSlugs = [
     'split-text-reveal',
     'stretch-text',
+    'scroll-fill-text',
+    'magnetic-cursor',
+    'shatter-text',
+    'morphing-text',
+    'sparkles-text',
+    'rubber-band-text',
+    'spotlight-text',
+    'hyper-text',
+    'typewriter-text',
+    'blur-reveal',
+
+
 ]
 
 const componentsDir = path.join(__dirname, '../src/components/ui')

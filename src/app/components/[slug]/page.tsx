@@ -4,8 +4,8 @@ import Link from "next/link"
 import { useState, use } from "react"
 import { ChevronRight, Eye, Code, Sparkles, Layers, Sliders, RotateCcw, RotateCw, MousePointer, Box, ArrowUpRight } from "lucide-react"
 import { sidebarComponents, sidebarCategories, componentsList, componentCodes, componentProps, editableProps, dynamicPreviews } from "@/lib/components-data"
-import { CodeBlock } from "@/components/ui/code-block"
-import { PropsEditor } from "@/components/ui/props-editor"
+import { CodeBlock } from "@/components/code-block"
+import { PropsEditor } from "@/components/props-editor"
 
 export default function ComponentViewerPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = use(params)
@@ -192,7 +192,7 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
                                 {/* Preview Area */}
                                 <div className="relative group">
                                     <div className="absolute -inset-px bg-gradient-to-r from-indigo-500/50 via-purple-500/50 to-indigo-500/50 rounded-2xl blur-sm opacity-20" />
-                                    <div className="relative aspect-video w-full rounded-2xl bg-[#060010] border border-white/10 flex items-center justify-center overflow-hidden">
+                                    <div className="relative min-h-[500px] w-full rounded-2xl bg-[#060010] border border-white/10 flex flex-col items-center justify-center overflow-hidden">
 
                                         {/* Radial gradient overlay */}
                                         <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 via-transparent to-purple-500/5" />
@@ -206,7 +206,7 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
                                             <RotateCw className="w-4 h-4" />
                                         </button>
 
-                                        <div className="relative z-10" key={previewKey}>
+                                        <div className="relative z-10 w-full flex items-center justify-center py-20" key={previewKey}>
                                             {DynamicPreview ? DynamicPreview(propValues) : <component.preview />}
                                         </div>
                                     </div>

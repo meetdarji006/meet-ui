@@ -61,7 +61,7 @@ export const splitTextRevealEditableProps = [
 export const splitTextRevealPreview = () => (
     <SplitTextReveal
         text="ELEGANT"
-        className="text-4xl font-bold font-sans text-white tracking-tighter"
+        className="text-4xl font-black font-sans text-white tracking-tighter"
         delay={0.2}
     />
 )
@@ -71,7 +71,7 @@ export const splitTextRevealDynamicPreview = (props: any) => (
     <SplitTextReveal
         key={props.once ? 'once-true' : 'once-false'}
         text={props.text || "ELEGANT"}
-        className="text-3xl md:text-6xl font-black font-sans text-white tracking-tighter uppercase"
+        className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black font-sans text-white tracking-tighter uppercase"
         duration={props.duration || 1.5}
         delay={props.delay || 0.2}
         stagger={props.stagger || 0.05}

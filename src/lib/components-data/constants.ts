@@ -14,22 +14,25 @@ export const sidebarCategories = [
         label: 'Text Animations',
         components: [
             { name: 'Split Text Reveal', slug: 'split-text-reveal' },
+            { name: 'Typewriter Text', slug: 'typewriter-text' },
+            { name: 'Blur Reveal', slug: 'blur-reveal' },
+
             { name: 'Stretch Text', slug: 'stretch-text' },
             { name: 'Scroll Fill Text', slug: 'scroll-fill-text' },
+            { name: 'Shatter Text', slug: 'shatter-text' },
+            { name: 'Morphing Text', slug: 'morphing-text' },
+            { name: 'Sparkles Text', slug: 'sparkles-text' },
+            { name: 'Rubber Band Text', slug: 'rubber-band-text' },
+            { name: 'Spotlight Text', slug: 'spotlight-text' },
+            { name: 'Hyper Text', slug: 'hyper-text' },
+
         ]
     },
     {
         id: 'components',
         label: 'Components',
         components: [
-            // Add UI components here
-        ]
-    },
-    {
-        id: 'backgrounds',
-        label: 'Backgrounds',
-        components: [
-            // Add background components here
+            { name: 'Magnetic Cursor', slug: 'magnetic-cursor' },
         ]
     },
 ]
