@@ -7,7 +7,6 @@ import { componentFilters, componentsList } from "@/lib/components-data"
 
 export default function ComponentsPage() {
     const [activeFilter, setActiveFilter] = useState('all')
-
     const filteredComponents = activeFilter === 'all'
         ? componentsList
         : componentsList.filter(c => c.category === activeFilter)

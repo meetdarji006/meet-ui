@@ -19,6 +19,25 @@ import {
     splitTextRevealUsageCode
 } from './split-text-reveal'
 import {
+    trueFocusMeta,
+    trueFocusPreview,
+    trueFocusDynamicPreview,
+    trueFocusTableProps,
+    trueFocusEditableProps,
+    trueFocusDependencies,
+    trueFocusUsageCode
+} from './true-focus'
+import {
+    distortedGlassSphereMeta,
+    distortedGlassSpherePreview,
+    distortedGlassSphereDynamicPreview,
+    distortedGlassSphereTableProps,
+    distortedGlassSphereEditableProps,
+    distortedGlassSphereDependencies,
+    distortedGlassSphereUsageCode
+} from './distorted-glass-sphere'
+
+import {
     stretchTextMeta,
     stretchTextPreview,
     stretchTextDynamicPreview,
@@ -27,6 +46,7 @@ import {
     stretchTextDependencies,
     stretchTextUsageCode
 } from './stretch-text'
+
 import {
     hyperTextMeta,
     hyperTextPreview,
@@ -157,6 +177,25 @@ import {
     contentRevealCardUsageCode
 } from './content-reveal-card'
 
+import {
+    magneticButtonMeta,
+    magneticButtonPreview,
+    magneticButtonDynamicPreview,
+    magneticButtonTableProps,
+    magneticButtonEditableProps,
+    magneticButtonUsageCode
+} from './magnetic-button'
+
+import {
+    particleWaveMeta,
+    particleWavePreview,
+    particleWaveDynamicPreview,
+    particleWaveTableProps,
+    particleWaveEditableProps,
+    particleWaveUsageCode
+} from './particle-wave'
+
+
 
 
 // ============================================
@@ -166,7 +205,7 @@ import {
 export interface ComponentMeta {
     name: string
     slug: string
-    category: 'ui' | '3d'
+    category: 'ui' | '3d' | 'gsap'
     description: string
     tags: string[]
 }
@@ -194,6 +233,10 @@ export const componentsList: ComponentEntry[] = [
     {
         ...splitTextRevealMeta,
         preview: splitTextRevealPreview,
+    },
+    {
+        ...trueFocusMeta,
+        preview: trueFocusPreview,
     },
     {
         ...stretchTextMeta,
@@ -261,6 +304,21 @@ export const componentsList: ComponentEntry[] = [
         ...circularGalleryMeta,
         preview: circularGalleryPreview,
     },
+
+    {
+        ...distortedGlassSphereMeta,
+        preview: distortedGlassSpherePreview,
+    },
+
+    {
+        ...magneticButtonMeta,
+        preview: magneticButtonPreview,
+    },
+    {
+        ...particleWaveMeta,
+        preview: particleWavePreview,
+    },
+
 ]
 
 // ============================================
@@ -269,6 +327,7 @@ export const componentsList: ComponentEntry[] = [
 
 export const dynamicPreviews: Record<string, (props: Record<string, any>) => React.ReactNode> = {
     'split-text-reveal': splitTextRevealDynamicPreview,
+    'true-focus': trueFocusDynamicPreview,
     'stretch-text': stretchTextDynamicPreview,
     'scroll-fill-text': scrollFillTextDynamicPreview,
     'magnetic-cursor': magneticCursorDynamicPreview,
@@ -286,6 +345,11 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
     'aurora-cursor': auroraCursorDynamicPreview,
     'content-reveal-card': contentRevealCardDynamicPreview,
     'circular-gallery': circularGalleryDynamicPreview,
+    'distorted-glass-sphere': distortedGlassSphereDynamicPreview,
+
+    'magnetic-button': magneticButtonDynamicPreview,
+    'particle-wave': particleWaveDynamicPreview,
+
 }
 
 // ============================================
@@ -294,6 +358,7 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
 
 export const componentProps: Record<string, { name: string; type: string; default: string }[]> = {
     'split-text-reveal': splitTextRevealTableProps,
+    'true-focus': trueFocusTableProps,
     'stretch-text': stretchTextTableProps,
     'scroll-fill-text': scrollFillTextTableProps,
     'magnetic-cursor': magneticCursorTableProps,
@@ -310,11 +375,18 @@ export const componentProps: Record<string, { name: string; type: string; defaul
     'click-ripple': clickRippleTableProps,
     'aurora-cursor': auroraCursorTableProps,
     'content-reveal-card': contentRevealCardTableProps,
+
     'circular-gallery': circularGalleryTableProps,
+    'distorted-glass-sphere': distortedGlassSphereTableProps,
+
+    'magnetic-button': magneticButtonTableProps,
+    'particle-wave': particleWaveTableProps,
+
 }
 
 export const editableProps: Record<string, PropConfig[]> = {
     'split-text-reveal': splitTextRevealEditableProps,
+    'true-focus': trueFocusEditableProps,
     'stretch-text': stretchTextEditableProps,
     'scroll-fill-text': scrollFillTextEditableProps,
     'magnetic-cursor': magneticCursorEditableProps,
@@ -331,7 +403,14 @@ export const editableProps: Record<string, PropConfig[]> = {
     'click-ripple': clickRippleEditableProps,
     'aurora-cursor': auroraCursorEditableProps,
     'content-reveal-card': contentRevealCardEditableProps,
+
+
     'circular-gallery': circularGalleryEditableProps,
+    'distorted-glass-sphere': distortedGlassSphereEditableProps,
+
+    'magnetic-button': magneticButtonEditableProps,
+    'particle-wave': particleWaveEditableProps,
+
 }
 
 export const componentDependencies: Record<string, string[]> = {
@@ -339,6 +418,7 @@ export const componentDependencies: Record<string, string[]> = {
     'shatter-text': shatterTextDependencies,
     'content-reveal-card': contentRevealCardDependencies,
     'split-text-reveal': splitTextRevealDependencies,
+    'true-focus': trueFocusDependencies,
     'stretch-text': stretchTextDependencies,
     'hyper-text': hyperTextDependencies,
     'typewriter-text': typewriterTextDependencies,
@@ -352,6 +432,11 @@ export const componentDependencies: Record<string, string[]> = {
     'cursor-trail': cursorTrailDependencies,
     'click-ripple': clickRippleDependencies,
     'aurora-cursor': auroraCursorDependencies,
+    'distorted-glass-sphere': distortedGlassSphereDependencies,
+
+    'magnetic-button': [],
+    'particle-wave': [],
+
 }
 
 export const componentUsageCodes: Record<string, string> = {
@@ -359,6 +444,7 @@ export const componentUsageCodes: Record<string, string> = {
     'shatter-text': shatterTextUsageCode,
     'content-reveal-card': contentRevealCardUsageCode,
     'split-text-reveal': splitTextRevealUsageCode,
+    'true-focus': trueFocusUsageCode,
     'stretch-text': stretchTextUsageCode,
     'hyper-text': hyperTextUsageCode,
     'typewriter-text': typewriterTextUsageCode,
@@ -372,4 +458,9 @@ export const componentUsageCodes: Record<string, string> = {
     'cursor-trail': cursorTrailUsageCode,
     'click-ripple': clickRippleUsageCode,
     'aurora-cursor': auroraCursorUsageCode,
+    'distorted-glass-sphere': distortedGlassSphereUsageCode,
+
+    'magnetic-button': magneticButtonUsageCode,
+    'particle-wave': particleWaveUsageCode,
+
 }

@@ -14,6 +14,7 @@ export const sidebarCategories = [
         label: 'Text Animations',
         components: [
             { name: 'Split Text Reveal', slug: 'split-text-reveal' },
+            { name: 'True Focus', slug: 'true-focus' },
             { name: 'Typewriter Text', slug: 'typewriter-text' },
             { name: 'Blur Reveal', slug: 'blur-reveal' },
 
@@ -24,6 +25,7 @@ export const sidebarCategories = [
             { name: 'Sparkles Text', slug: 'sparkles-text' },
             { name: 'Rubber Band Text', slug: 'rubber-band-text' },
             { name: 'Spotlight Text', slug: 'spotlight-text' },
+
             { name: 'Hyper Text', slug: 'hyper-text' },
 
         ]
@@ -38,6 +40,10 @@ export const sidebarCategories = [
             { name: 'Aurora Cursor', slug: 'aurora-cursor' },
             { name: 'Content Reveal Card', slug: 'content-reveal-card' },
             { name: 'Circular Gallery', slug: 'circular-gallery' },
+            { name: 'Distorted Glass Sphere', slug: 'distorted-glass-sphere' },
+            { name: 'Magnetic Button', slug: 'magnetic-button' },
+            { name: 'Particle Wave', slug: 'particle-wave' },
+
         ]
     },
 ]

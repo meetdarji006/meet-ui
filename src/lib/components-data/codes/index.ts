@@ -16,6 +16,15 @@ import { blurRevealCodeTS, blurRevealCodeJS } from './blur-reveal'
 import { cursorTrailCodeTS, cursorTrailCodeJS } from './cursor-trail'
 import { clickRippleCodeTS, clickRippleCodeJS } from './click-ripple'
 import { auroraCursorCodeTS, auroraCursorCodeJS } from './aurora-cursor'
+import { distortedGlassSphereCodeTS, distortedGlassSphereCodeJS } from './distorted-glass-sphere'
+import { magneticButtonCode } from './magnetic-button'
+import { particleWaveCode } from './particle-wave'
+
+
+
+
+
+
 
 export interface ComponentCode {
     ts: string
@@ -25,6 +34,7 @@ export interface ComponentCode {
 // Export as a map for easy lookup by slug
 export const componentCodes: Record<string, ComponentCode> = {
     'split-text-reveal': { ts: splitTextRevealCodeTS, js: splitTextRevealCodeJS },
+
     'stretch-text': { ts: stretchTextCodeTS, js: stretchTextCodeJS },
     'scroll-fill-text': { ts: scrollFillTextCodeTS, js: scrollFillTextCodeJS },
     'magnetic-cursor': { ts: magneticCursorCodeTS, js: magneticCursorCodeJS },
@@ -39,6 +49,12 @@ export const componentCodes: Record<string, ComponentCode> = {
     'cursor-trail': { ts: cursorTrailCodeTS, js: cursorTrailCodeJS },
     'click-ripple': { ts: clickRippleCodeTS, js: clickRippleCodeJS },
     'aurora-cursor': { ts: auroraCursorCodeTS, js: auroraCursorCodeJS },
+
+    'distorted-glass-sphere': { ts: distortedGlassSphereCodeTS, js: distortedGlassSphereCodeJS },
+    'magnetic-button': { ts: magneticButtonCode.react, js: magneticButtonCode.react },
+    'particle-wave': { ts: particleWaveCode.react, js: particleWaveCode.react },
+
+
 }
 
 // Also export individual codes for direct import
@@ -73,4 +89,11 @@ export {
     clickRippleCodeJS,
     auroraCursorCodeTS,
     auroraCursorCodeJS,
+    distortedGlassSphereCodeTS,
+    distortedGlassSphereCodeJS,
+    magneticButtonCode,
+    particleWaveCode,
+
+
+
 }

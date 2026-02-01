@@ -5,11 +5,20 @@ import { ArrowUpRight, Layout, Sparkles } from "lucide-react"
 
 const templates = [
     {
+        title: "Modern Agency",
+        description: "Premium digital agency website featuring interactive 3D elements, smooth GSAP animations, and a dark aesthetic.",
+        category: "Portfolio",
+        price: "Free",
+        features: ["3D Hero", "GSAP Scroll", "Dark Mode"],
+        href: "/templates/agency"
+    },
+    {
         title: "SaaS Landing",
         description: "A high-converting landing page template with hero, features, pricing, and testimonials sections.",
         category: "Marketing",
         price: "Free",
         features: ["Responsive", "Dark Mode", "Animations"],
+        href: "#"
     },
     {
         title: "Portfolio Pro",
@@ -73,8 +82,8 @@ export default function TemplatesPage() {
                         <button
                             key={cat}
                             className={`px-5 py-2.5 rounded-full border text-sm font-medium whitespace-nowrap transition-all duration-300 ${i === 0
-                                    ? 'bg-white text-black border-white'
-                                    : 'bg-white/5 text-neutral-300 border-white/10 hover:bg-white/10 hover:border-white/20'
+                                ? 'bg-white text-black border-white'
+                                : 'bg-white/5 text-neutral-300 border-white/10 hover:bg-white/10 hover:border-white/20'
                                 }`}
                         >
                             {cat}
@@ -95,8 +104,8 @@ export default function TemplatesPage() {
 
                                 {/* Price Badge */}
                                 <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium ${item.price === 'Free'
-                                        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
-                                        : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                                    ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
+                                    : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
                                     }`}>
                                     {item.price}
                                 </div>
@@ -122,7 +131,7 @@ export default function TemplatesPage() {
                                 {/* Actions */}
                                 <div className="flex gap-3">
                                     <Link
-                                        href="#"
+                                        href={item.href || "#"}
                                         className="flex-1 h-10 rounded-full bg-white/5 border border-white/10 text-neutral-300 hover:bg-white/10 hover:text-white transition-all flex items-center justify-center text-sm font-medium gap-2"
                                     >
                                         Preview
