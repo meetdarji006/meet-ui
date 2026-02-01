@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 function cn(...classes: (string | undefined | null | false)[]) {
     return classes.filter(Boolean).join(' ');
@@ -28,15 +28,15 @@ export const BlurReveal = ({
 }: BlurRevealProps) => {
     const words = text.split(" ")
 
-    const container = {
+    const container: Variants = {
         hidden: { opacity: 0 },
-        visible: (i = 1) => ({
+        visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.12, delayChildren: 0.04 * i + delay },
-        }),
+            transition: { staggerChildren: 0.12, delayChildren: delay },
+        },
     }
 
-    const child = {
+    const child: Variants = {
         hidden: {
             opacity: 0,
             filter: `blur(${blur})`,
