@@ -3,9 +3,13 @@
 
 export const sparklesTextCodeTS = `"use client"
 
-import { useState, useEffect } from "react"
+import CSS from 'csstype'
 import { motion, useAnimation } from "framer-motion"
-import { cn } from "@/lib/utils"
+import React, { useEffect, useState } from "react"
+
+function cn(...classes: (string | undefined | null | false)[]) {
+    return classes.filter(Boolean).join(' ');
+}
 
 interface SparklesTextProps {
     /** Text to display */
@@ -101,9 +105,11 @@ export const SparklesText = ({
 `
 
 export const sparklesTextCodeJS = `"use client";
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import React, { useEffect, useState } from "react";
+function cn(...classes) {
+    return classes.filter(Boolean).join(' ');
+}
 const Sparkle = ({ size, color, style, onComplete }) => {
     return (<motion.span className="absolute pointer-events-none block z-20" initial={{ scale: 0, rotate: 0 }} animate={{
             scale: [0, 1, 0],

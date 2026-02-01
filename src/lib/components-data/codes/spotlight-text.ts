@@ -5,7 +5,10 @@ export const spotlightTextCodeTS = `"use client"
 
 import React, { useRef, useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { cn } from "@/lib/utils"
+
+function cn(...classes: (string | undefined | null | false)[]) {
+    return classes.filter(Boolean).join(' ');
+}
 
 interface SpotlightTextProps {
     text: string
@@ -81,7 +84,9 @@ export const SpotlightText = ({
 export const spotlightTextCodeJS = `"use client";
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+function cn(...classes) {
+    return classes.filter(Boolean).join(' ');
+}
 export const SpotlightText = ({ text = "Hover Me", className, spotlightSize = 100, litColor = "#ffffff", dimColor = "rgba(255, 255, 255, 0.2)" }) => {
     const containerRef = useRef(null);
     const [position, setPosition] = useState({ x: -100, y: -100 });

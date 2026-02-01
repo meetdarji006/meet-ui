@@ -3,9 +3,12 @@
 
 export const typewriterTextCodeTS = `"use client"
 
-import { useEffect, useState } from "react"
-import { motion, useInView } from "framer-motion"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+
+function cn(...classes: (string | undefined | null | false)[]) {
+    return classes.filter(Boolean).join(' ');
+}
 
 interface TypewriterTextProps {
     text: string | string[]
@@ -96,9 +99,11 @@ export function TypewriterText({
 `
 
 export const typewriterTextCodeJS = `"use client";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+function cn(...classes) {
+    return classes.filter(Boolean).join(' ');
+}
 export function TypewriterText({ text, speed = 100, deleteSpeed = 50, waitTime = 2000, cursor = true, cursorChar = "|", loop = true, className, }) {
     const [displayText, setDisplayText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);

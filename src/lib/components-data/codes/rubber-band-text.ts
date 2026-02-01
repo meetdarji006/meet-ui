@@ -5,7 +5,10 @@ export const rubberBandTextCodeTS = `"use client"
 
 import { useState } from "react"
 import { motion, useAnimationControls } from "framer-motion"
-import { cn } from "@/lib/utils"
+
+function cn(...classes: (string | undefined | null | false)[]) {
+    return classes.filter(Boolean).join(' ');
+}
 
 interface RubberBandTextProps {
     text: string
@@ -90,7 +93,9 @@ const RubberLetter = ({ letter, hoverColor, textColor, duration }: { letter: str
 export const rubberBandTextCodeJS = `"use client";
 import { useState } from "react";
 import { motion, useAnimationControls } from "framer-motion";
-import { cn } from "@/lib/utils";
+function cn(...classes) {
+    return classes.filter(Boolean).join(' ');
+}
 export const RubberBandText = ({ text = "Hover Me", className, hoverColor = "#667eea", textColor = "#ffffff", duration = 0.8 }) => {
     return (<span className={cn("inline-flex overflow-hidden", className)}>
             {text.split("").map((letter, i) => (<RubberLetter key={i} letter={letter === " " ? "\\u00A0" : letter} hoverColor={hoverColor} textColor={textColor} duration={duration}/>))}

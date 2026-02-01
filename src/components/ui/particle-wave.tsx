@@ -50,9 +50,7 @@ function Wave({ color = "#4f46e5", speed = 1, amplitude = 1 }) {
             <bufferGeometry>
                 <bufferAttribute
                     attach="attributes-position"
-                    count={particlesPosition.length / 3}
-                    array={particlesPosition}
-                    itemSize={3}
+                    args={[particlesPosition, 3]}
                 />
             </bufferGeometry>
             <pointsMaterial

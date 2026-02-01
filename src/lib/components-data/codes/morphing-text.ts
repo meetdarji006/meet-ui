@@ -3,9 +3,12 @@
 
 export const morphingTextCodeTS = `"use client"
 
-import { useState, useEffect, useCallback, useRef } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { cn } from "@/lib/utils"
+
+function cn(...classes: (string | undefined | null | false)[]) {
+    return classes.filter(Boolean).join(' ');
+}
 
 interface MorphingTextProps {
     /** Array of words to morph between */
@@ -126,9 +129,11 @@ export const MorphingText = ({
 `
 
 export const morphingTextCodeJS = `"use client";
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
+function cn(...classes) {
+    return classes.filter(Boolean).join(' ');
+}
 export const MorphingText = ({ words = ["CREATIVE", "DYNAMIC", "POWERFUL"], interval = 3000, morphDuration = 1.2, className }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [displayWord, setDisplayWord] = useState(words[0]);

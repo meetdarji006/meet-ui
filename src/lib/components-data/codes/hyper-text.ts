@@ -1,11 +1,12 @@
 // Auto-generated from hyper-text.tsx
 // Run: npm run generate-codes
 
-export const hyperTextCodeTS = `"use client"
-
-import { useEffect, useRef, useState } from "react"
+export const hyperTextCodeTS = `import { useEffect, useRef, useState } from "react"
 import { AnimatePresence, motion, Variants } from "framer-motion"
-import { cn } from "@/lib/utils"
+
+function cn(...classes: (string | undefined | null | false)[]) {
+    return classes.filter(Boolean).join(' ');
+}
 
 interface HyperTextProps {
     text: string
@@ -95,10 +96,11 @@ export function HyperText({
 }
 `
 
-export const hyperTextCodeJS = `"use client";
-import { useEffect, useRef, useState } from "react";
+export const hyperTextCodeJS = `import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+function cn(...classes) {
+    return classes.filter(Boolean).join(' ');
+}
 const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const getRandomInt = (max) => Math.floor(Math.random() * max);
 export function HyperText({ text, duration = 800, framerProps = {

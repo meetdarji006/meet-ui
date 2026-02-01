@@ -3,9 +3,12 @@
 
 export const splitTextRevealCodeTS = `"use client"
 
-import { cn } from "@/lib/utils"
-import { motion, useInView, Variants } from "framer-motion"
-import { useRef } from "react"
+import { motion, useAnimation, useInView, Variants } from "framer-motion"
+import { useEffect, useRef } from "react"
+
+function cn(...classes: (string | undefined | null | false)[]) {
+    return classes.filter(Boolean).join(' ');
+}
 
 interface SplitTextRevealProps {
     text?: string
@@ -107,9 +110,11 @@ export const SplitTextReveal = ({
 `
 
 export const splitTextRevealCodeJS = `"use client";
-import { cn } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+function cn(...classes) {
+    return classes.filter(Boolean).join(' ');
+}
 export const SplitTextReveal = ({ text = "ELEGANT", className, delay = 0, duration = 1.5, stagger = 0.05, once = false }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once, margin: "-10%" });

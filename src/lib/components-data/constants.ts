@@ -15,6 +15,7 @@ export const sidebarCategories = [
         components: [
             { name: 'Split Text Reveal', slug: 'split-text-reveal' },
             { name: 'True Focus', slug: 'true-focus' },
+
             { name: 'Typewriter Text', slug: 'typewriter-text' },
             { name: 'Blur Reveal', slug: 'blur-reveal' },
 

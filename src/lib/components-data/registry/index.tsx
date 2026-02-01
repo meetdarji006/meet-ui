@@ -27,6 +27,7 @@ import {
     trueFocusDependencies,
     trueFocusUsageCode
 } from './true-focus'
+
 import {
     distortedGlassSphereMeta,
     distortedGlassSpherePreview,
@@ -238,6 +239,7 @@ export const componentsList: ComponentEntry[] = [
         ...trueFocusMeta,
         preview: trueFocusPreview,
     },
+
     {
         ...stretchTextMeta,
         preview: stretchTextPreview,
@@ -328,6 +330,7 @@ export const componentsList: ComponentEntry[] = [
 export const dynamicPreviews: Record<string, (props: Record<string, any>) => React.ReactNode> = {
     'split-text-reveal': splitTextRevealDynamicPreview,
     'true-focus': trueFocusDynamicPreview,
+
     'stretch-text': stretchTextDynamicPreview,
     'scroll-fill-text': scrollFillTextDynamicPreview,
     'magnetic-cursor': magneticCursorDynamicPreview,
@@ -359,6 +362,7 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
 export const componentProps: Record<string, { name: string; type: string; default: string }[]> = {
     'split-text-reveal': splitTextRevealTableProps,
     'true-focus': trueFocusTableProps,
+
     'stretch-text': stretchTextTableProps,
     'scroll-fill-text': scrollFillTextTableProps,
     'magnetic-cursor': magneticCursorTableProps,
@@ -387,6 +391,7 @@ export const componentProps: Record<string, { name: string; type: string; defaul
 export const editableProps: Record<string, PropConfig[]> = {
     'split-text-reveal': splitTextRevealEditableProps,
     'true-focus': trueFocusEditableProps,
+
     'stretch-text': stretchTextEditableProps,
     'scroll-fill-text': scrollFillTextEditableProps,
     'magnetic-cursor': magneticCursorEditableProps,
@@ -419,6 +424,7 @@ export const componentDependencies: Record<string, string[]> = {
     'content-reveal-card': contentRevealCardDependencies,
     'split-text-reveal': splitTextRevealDependencies,
     'true-focus': trueFocusDependencies,
+
     'stretch-text': stretchTextDependencies,
     'hyper-text': hyperTextDependencies,
     'typewriter-text': typewriterTextDependencies,
@@ -445,6 +451,7 @@ export const componentUsageCodes: Record<string, string> = {
     'content-reveal-card': contentRevealCardUsageCode,
     'split-text-reveal': splitTextRevealUsageCode,
     'true-focus': trueFocusUsageCode,
+
     'stretch-text': stretchTextUsageCode,
     'hyper-text': hyperTextUsageCode,
     'typewriter-text': typewriterTextUsageCode,
