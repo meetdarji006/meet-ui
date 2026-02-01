@@ -19,7 +19,6 @@ interface DistortedGlassSphereProps {
     transmission?: number
     ior?: number
     thickness?: number
-    chromaticAberration?: number
     scale?: number
     environmentPreset?: "apartment" | "city" | "dawn" | "forest" | "lobby" | "night" | "park" | "studio" | "sunset" | "warehouse" | "none"
     environmentFiles?: string
@@ -35,7 +34,6 @@ const Sphere = ({
     transmission = 0,
     ior = 1.2,
     thickness = 0,
-    chromaticAberration = 0,
     scale = 2
 }: DistortedGlassSphereProps) => {
     const mesh = useRef<THREE.Mesh>(null)
@@ -71,7 +69,6 @@ const Sphere = ({
                     transmission={transmission}
                     ior={ior}
                     thickness={thickness}
-                    chromaticAberration={chromaticAberration}
                     distort={distort}
                     speed={speed}
                 />
@@ -91,7 +88,6 @@ export function DistortedGlassSphere({
     transmission,
     ior,
     thickness,
-    chromaticAberration,
     scale = 2,
     environmentPreset = "city",
     environmentFiles
@@ -117,7 +113,6 @@ export function DistortedGlassSphere({
                     transmission={effectiveTransmission}
                     ior={ior}
                     thickness={thickness}
-                    chromaticAberration={chromaticAberration}
                     scale={scale} // Pass the scale prop
                 />
 
