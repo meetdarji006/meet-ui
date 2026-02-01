@@ -42,7 +42,7 @@ export const BlurReveal = ({
             filter: `blur(${blur})`,
             y: yOffset,
             transition: {
-                type: "spring",
+                type: "spring" as const,
                 damping: 12,
                 stiffness: 100,
             },
@@ -52,7 +52,7 @@ export const BlurReveal = ({
             filter: "blur(0px)",
             y: 0,
             transition: {
-                type: "spring",
+                type: "spring" as const,
                 damping: 12,
                 stiffness: 100,
                 duration,
