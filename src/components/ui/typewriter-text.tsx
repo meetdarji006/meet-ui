@@ -1,8 +1,11 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { motion, useInView } from "framer-motion"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+
+function cn(...classes: (string | undefined | null | false)[]) {
+    return classes.filter(Boolean).join(' ');
+}
 
 interface TypewriterTextProps {
     text: string | string[]

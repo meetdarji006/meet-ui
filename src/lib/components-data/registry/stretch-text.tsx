@@ -46,6 +46,15 @@ export const stretchTextEditableProps = [
     },
 ]
 
+export const stretchTextDependencies = ["framer-motion"]
+
+export const stretchTextUsageCode = `<StretchText
+  text="STRETCH"
+  stretchIntensity={1.5}
+  stretchRange={200}
+  className="text-4xl font-bold"
+/>`
+
 // Small preview for components listing grid
 export const stretchTextPreview = () => (
     <StretchText

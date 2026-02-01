@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { useRef, useMemo } from "react"
+import { useRef, useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 
 interface ShatterTextProps {
@@ -29,12 +29,15 @@ export const ShatterText = ({
 }: ShatterTextProps) => {
     const ref = useRef(null)
     const isInView = useInView(ref, { once, margin: "-10%" })
+    const [isClient, setIsClient] = useState(false)
+    const [transforms, setTransforms] = useState<{ x: number; y: number; rotate: number; scale: number }[]>([])
 
     const characters = text.split("")
 
-    // Calculate transforms immediately (not in useEffect) to avoid state mixing
-    const transforms = useMemo(() => {
-        return characters.map(() => {
+    // Generate random transforms only on client side to avoid hydration mismatch
+    useEffect(() => {
+        setIsClient(true)
+        const newTransforms = characters.map(() => {
             const angle = Math.random() * 360
             const radians = (angle * Math.PI) / 180
             const distance = scatter * (0.5 + Math.random() * 0.5)
@@ -46,6 +49,7 @@ export const ShatterText = ({
                 scale: 0.5 + Math.random() * 0.5,
             }
         })
+        setTransforms(newTransforms)
     }, [text, scatter])
 
     return (
@@ -53,7 +57,7 @@ export const ShatterText = ({
             ref={ref}
             className={cn("inline-flex flex-wrap justify-center", className)}
             initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+            animate={isClient && isInView ? "visible" : "hidden"}
         >
             {characters.map((char, i) => {
                 const transform = transforms[i] || { x: 0, y: 0, rotate: 0, scale: 1 }

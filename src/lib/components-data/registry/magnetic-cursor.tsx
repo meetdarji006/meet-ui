@@ -71,9 +71,20 @@ export const magneticCursorEditableProps = [
     },
 ]
 
+export const magneticCursorDependencies = ["framer-motion"]
+
+export const magneticCursorUsageCode = `<MagneticCursor
+  circleCount={5}
+  circleSize={40}
+  color="rgba(255, 255, 255, 0.6)"
+  smoothing={0.15}
+  borderWidth={1}
+  hoverScale={1.5}
+/>`
+
 // Small preview for grid (static version - simulates trail effect)
 export const magneticCursorPreview = () => (
-    <div className="w-64 h-40 flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 rounded-xl overflow-hidden relative">
+    <div className="w-64 h-40 flex items-center justify-center bg-linear-to-br from-slate-900 via-purple-900/20 to-slate-900 rounded-xl overflow-hidden relative">
         {/* Simulated cursor trail - curved path */}
         {[0, 1, 2, 3, 4].map((i) => (
             <div

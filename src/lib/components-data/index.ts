@@ -7,6 +7,8 @@ export {
     editableProps,
     type ComponentMeta,
     type ComponentEntry,
-    type PropConfig
+    type PropConfig,
+    componentDependencies,
+    componentUsageCodes
 } from './registry'
 export { componentCodes } from './codes'

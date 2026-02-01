@@ -28,6 +28,16 @@ export const typewriterTextEditableProps = [
     { name: 'className', type: 'string' as const, default: 'text-4xl font-bold', description: 'Tailwind classes' },
 ]
 
+export const typewriterTextDependencies = ["framer-motion"]
+
+export const typewriterTextUsageCode = `<TypewriterText
+  text={["Build faster", "Ship sooner"]}
+  speed={100}
+  waitTime={2000}
+  loop={true}
+  cursor={true}
+/>`
+
 export const typewriterTextPreview = () => (
     <TypewriterText text={["Typewriter Text", "Animated Typing", "React Component"]} className="text-4xl font-bold" />
 )

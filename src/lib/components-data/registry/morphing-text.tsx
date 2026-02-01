@@ -21,6 +21,15 @@ export const morphingTextEditableProps = [
     { name: 'morphDuration', type: 'number' as const, default: 1.2, min: 0.5, max: 2.5, step: 0.1, description: 'Morph duration (s)' },
 ]
 
+export const morphingTextDependencies = ["framer-motion"]
+
+export const morphingTextUsageCode = `<MorphingText
+  words={["CREATIVE", "DYNAMIC", "POWERFUL"]}
+  interval={3000}
+  morphDuration={1.2}
+  className="text-purple-400 font-bold"
+/>`
+
 export const morphingTextPreview = () => (
     <div className="flex items-center gap-2 text-2xl font-bold text-white tracking-tight">
         <span>We are</span>

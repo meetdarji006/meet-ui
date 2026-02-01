@@ -24,6 +24,16 @@ export const spotlightTextEditableProps = [
     { name: 'dimColor', type: 'string' as const, default: 'rgba(255, 255, 255, 0.2)', description: 'Tailwind class or Hex color' },
 ]
 
+export const spotlightTextDependencies = ["framer-motion"]
+
+export const spotlightTextUsageCode = `<SpotlightText
+  text="Reveal Me"
+  spotlightSize={100}
+  litColor="#ffffff"
+  dimColor="rgba(255, 255, 255, 0.2)"
+  className="text-4xl font-bold"
+/>`
+
 export const spotlightTextPreview = () => (
     <SpotlightText
         text="Reveal Me"

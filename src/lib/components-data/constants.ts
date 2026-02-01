@@ -33,6 +33,11 @@ export const sidebarCategories = [
         label: 'Components',
         components: [
             { name: 'Magnetic Cursor', slug: 'magnetic-cursor' },
+            { name: 'Cursor Trail', slug: 'cursor-trail' },
+            { name: 'Click Ripple', slug: 'click-ripple' },
+            { name: 'Aurora Cursor', slug: 'aurora-cursor' },
+            { name: 'Content Reveal Card', slug: 'content-reveal-card' },
+            { name: 'Circular Gallery', slug: 'circular-gallery' },
         ]
     },
 ]

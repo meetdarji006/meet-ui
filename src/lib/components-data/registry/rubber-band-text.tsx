@@ -24,6 +24,16 @@ export const rubberBandTextEditableProps = [
     { name: 'duration', type: 'number' as const, default: 0.8, min: 0.1, max: 2, step: 0.1, description: 'Animation duration (s)' },
 ]
 
+export const rubberBandTextDependencies = ["framer-motion"]
+
+export const rubberBandTextUsageCode = `<RubberBandText
+  text="Hover Me"
+  textColor="#ffffff"
+  hoverColor="#667eea"
+  duration={0.8}
+  className="text-4xl font-bold"
+/>`
+
 export const rubberBandTextPreview = () => (
     <RubberBandText
         text="Hover Me"

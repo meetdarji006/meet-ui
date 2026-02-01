@@ -13,6 +13,9 @@ import { spotlightTextCodeTS, spotlightTextCodeJS } from './spotlight-text'
 import { hyperTextCodeTS, hyperTextCodeJS } from './hyper-text'
 import { typewriterTextCodeTS, typewriterTextCodeJS } from './typewriter-text'
 import { blurRevealCodeTS, blurRevealCodeJS } from './blur-reveal'
+import { cursorTrailCodeTS, cursorTrailCodeJS } from './cursor-trail'
+import { clickRippleCodeTS, clickRippleCodeJS } from './click-ripple'
+import { auroraCursorCodeTS, auroraCursorCodeJS } from './aurora-cursor'
 
 export interface ComponentCode {
     ts: string
@@ -33,6 +36,9 @@ export const componentCodes: Record<string, ComponentCode> = {
     'hyper-text': { ts: hyperTextCodeTS, js: hyperTextCodeJS },
     'typewriter-text': { ts: typewriterTextCodeTS, js: typewriterTextCodeJS },
     'blur-reveal': { ts: blurRevealCodeTS, js: blurRevealCodeJS },
+    'cursor-trail': { ts: cursorTrailCodeTS, js: cursorTrailCodeJS },
+    'click-ripple': { ts: clickRippleCodeTS, js: clickRippleCodeJS },
+    'aurora-cursor': { ts: auroraCursorCodeTS, js: auroraCursorCodeJS },
 }
 
 // Also export individual codes for direct import
@@ -61,4 +67,10 @@ export {
     typewriterTextCodeJS,
     blurRevealCodeTS,
     blurRevealCodeJS,
+    cursorTrailCodeTS,
+    cursorTrailCodeJS,
+    clickRippleCodeTS,
+    clickRippleCodeJS,
+    auroraCursorCodeTS,
+    auroraCursorCodeJS,
 }

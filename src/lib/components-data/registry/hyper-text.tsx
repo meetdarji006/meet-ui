@@ -22,6 +22,14 @@ export const hyperTextEditableProps = [
     { name: 'className', type: 'string' as const, default: 'text-4xl font-bold', description: 'Tailwind classes' },
 ]
 
+export const hyperTextDependencies = ["framer-motion"]
+
+export const hyperTextUsageCode = `<HyperText
+  text="Hyper Text"
+  className="text-4xl font-bold"
+  duration={800}
+/>`
+
 export const hyperTextPreview = () => (
     <HyperText text="Hyper Text" className="text-4xl font-bold" />
 )

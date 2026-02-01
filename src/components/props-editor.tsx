@@ -56,15 +56,15 @@ export function PropsEditor({ props, values, onChange }: PropsEditorProps) {
                     {prop.type === 'boolean' && (
                         <button
                             onClick={() => onChange(prop.name, !(values[prop.name] ?? prop.default))}
-                            className={`relative w-12 h-6 rounded-full transition-colors ${(values[prop.name] ?? prop.default)
-                                    ? 'bg-indigo-500'
-                                    : 'bg-white/10'
+                            className={`relative w-11 h-6 rounded-full transition-colors ${(values[prop.name] ?? prop.default)
+                                ? 'bg-indigo-500'
+                                : 'bg-white/20'
                                 }`}
                         >
                             <span
-                                className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-transform ${(values[prop.name] ?? prop.default)
-                                        ? 'translate-x-7'
-                                        : 'translate-x-1'
+                                className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow-md transition-transform ${(values[prop.name] ?? prop.default)
+                                    ? 'translate-x-5'
+                                    : 'translate-x-0'
                                     }`}
                             />
                         </button>

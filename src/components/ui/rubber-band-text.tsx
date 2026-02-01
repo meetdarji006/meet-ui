@@ -2,7 +2,10 @@
 
 import { useState } from "react"
 import { motion, useAnimationControls } from "framer-motion"
-import { cn } from "@/lib/utils"
+
+function cn(...classes: (string | undefined | null | false)[]) {
+    return classes.filter(Boolean).join(' ');
+}
 
 interface RubberBandTextProps {
     text: string

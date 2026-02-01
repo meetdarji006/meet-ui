@@ -24,6 +24,15 @@ export const blurRevealEditableProps = [
     { name: 'className', type: 'string' as const, default: 'text-4xl font-bold', description: 'Container classes' },
 ]
 
+export const blurRevealDependencies = ["framer-motion"]
+
+export const blurRevealUsageCode = `<BlurReveal
+  text="Blur Reveal"
+  duration={0.8}
+  blur="10px"
+  className="text-4xl font-bold"
+/>`
+
 export const blurRevealPreview = () => (
     <BlurReveal text="Blur Reveal Animation" className="text-4xl font-bold justify-center" />
 )

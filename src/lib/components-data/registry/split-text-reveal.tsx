@@ -57,6 +57,15 @@ export const splitTextRevealEditableProps = [
     }
 ]
 
+export const splitTextRevealDependencies = ["framer-motion"]
+
+export const splitTextRevealUsageCode = `<SplitTextReveal
+  text="ELEGANT"
+  duration={1.5}
+  stagger={0.05}
+  className="text-4xl font-bold"
+/>`
+
 // Small preview for grid
 export const splitTextRevealPreview = () => (
     <SplitTextReveal

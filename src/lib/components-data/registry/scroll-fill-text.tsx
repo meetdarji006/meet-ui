@@ -77,6 +77,19 @@ export const scrollFillTextEditableProps = [
     },
 ]
 
+export const scrollFillTextDependencies = ["framer-motion"]
+
+export const scrollFillTextUsageCode = `<ScrollFillText
+  text="MeetUI - A Open Source Treasure"
+  fillColor="#ffffff"
+  emptyColor="#2f2f2f"
+  start={0.8}
+  end={0.2}
+  easing="easeOut"
+  stagger={0}
+  className="text-4xl font-medium"
+/>`
+
 // Small preview for grid (static version)
 export const scrollFillTextPreview = () => (
     <div className="text-center">

@@ -1,8 +1,11 @@
 "use client"
 
-import { cn } from "@/lib/utils"
-import { motion, useInView, Variants } from "framer-motion"
-import { useRef } from "react"
+import { motion, useAnimation, useInView, Variants } from "framer-motion"
+import { useEffect, useRef } from "react"
+
+function cn(...classes: (string | undefined | null | false)[]) {
+    return classes.filter(Boolean).join(' ');
+}
 
 interface SplitTextRevealProps {
     text?: string

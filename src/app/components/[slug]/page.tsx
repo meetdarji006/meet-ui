@@ -3,13 +3,14 @@
 import Link from "next/link"
 import { useState, use } from "react"
 import { ChevronRight, Eye, Code, Sparkles, Layers, Sliders, RotateCcw, RotateCw, MousePointer, Box, ArrowUpRight } from "lucide-react"
-import { sidebarComponents, sidebarCategories, componentsList, componentCodes, componentProps, editableProps, dynamicPreviews } from "@/lib/components-data"
+import { sidebarComponents, sidebarCategories, componentsList, componentCodes, componentProps, editableProps, dynamicPreviews, componentDependencies, componentUsageCodes } from "@/lib/components-data"
 import { CodeBlock } from "@/components/code-block"
 import { PropsEditor } from "@/components/props-editor"
 
 export default function ComponentViewerPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = use(params)
     const [activeTab, setActiveTab] = useState<'preview' | 'code'>('preview')
+    const [installTab, setInstallTab] = useState<'npm' | 'yarn' | 'pnpm' | 'bun'>('npm')
     const [language, setLanguage] = useState<'ts' | 'js'>('ts')
     const [previewKey, setPreviewKey] = useState(0)
 
@@ -27,6 +28,8 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
     const codeData = componentCodes[slug]
     const props = componentProps[slug]
     const DynamicPreview = dynamicPreviews[slug]
+    const dependencies = componentDependencies[slug]
+    const usageCode = componentUsageCodes[slug]
 
     const handlePropChange = (name: string, value: any) => {
         setPropValues(prev => ({ ...prev, [name]: value }))
@@ -51,14 +54,14 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
     return (
         <div className="pt-28 pb-24 min-h-screen relative">
             {/* Background gradient accent */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-indigo-500/10 via-purple-500/5 to-transparent blur-3xl pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-linear-to-b from-indigo-500/10 via-purple-500/5 to-transparent blur-3xl pointer-events-none" />
 
             <div className="container mx-auto px-6 max-w-7xl relative">
                 <div className="flex gap-10">
 
                     {/* Sidebar */}
                     <aside className="hidden lg:block w-60 shrink-0">
-                        <nav className="sticky top-32 space-y-6">
+                        <nav className="sticky top-32 space-y-6 max-h-[calc(100vh-10rem)] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent hover:scrollbar-thumb-white/20">
                             {/* Header */}
                             <div className="flex items-center justify-between px-1">
                                 <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider flex items-center gap-2">
@@ -127,7 +130,7 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
                         <div className="mb-8">
                             <div className="flex items-center gap-3 mb-3">
                                 <h1 className="text-3xl md:text-5xl font-medium text-white">{component.name}</h1>
-                                <span className="px-2.5 py-1 rounded-full bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 text-xs font-medium text-indigo-300 flex items-center gap-1.5">
+                                <span className="px-2.5 py-1 rounded-full bg-linear-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 text-xs font-medium text-indigo-300 flex items-center gap-1.5">
                                     <Sparkles className="w-3 h-3" />
                                     Premium
                                 </span>
@@ -139,7 +142,7 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
 
                         {/* Tabs */}
                         <div className="flex items-end justify-between gap-6 mb-8 border-b border-white/10">
-                            <div className="flex items-center gap-8 translate-y-[1px]">
+                            <div className="flex items-center gap-8 translate-y-px">
                                 <button
                                     onClick={() => setActiveTab('preview')}
                                     className={`flex items-center gap-2 pb-3 text-sm font-medium transition-all relative border-b-2 ${activeTab === 'preview'
@@ -191,11 +194,11 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
                             <div className="space-y-6">
                                 {/* Preview Area */}
                                 <div className="relative group">
-                                    <div className="absolute -inset-px bg-gradient-to-r from-indigo-500/50 via-purple-500/50 to-indigo-500/50 rounded-2xl blur-sm opacity-20" />
+                                    <div className="absolute -inset-px bg-linear-to-r from-indigo-500/50 via-purple-500/50 to-indigo-500/50 rounded-2xl blur-sm opacity-20" />
                                     <div className="relative min-h-[500px] w-full rounded-2xl bg-[#060010] border border-white/10 flex flex-col items-center justify-center overflow-hidden">
 
                                         {/* Radial gradient overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 via-transparent to-purple-500/5" />
+                                        <div className="absolute inset-0 bg-linear-to-b from-indigo-500/5 via-transparent to-purple-500/5" />
 
                                         {/* Rerun Button */}
                                         <button
@@ -238,7 +241,7 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
                             </div>
                         ) : (
                             <div className="relative">
-                                <div className="absolute -inset-px bg-gradient-to-r from-indigo-500/30 to-purple-500/30 rounded-xl opacity-50" />
+                                <div className="absolute -inset-px bg-linear-to-r from-indigo-500/30 to-purple-500/30 rounded-xl opacity-50" />
                                 <CodeBlock
                                     code={codeData ? codeData[language] : '// Code not available'}
                                     language={language === 'ts' ? 'tsx' : 'jsx'}
@@ -250,7 +253,7 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
                         {props && props.length > 0 && (
                             <div className="mt-12">
                                 <h2 className="text-xl font-medium text-white mb-6 flex items-center gap-3">
-                                    <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-indigo-500/30">
+                                    <div className="w-8 h-8 rounded-lg bg-linear-to-r from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-indigo-500/30">
                                         <Layers className="w-4 h-4 text-indigo-400" />
                                     </div>
                                     Props
@@ -258,7 +261,7 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
                                 <div className="overflow-hidden rounded-xl border border-white/10">
                                     <table className="w-full text-sm">
                                         <thead>
-                                            <tr className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border-b border-white/10">
+                                            <tr className="bg-linear-to-r from-indigo-500/10 to-purple-500/10 border-b border-white/10">
                                                 <th className="text-left p-4 font-medium text-neutral-300">Name</th>
                                                 <th className="text-left p-4 font-medium text-neutral-300">Type</th>
                                                 <th className="text-left p-4 font-medium text-neutral-300">Default</th>
@@ -278,15 +281,50 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
                             </div>
                         )}
 
+                        {/* Installation Section */}
+                        {dependencies && dependencies.length > 0 && (
+                            <div className="mt-12">
+                                <h2 className="text-xl font-medium text-white mb-6 flex items-center gap-3">
+                                    <div className="w-8 h-8 rounded-lg bg-linear-to-r from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-indigo-500/30">
+                                        <Box className="w-4 h-4 text-indigo-400" />
+                                    </div>
+                                    Installation
+                                </h2>
+                                <div className="space-y-4">
+                                    <div className="flex items-center gap-2 p-1 bg-white/5 border border-white/10 rounded-lg w-fit">
+                                        {(['npm', 'yarn', 'pnpm', 'bun'] as const).map((pm) => (
+                                            <button
+                                                key={pm}
+                                                onClick={() => setInstallTab(pm)}
+                                                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${installTab === pm
+                                                    ? 'bg-indigo-500/20 text-indigo-300 shadow-sm'
+                                                    : 'text-neutral-400 hover:text-white'
+                                                    }`}
+                                            >
+                                                {pm}
+                                            </button>
+                                        ))}
+                                    </div>
+                                    <CodeBlock
+                                        code={`${installTab === 'npm' ? 'npm install' : installTab === 'yarn' ? 'yarn add' : installTab === 'pnpm' ? 'pnpm add' : 'bun add'} ${dependencies.join(' ')}`}
+                                        language="bash"
+                                    />
+                                </div>
+                            </div>
+                        )}
+
                         {/* Usage Section */}
                         <div className="mt-12">
                             <h2 className="text-xl font-medium text-white mb-6 flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-indigo-500/30">
+                                <div className="w-8 h-8 rounded-lg bg-linear-to-r from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-indigo-500/30">
                                     <Code className="w-4 h-4 text-indigo-400" />
                                 </div>
                                 Usage
                             </h2>
-                            <CodeBlock code={`import { ${component.name.replace(/\s+/g, '')} } from "@/components/ui/${slug}"\n\nexport default function Example() {\n    return <${component.name.replace(/\s+/g, '')} text="Hello World" />\n}`} language={language === 'ts' ? 'tsx' : 'jsx'} />
+                            <CodeBlock
+                                code={usageCode ? `import { ${component.name.replace(/\s+/g, '')} } from "@/components/ui/${slug}"\n\nexport default function Example() {\n    return (\n${usageCode.split('\n').map(line => '        ' + line).join('\n')}\n    )\n}` : `import { ${component.name.replace(/\s+/g, '')} } from "@/components/ui/${slug}"\n\nexport default function Example() {\n    return <${component.name.replace(/\s+/g, '')} text="Hello World" />\n}`}
+                                language={language === 'ts' ? 'tsx' : 'jsx'}
+                            />
                         </div>
                     </main>
                 </div>

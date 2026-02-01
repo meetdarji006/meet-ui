@@ -25,6 +25,15 @@ export const shatterTextEditableProps = [
     { name: 'once', type: 'boolean' as const, default: false, description: 'Animate only once' },
 ]
 
+export const shatterTextDependencies = ["framer-motion"]
+
+export const shatterTextUsageCode = `<ShatterText
+  text="EXPLODE"
+  duration={0.8}
+  scatter={100}
+  className="text-5xl font-bold"
+/>`
+
 export const shatterTextPreview = () => (
     <ShatterText
         text="SHATTER"

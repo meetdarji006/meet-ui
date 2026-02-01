@@ -2,7 +2,10 @@
 
 import React, { useRef, useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { cn } from "@/lib/utils"
+
+function cn(...classes: (string | undefined | null | false)[]) {
+    return classes.filter(Boolean).join(' ');
+}
 
 interface SpotlightTextProps {
     text: string

@@ -1,82 +1,140 @@
 "use client"
 // Import all component registries
 import {
+    circularGalleryMeta,
+    circularGalleryPreview,
+    circularGalleryDynamicPreview,
+    circularGalleryTableProps,
+    circularGalleryEditableProps,
+    circularGalleryDependencies,
+    circularGalleryUsageCode
+} from './circular-gallery'
+import {
     splitTextRevealMeta,
     splitTextRevealPreview,
     splitTextRevealDynamicPreview,
     splitTextRevealTableProps,
-    splitTextRevealEditableProps
+    splitTextRevealEditableProps,
+    splitTextRevealDependencies,
+    splitTextRevealUsageCode
 } from './split-text-reveal'
 import {
     stretchTextMeta,
     stretchTextPreview,
     stretchTextDynamicPreview,
     stretchTextTableProps,
-    stretchTextEditableProps
+    stretchTextEditableProps,
+    stretchTextDependencies,
+    stretchTextUsageCode
 } from './stretch-text'
 import {
     hyperTextMeta,
     hyperTextPreview,
     hyperTextDynamicPreview,
     hyperTextTableProps,
-    hyperTextEditableProps
+    hyperTextEditableProps,
+    hyperTextDependencies,
+    hyperTextUsageCode
 } from './hyper-text'
 import {
     typewriterTextMeta,
     typewriterTextPreview,
     typewriterTextDynamicPreview,
     typewriterTextTableProps,
-    typewriterTextEditableProps
+    typewriterTextEditableProps,
+    typewriterTextDependencies,
+    typewriterTextUsageCode
 } from './typewriter-text'
 import {
     blurRevealMeta,
     blurRevealPreview,
     blurRevealDynamicPreview,
     blurRevealTableProps,
-    blurRevealEditableProps
+    blurRevealEditableProps,
+    blurRevealDependencies,
+    blurRevealUsageCode
 } from './blur-reveal'
+import {
+    cursorTrailMeta,
+    cursorTrailPreview,
+    cursorTrailDynamicPreview,
+    cursorTrailTableProps,
+    cursorTrailEditableProps,
+    cursorTrailDependencies,
+    cursorTrailUsageCode
+} from './cursor-trail'
+import {
+    clickRippleMeta,
+    clickRipplePreview,
+    clickRippleDynamicPreview,
+    clickRippleTableProps,
+    clickRippleEditableProps,
+    clickRippleDependencies,
+    clickRippleUsageCode
+} from './click-ripple'
+import {
+    auroraCursorMeta,
+    auroraCursorPreview,
+    auroraCursorDynamicPreview,
+    auroraCursorTableProps,
+    auroraCursorEditableProps,
+    auroraCursorDependencies,
+    auroraCursorUsageCode
+} from './aurora-cursor'
 
 import {
     scrollFillTextMeta,
     scrollFillTextPreview,
     scrollFillTextDynamicPreview,
     scrollFillTextTableProps,
-    scrollFillTextEditableProps
+    scrollFillTextEditableProps,
+    scrollFillTextDependencies,
+    scrollFillTextUsageCode
 } from './scroll-fill-text'
 import {
     magneticCursorMeta,
     magneticCursorPreview,
     magneticCursorDynamicPreview,
     magneticCursorTableProps,
-    magneticCursorEditableProps
+    magneticCursorEditableProps,
+    magneticCursorDependencies,
+    magneticCursorUsageCode
 } from './magnetic-cursor'
 import {
     shatterTextMeta,
     shatterTextPreview,
     shatterTextDynamicPreview,
     shatterTextTableProps,
-    shatterTextEditableProps
+    shatterTextEditableProps,
+    shatterTextDependencies,
+    shatterTextUsageCode
 } from './shatter-text'
 import {
     morphingTextMeta,
     morphingTextPreview,
     morphingTextDynamicPreview,
     morphingTextTableProps,
-    morphingTextEditableProps
+    morphingTextEditableProps,
+    morphingTextDependencies,
+    morphingTextUsageCode
 } from './morphing-text'
 import {
     sparklesTextMeta,
     sparklesTextPreview,
     sparklesTextDynamicPreview,
     sparklesTextTableProps,
-    sparklesTextEditableProps
+    sparklesTextEditableProps,
+    sparklesTextDependencies,
+    sparklesTextUsageCode
 } from './sparkles-text'
 import {
     rubberBandTextMeta,
     rubberBandTextPreview,
     rubberBandTextDynamicPreview,
     rubberBandTextTableProps,
-    rubberBandTextEditableProps
+    rubberBandTextEditableProps,
+    rubberBandTextDependencies,
+    rubberBandTextUsageCode
 } from './rubber-band-text'
 
 import {
@@ -84,8 +142,20 @@ import {
     spotlightTextPreview,
     spotlightTextDynamicPreview,
     spotlightTextTableProps,
-    spotlightTextEditableProps
+    spotlightTextEditableProps,
+    spotlightTextDependencies,
+    spotlightTextUsageCode
 } from './spotlight-text'
+
+import {
+    contentRevealCardMeta,
+    contentRevealCardPreview,
+    contentRevealCardDynamicPreview,
+    contentRevealCardTableProps,
+    contentRevealCardEditableProps,
+    contentRevealCardDependencies,
+    contentRevealCardUsageCode
+} from './content-reveal-card'
 
 
 
@@ -171,6 +241,26 @@ export const componentsList: ComponentEntry[] = [
         ...blurRevealMeta,
         preview: blurRevealPreview,
     },
+    {
+        ...cursorTrailMeta,
+        preview: cursorTrailPreview,
+    },
+    {
+        ...clickRippleMeta,
+        preview: clickRipplePreview,
+    },
+    {
+        ...auroraCursorMeta,
+        preview: auroraCursorPreview,
+    },
+    {
+        ...contentRevealCardMeta,
+        preview: contentRevealCardPreview,
+    },
+    {
+        ...circularGalleryMeta,
+        preview: circularGalleryPreview,
+    },
 ]
 
 // ============================================
@@ -191,6 +281,11 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
     'hyper-text': hyperTextDynamicPreview,
     'typewriter-text': typewriterTextDynamicPreview,
     'blur-reveal': blurRevealDynamicPreview,
+    'cursor-trail': cursorTrailDynamicPreview,
+    'click-ripple': clickRippleDynamicPreview,
+    'aurora-cursor': auroraCursorDynamicPreview,
+    'content-reveal-card': contentRevealCardDynamicPreview,
+    'circular-gallery': circularGalleryDynamicPreview,
 }
 
 // ============================================
@@ -211,6 +306,11 @@ export const componentProps: Record<string, { name: string; type: string; defaul
     'hyper-text': hyperTextTableProps,
     'typewriter-text': typewriterTextTableProps,
     'blur-reveal': blurRevealTableProps,
+    'cursor-trail': cursorTrailTableProps,
+    'click-ripple': clickRippleTableProps,
+    'aurora-cursor': auroraCursorTableProps,
+    'content-reveal-card': contentRevealCardTableProps,
+    'circular-gallery': circularGalleryTableProps,
 }
 
 export const editableProps: Record<string, PropConfig[]> = {
@@ -227,4 +327,49 @@ export const editableProps: Record<string, PropConfig[]> = {
     'hyper-text': hyperTextEditableProps,
     'typewriter-text': typewriterTextEditableProps,
     'blur-reveal': blurRevealEditableProps,
+    'cursor-trail': cursorTrailEditableProps,
+    'click-ripple': clickRippleEditableProps,
+    'aurora-cursor': auroraCursorEditableProps,
+    'content-reveal-card': contentRevealCardEditableProps,
+    'circular-gallery': circularGalleryEditableProps,
+}
+
+export const componentDependencies: Record<string, string[]> = {
+    'circular-gallery': circularGalleryDependencies,
+    'shatter-text': shatterTextDependencies,
+    'content-reveal-card': contentRevealCardDependencies,
+    'split-text-reveal': splitTextRevealDependencies,
+    'stretch-text': stretchTextDependencies,
+    'hyper-text': hyperTextDependencies,
+    'typewriter-text': typewriterTextDependencies,
+    'blur-reveal': blurRevealDependencies,
+    'scroll-fill-text': scrollFillTextDependencies,
+    'magnetic-cursor': magneticCursorDependencies,
+    'morphing-text': morphingTextDependencies,
+    'sparkles-text': sparklesTextDependencies,
+    'rubber-band-text': rubberBandTextDependencies,
+    'spotlight-text': spotlightTextDependencies,
+    'cursor-trail': cursorTrailDependencies,
+    'click-ripple': clickRippleDependencies,
+    'aurora-cursor': auroraCursorDependencies,
+}
+
+export const componentUsageCodes: Record<string, string> = {
+    'circular-gallery': circularGalleryUsageCode,
+    'shatter-text': shatterTextUsageCode,
+    'content-reveal-card': contentRevealCardUsageCode,
+    'split-text-reveal': splitTextRevealUsageCode,
+    'stretch-text': stretchTextUsageCode,
+    'hyper-text': hyperTextUsageCode,
+    'typewriter-text': typewriterTextUsageCode,
+    'blur-reveal': blurRevealUsageCode,
+    'scroll-fill-text': scrollFillTextUsageCode,
+    'magnetic-cursor': magneticCursorUsageCode,
+    'morphing-text': morphingTextUsageCode,
+    'sparkles-text': sparklesTextUsageCode,
+    'rubber-band-text': rubberBandTextUsageCode,
+    'spotlight-text': spotlightTextUsageCode,
+    'cursor-trail': cursorTrailUsageCode,
+    'click-ripple': clickRippleUsageCode,
+    'aurora-cursor': auroraCursorUsageCode,
 }

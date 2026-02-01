@@ -21,6 +21,14 @@ export const sparklesTextEditableProps = [
     { name: 'sparklesCount', type: 'number' as const, default: 10, min: 5, max: 20, step: 1, description: 'Max sparkles count' },
 ]
 
+export const sparklesTextDependencies = ["framer-motion"]
+
+export const sparklesTextUsageCode = `<SparklesText
+  text="Magic Effect"
+  sparklesCount={10}
+  className="text-4xl font-bold"
+/>`
+
 export const sparklesTextPreview = () => (
     <SparklesText
         text="Magic Effect"

@@ -1,8 +1,12 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import CSS from 'csstype'
 import { motion, useAnimation } from "framer-motion"
-import { cn } from "@/lib/utils"
+import React, { useEffect, useState } from "react"
+
+function cn(...classes: (string | undefined | null | false)[]) {
+    return classes.filter(Boolean).join(' ');
+}
 
 interface SparklesTextProps {
     /** Text to display */

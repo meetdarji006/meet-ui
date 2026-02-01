@@ -22,6 +22,9 @@ const componentSlugs = [
     'hyper-text',
     'typewriter-text',
     'blur-reveal',
+    'cursor-trail',
+    'click-ripple',
+    'aurora-cursor',
 
 
 ]

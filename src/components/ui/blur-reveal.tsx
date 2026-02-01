@@ -1,19 +1,23 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { cn } from "@/lib/utils"
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 
-interface BlurRevealProps {
-    text: string
-    duration?: number
-    delay?: number
-    blur?: string
-    yOffset?: number
-    className?: string
-    childClassName?: string
+function cn(...classes: (string | undefined | null | false)[]) {
+    return classes.filter(Boolean).join(' ');
 }
 
-export function BlurReveal({
+interface BlurRevealProps {
+    text: string;
+    duration?: number;
+    delay?: number;
+    blur?: string;
+    yOffset?: number;
+    className?: string;
+    childClassName?: string;
+}
+
+export const BlurReveal = ({
     text,
     duration = 0.8,
     delay = 0,
@@ -21,7 +25,7 @@ export function BlurReveal({
     yOffset = 20,
     className,
     childClassName,
-}: BlurRevealProps) {
+}: BlurRevealProps) => {
     const words = text.split(" ")
 
     const container = {
