@@ -25,6 +25,7 @@ const componentSlugs = [
     'cursor-trail',
     'click-ripple',
     'aurora-cursor',
+    'glass-toggle',
 
 
 ]

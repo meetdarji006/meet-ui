@@ -18,15 +18,17 @@ import {
     splitTextRevealDependencies,
     splitTextRevealUsageCode
 } from './split-text-reveal'
+
 import {
-    trueFocusMeta,
-    trueFocusPreview,
-    trueFocusDynamicPreview,
-    trueFocusTableProps,
-    trueFocusEditableProps,
-    trueFocusDependencies,
-    trueFocusUsageCode
-} from './true-focus'
+    glassToggleMeta,
+    glassTogglePreview,
+    glassToggleDynamicPreview,
+    glassToggleTableProps,
+    glassToggleEditableProps,
+    glassToggleDependencies,
+    glassToggleUsageCode
+} from './glass-toggle'
+
 
 import {
     distortedGlassSphereMeta,
@@ -236,9 +238,10 @@ export const componentsList: ComponentEntry[] = [
         preview: splitTextRevealPreview,
     },
     {
-        ...trueFocusMeta,
-        preview: trueFocusPreview,
+        ...glassToggleMeta,
+        preview: glassTogglePreview,
     },
+
 
     {
         ...stretchTextMeta,
@@ -329,7 +332,8 @@ export const componentsList: ComponentEntry[] = [
 
 export const dynamicPreviews: Record<string, (props: Record<string, any>) => React.ReactNode> = {
     'split-text-reveal': splitTextRevealDynamicPreview,
-    'true-focus': trueFocusDynamicPreview,
+    'glass-toggle': glassToggleDynamicPreview,
+
 
     'stretch-text': stretchTextDynamicPreview,
     'scroll-fill-text': scrollFillTextDynamicPreview,
@@ -361,7 +365,8 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
 
 export const componentProps: Record<string, { name: string; type: string; default: string }[]> = {
     'split-text-reveal': splitTextRevealTableProps,
-    'true-focus': trueFocusTableProps,
+    'glass-toggle': glassToggleTableProps,
+
 
     'stretch-text': stretchTextTableProps,
     'scroll-fill-text': scrollFillTextTableProps,
@@ -390,7 +395,8 @@ export const componentProps: Record<string, { name: string; type: string; defaul
 
 export const editableProps: Record<string, PropConfig[]> = {
     'split-text-reveal': splitTextRevealEditableProps,
-    'true-focus': trueFocusEditableProps,
+    'glass-toggle': glassToggleEditableProps,
+
 
     'stretch-text': stretchTextEditableProps,
     'scroll-fill-text': scrollFillTextEditableProps,
@@ -423,7 +429,8 @@ export const componentDependencies: Record<string, string[]> = {
     'shatter-text': shatterTextDependencies,
     'content-reveal-card': contentRevealCardDependencies,
     'split-text-reveal': splitTextRevealDependencies,
-    'true-focus': trueFocusDependencies,
+    'glass-toggle': glassToggleDependencies,
+
 
     'stretch-text': stretchTextDependencies,
     'hyper-text': hyperTextDependencies,
@@ -450,7 +457,8 @@ export const componentUsageCodes: Record<string, string> = {
     'shatter-text': shatterTextUsageCode,
     'content-reveal-card': contentRevealCardUsageCode,
     'split-text-reveal': splitTextRevealUsageCode,
-    'true-focus': trueFocusUsageCode,
+    'glass-toggle': glassToggleUsageCode,
+
 
     'stretch-text': stretchTextUsageCode,
     'hyper-text': hyperTextUsageCode,

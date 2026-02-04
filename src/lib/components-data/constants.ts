@@ -14,7 +14,7 @@ export const sidebarCategories = [
         label: 'Text Animations',
         components: [
             { name: 'Split Text Reveal', slug: 'split-text-reveal' },
-            { name: 'True Focus', slug: 'true-focus' },
+
 
             { name: 'Typewriter Text', slug: 'typewriter-text' },
             { name: 'Blur Reveal', slug: 'blur-reveal' },
@@ -44,6 +44,7 @@ export const sidebarCategories = [
             { name: 'Distorted Glass Sphere', slug: 'distorted-glass-sphere' },
             { name: 'Magnetic Button', slug: 'magnetic-button' },
             { name: 'Particle Wave', slug: 'particle-wave' },
+            { name: 'Glass Toggle', slug: 'glass-toggle' },
 
         ]
     },
