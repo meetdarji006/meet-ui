@@ -45,7 +45,7 @@ export const sidebarCategories = [
             { name: 'Magnetic Button', slug: 'magnetic-button' },
             { name: 'Particle Wave', slug: 'particle-wave' },
             { name: 'Glass Toggle', slug: 'glass-toggle' },
-
+            { name: 'Cloth Effect', slug: 'cloth-effect' },
         ]
     },
 ]

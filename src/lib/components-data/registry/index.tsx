@@ -29,6 +29,16 @@ import {
     glassToggleUsageCode
 } from './glass-toggle'
 
+import {
+    clothEffectMeta,
+    clothEffectPreview,
+    clothEffectDynamicPreview,
+    clothEffectTableProps,
+    clothEffectEditableProps,
+    clothEffectDependencies,
+    clothEffectUsageCode
+} from './cloth-effect'
+
 
 import {
     distortedGlassSphereMeta,
@@ -241,6 +251,10 @@ export const componentsList: ComponentEntry[] = [
         ...glassToggleMeta,
         preview: glassTogglePreview,
     },
+    {
+        ...clothEffectMeta,
+        preview: clothEffectPreview,
+    },
 
 
     {
@@ -333,6 +347,7 @@ export const componentsList: ComponentEntry[] = [
 export const dynamicPreviews: Record<string, (props: Record<string, any>) => React.ReactNode> = {
     'split-text-reveal': splitTextRevealDynamicPreview,
     'glass-toggle': glassToggleDynamicPreview,
+    'cloth-effect': clothEffectDynamicPreview,
 
 
     'stretch-text': stretchTextDynamicPreview,
@@ -366,6 +381,7 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
 export const componentProps: Record<string, { name: string; type: string; default: string }[]> = {
     'split-text-reveal': splitTextRevealTableProps,
     'glass-toggle': glassToggleTableProps,
+    'cloth-effect': clothEffectTableProps,
 
 
     'stretch-text': stretchTextTableProps,
@@ -396,6 +412,7 @@ export const componentProps: Record<string, { name: string; type: string; defaul
 export const editableProps: Record<string, PropConfig[]> = {
     'split-text-reveal': splitTextRevealEditableProps,
     'glass-toggle': glassToggleEditableProps,
+    'cloth-effect': clothEffectEditableProps,
 
 
     'stretch-text': stretchTextEditableProps,
@@ -430,6 +447,7 @@ export const componentDependencies: Record<string, string[]> = {
     'content-reveal-card': contentRevealCardDependencies,
     'split-text-reveal': splitTextRevealDependencies,
     'glass-toggle': glassToggleDependencies,
+    'cloth-effect': clothEffectDependencies,
 
 
     'stretch-text': stretchTextDependencies,
@@ -458,6 +476,7 @@ export const componentUsageCodes: Record<string, string> = {
     'content-reveal-card': contentRevealCardUsageCode,
     'split-text-reveal': splitTextRevealUsageCode,
     'glass-toggle': glassToggleUsageCode,
+    'cloth-effect': clothEffectUsageCode,
 
 
     'stretch-text': stretchTextUsageCode,

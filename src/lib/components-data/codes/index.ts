@@ -17,6 +17,7 @@ import { cursorTrailCodeTS, cursorTrailCodeJS } from './cursor-trail'
 import { clickRippleCodeTS, clickRippleCodeJS } from './click-ripple'
 import { auroraCursorCodeTS, auroraCursorCodeJS } from './aurora-cursor'
 import { glassToggleCodeTS, glassToggleCodeJS } from './glass-toggle'
+import { clothEffectCodeTS, clothEffectCodeJS } from './cloth-effect'
 
 export interface ComponentCode {
     ts: string
@@ -41,6 +42,7 @@ export const componentCodes: Record<string, ComponentCode> = {
     'click-ripple': { ts: clickRippleCodeTS, js: clickRippleCodeJS },
     'aurora-cursor': { ts: auroraCursorCodeTS, js: auroraCursorCodeJS },
     'glass-toggle': { ts: glassToggleCodeTS, js: glassToggleCodeJS },
+    'cloth-effect': { ts: clothEffectCodeTS, js: clothEffectCodeJS },
 }
 
 // Also export individual codes for direct import
@@ -77,4 +79,6 @@ export {
     auroraCursorCodeJS,
     glassToggleCodeTS,
     glassToggleCodeJS,
+    clothEffectCodeTS,
+    clothEffectCodeJS,
 }

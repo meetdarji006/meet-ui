@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Outfit, Space_Grotesk } from "next/font/google";
+import { Poppins, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 
-const outfit = Outfit({
+const poppins = Poppins({
     subsets: ["latin"],
     variable: "--font-sans",
     display: "swap",
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 const spaceGrotesk = Space_Grotesk({
@@ -30,7 +31,7 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <body
                 suppressHydrationWarning
-                className={`${outfit.variable} ${spaceGrotesk.variable} font-sans antialiased bg-background text-foreground selection:bg-primary/20`}
+                className={`${poppins.variable} ${spaceGrotesk.variable} font-sans antialiased bg-background text-foreground selection:bg-primary/20`}
             >
                 <ThemeProvider
                     attribute="class"
