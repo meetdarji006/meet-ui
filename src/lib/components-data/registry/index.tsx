@@ -39,6 +39,26 @@ import {
     clothEffectUsageCode
 } from './cloth-effect'
 
+import {
+    signalLinesMeta,
+    signalLinesPreview,
+    signalLinesDynamicPreview,
+    signalLinesTableProps,
+    signalLinesEditableProps,
+    signalLinesDependencies,
+    signalLinesUsageCode
+} from './signal-lines'
+
+import {
+    elasticCurveMeta,
+    elasticCurvePreview,
+    elasticCurveDynamicPreview,
+    elasticCurveTableProps,
+    elasticCurveEditableProps,
+    elasticCurveDependencies,
+    elasticCurveUsageCode
+} from './elastic-curve'
+
 
 import {
     distortedGlassSphereMeta,
@@ -255,7 +275,14 @@ export const componentsList: ComponentEntry[] = [
         ...clothEffectMeta,
         preview: clothEffectPreview,
     },
-
+    {
+        ...signalLinesMeta,
+        preview: signalLinesPreview,
+    },
+    {
+        ...elasticCurveMeta,
+        preview: elasticCurvePreview,
+    },
 
     {
         ...stretchTextMeta,
@@ -348,6 +375,7 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
     'split-text-reveal': splitTextRevealDynamicPreview,
     'glass-toggle': glassToggleDynamicPreview,
     'cloth-effect': clothEffectDynamicPreview,
+    'signal-lines': signalLinesDynamicPreview,
 
 
     'stretch-text': stretchTextDynamicPreview,
@@ -371,7 +399,7 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
 
     'magnetic-button': magneticButtonDynamicPreview,
     'particle-wave': particleWaveDynamicPreview,
-
+    'elastic-curve': elasticCurveDynamicPreview,
 }
 
 // ============================================
@@ -382,6 +410,7 @@ export const componentProps: Record<string, { name: string; type: string; defaul
     'split-text-reveal': splitTextRevealTableProps,
     'glass-toggle': glassToggleTableProps,
     'cloth-effect': clothEffectTableProps,
+    'signal-lines': signalLinesTableProps,
 
 
     'stretch-text': stretchTextTableProps,
@@ -406,13 +435,14 @@ export const componentProps: Record<string, { name: string; type: string; defaul
 
     'magnetic-button': magneticButtonTableProps,
     'particle-wave': particleWaveTableProps,
-
+    'elastic-curve': elasticCurveTableProps,
 }
 
 export const editableProps: Record<string, PropConfig[]> = {
     'split-text-reveal': splitTextRevealEditableProps,
     'glass-toggle': glassToggleEditableProps,
     'cloth-effect': clothEffectEditableProps,
+    'signal-lines': signalLinesEditableProps,
 
 
     'stretch-text': stretchTextEditableProps,
@@ -438,7 +468,7 @@ export const editableProps: Record<string, PropConfig[]> = {
 
     'magnetic-button': magneticButtonEditableProps,
     'particle-wave': particleWaveEditableProps,
-
+    'elastic-curve': elasticCurveEditableProps,
 }
 
 export const componentDependencies: Record<string, string[]> = {
@@ -448,6 +478,7 @@ export const componentDependencies: Record<string, string[]> = {
     'split-text-reveal': splitTextRevealDependencies,
     'glass-toggle': glassToggleDependencies,
     'cloth-effect': clothEffectDependencies,
+    'signal-lines': signalLinesDependencies,
 
 
     'stretch-text': stretchTextDependencies,
@@ -467,7 +498,7 @@ export const componentDependencies: Record<string, string[]> = {
 
     'magnetic-button': [],
     'particle-wave': [],
-
+    'elastic-curve': elasticCurveDependencies,
 }
 
 export const componentUsageCodes: Record<string, string> = {
@@ -477,6 +508,7 @@ export const componentUsageCodes: Record<string, string> = {
     'split-text-reveal': splitTextRevealUsageCode,
     'glass-toggle': glassToggleUsageCode,
     'cloth-effect': clothEffectUsageCode,
+    'signal-lines': signalLinesUsageCode,
 
 
     'stretch-text': stretchTextUsageCode,
@@ -496,5 +528,5 @@ export const componentUsageCodes: Record<string, string> = {
 
     'magnetic-button': magneticButtonUsageCode,
     'particle-wave': particleWaveUsageCode,
-
+    'elastic-curve': elasticCurveUsageCode,
 }

@@ -14,11 +14,8 @@ export const sidebarCategories = [
         label: 'Text Animations',
         components: [
             { name: 'Split Text Reveal', slug: 'split-text-reveal' },
-
-
             { name: 'Typewriter Text', slug: 'typewriter-text' },
             { name: 'Blur Reveal', slug: 'blur-reveal' },
-
             { name: 'Stretch Text', slug: 'stretch-text' },
             { name: 'Scroll Fill Text', slug: 'scroll-fill-text' },
             { name: 'Shatter Text', slug: 'shatter-text' },
@@ -26,9 +23,7 @@ export const sidebarCategories = [
             { name: 'Sparkles Text', slug: 'sparkles-text' },
             { name: 'Rubber Band Text', slug: 'rubber-band-text' },
             { name: 'Spotlight Text', slug: 'spotlight-text' },
-
             { name: 'Hyper Text', slug: 'hyper-text' },
-
         ]
     },
     {
@@ -46,6 +41,8 @@ export const sidebarCategories = [
             { name: 'Particle Wave', slug: 'particle-wave' },
             { name: 'Glass Toggle', slug: 'glass-toggle' },
             { name: 'Cloth Effect', slug: 'cloth-effect' },
+            { name: 'Signal Lines', slug: 'signal-lines' },
+            { name: 'Elastic Curve', slug: 'elastic-curve' },
         ]
     },
 ]
