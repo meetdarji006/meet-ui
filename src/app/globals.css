@@ -84,6 +84,7 @@
 
     --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
     --font-heading: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+    --font-mono: var(--font-mono), ui-monospace, monospace;
 
     --animate-float: float 6s ease-in-out infinite;
 
@@ -107,6 +108,52 @@ html {
 body {
     @apply bg-background text-foreground antialiased;
     background: radial-gradient(ellipse at 20% 0%, #0f0020 0%, #060010 50%, #020008 100%);
+}
+
+/* Dot Grid Background */
+.dot-grid {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* Custom Range Slider */
+input[type="range"].custom-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3));
+    outline: none;
+    transition: background 0.2s;
+}
+
+input[type="range"].custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #818cf8, #a78bfa);
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+input[type="range"].custom-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 18px rgba(99, 102, 241, 0.6);
+}
+
+input[type="range"].custom-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #818cf8, #a78bfa);
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
 }
 
 /* Custom Thin Scrollbar */

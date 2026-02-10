@@ -25,7 +25,7 @@ export default function ComponentsPage() {
                         <Sparkles className="w-3 h-3" />
                         {componentsList.length} Premium Components
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-medium tracking-tight mb-4 leading-[1.1]">
+                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 leading-[1.1] font-heading">
                         <span className="bg-gradient-to-r from-white via-white to-neutral-400 bg-clip-text text-transparent">Components</span>
                     </h1>
                     <p className="text-lg text-neutral-400 max-w-2xl font-light leading-relaxed">
@@ -85,7 +85,7 @@ export default function ComponentsPage() {
 
                                 <div className="relative">
                                     <div className="flex justify-between items-start mb-2">
-                                        <h3 className="font-medium text-white text-base group-hover:text-indigo-200 transition-colors duration-300">
+                                        <h3 className="font-semibold text-white text-base group-hover:text-indigo-200 transition-colors duration-300 font-heading">
                                             {item.name}
                                         </h3>
                                         <div className="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-indigo-500/20 group-hover:border-indigo-500/40 transition-all duration-300">
@@ -102,7 +102,7 @@ export default function ComponentsPage() {
                                         {item.tags.map(tag => (
                                             <span
                                                 key={tag}
-                                                className="text-[10px] px-2 py-0.5 rounded-md bg-white/[0.04] text-neutral-400 border border-white/[0.06]"
+                                                className="text-[10px] px-2 py-0.5 rounded-md bg-white/[0.04] text-neutral-400 border border-white/[0.06] font-mono"
                                             >
                                                 {tag}
                                             </span>
