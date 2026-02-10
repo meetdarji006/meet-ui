@@ -1,15 +1,6 @@
 "use client"
 // Import all component registries
 import {
-    circularGalleryMeta,
-    circularGalleryPreview,
-    circularGalleryDynamicPreview,
-    circularGalleryTableProps,
-    circularGalleryEditableProps,
-    circularGalleryDependencies,
-    circularGalleryUsageCode
-} from './circular-gallery'
-import {
     splitTextRevealMeta,
     splitTextRevealPreview,
     splitTextRevealDynamicPreview,
@@ -60,15 +51,7 @@ import {
 } from './elastic-curve'
 
 
-import {
-    distortedGlassSphereMeta,
-    distortedGlassSpherePreview,
-    distortedGlassSphereDynamicPreview,
-    distortedGlassSphereTableProps,
-    distortedGlassSphereEditableProps,
-    distortedGlassSphereDependencies,
-    distortedGlassSphereUsageCode
-} from './distorted-glass-sphere'
+
 
 import {
     stretchTextMeta,
@@ -107,15 +90,6 @@ import {
     blurRevealDependencies,
     blurRevealUsageCode
 } from './blur-reveal'
-import {
-    cursorTrailMeta,
-    cursorTrailPreview,
-    cursorTrailDynamicPreview,
-    cursorTrailTableProps,
-    cursorTrailEditableProps,
-    cursorTrailDependencies,
-    cursorTrailUsageCode
-} from './cursor-trail'
 import {
     clickRippleMeta,
     clickRipplePreview,
@@ -210,14 +184,6 @@ import {
     contentRevealCardUsageCode
 } from './content-reveal-card'
 
-import {
-    magneticButtonMeta,
-    magneticButtonPreview,
-    magneticButtonDynamicPreview,
-    magneticButtonTableProps,
-    magneticButtonEditableProps,
-    magneticButtonUsageCode
-} from './magnetic-button'
 
 import {
     particleWaveMeta,
@@ -331,10 +297,6 @@ export const componentsList: ComponentEntry[] = [
         preview: blurRevealPreview,
     },
     {
-        ...cursorTrailMeta,
-        preview: cursorTrailPreview,
-    },
-    {
         ...clickRippleMeta,
         preview: clickRipplePreview,
     },
@@ -346,20 +308,8 @@ export const componentsList: ComponentEntry[] = [
         ...contentRevealCardMeta,
         preview: contentRevealCardPreview,
     },
-    {
-        ...circularGalleryMeta,
-        preview: circularGalleryPreview,
-    },
 
-    {
-        ...distortedGlassSphereMeta,
-        preview: distortedGlassSpherePreview,
-    },
 
-    {
-        ...magneticButtonMeta,
-        preview: magneticButtonPreview,
-    },
     {
         ...particleWaveMeta,
         preview: particleWavePreview,
@@ -390,16 +340,9 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
     'hyper-text': hyperTextDynamicPreview,
     'typewriter-text': typewriterTextDynamicPreview,
     'blur-reveal': blurRevealDynamicPreview,
-    'cursor-trail': cursorTrailDynamicPreview,
     'click-ripple': clickRippleDynamicPreview,
     'aurora-cursor': auroraCursorDynamicPreview,
     'content-reveal-card': contentRevealCardDynamicPreview,
-    'circular-gallery': circularGalleryDynamicPreview,
-    'distorted-glass-sphere': distortedGlassSphereDynamicPreview,
-
-    'magnetic-button': magneticButtonDynamicPreview,
-    'particle-wave': particleWaveDynamicPreview,
-    'elastic-curve': elasticCurveDynamicPreview,
 }
 
 // ============================================
@@ -425,17 +368,10 @@ export const componentProps: Record<string, { name: string; type: string; defaul
     'hyper-text': hyperTextTableProps,
     'typewriter-text': typewriterTextTableProps,
     'blur-reveal': blurRevealTableProps,
-    'cursor-trail': cursorTrailTableProps,
     'click-ripple': clickRippleTableProps,
     'aurora-cursor': auroraCursorTableProps,
     'content-reveal-card': contentRevealCardTableProps,
 
-    'circular-gallery': circularGalleryTableProps,
-    'distorted-glass-sphere': distortedGlassSphereTableProps,
-
-    'magnetic-button': magneticButtonTableProps,
-    'particle-wave': particleWaveTableProps,
-    'elastic-curve': elasticCurveTableProps,
 }
 
 export const editableProps: Record<string, PropConfig[]> = {
@@ -457,22 +393,14 @@ export const editableProps: Record<string, PropConfig[]> = {
     'hyper-text': hyperTextEditableProps,
     'typewriter-text': typewriterTextEditableProps,
     'blur-reveal': blurRevealEditableProps,
-    'cursor-trail': cursorTrailEditableProps,
     'click-ripple': clickRippleEditableProps,
     'aurora-cursor': auroraCursorEditableProps,
     'content-reveal-card': contentRevealCardEditableProps,
 
 
-    'circular-gallery': circularGalleryEditableProps,
-    'distorted-glass-sphere': distortedGlassSphereEditableProps,
-
-    'magnetic-button': magneticButtonEditableProps,
-    'particle-wave': particleWaveEditableProps,
-    'elastic-curve': elasticCurveEditableProps,
 }
 
 export const componentDependencies: Record<string, string[]> = {
-    'circular-gallery': circularGalleryDependencies,
     'shatter-text': shatterTextDependencies,
     'content-reveal-card': contentRevealCardDependencies,
     'split-text-reveal': splitTextRevealDependencies,
@@ -491,18 +419,11 @@ export const componentDependencies: Record<string, string[]> = {
     'sparkles-text': sparklesTextDependencies,
     'rubber-band-text': rubberBandTextDependencies,
     'spotlight-text': spotlightTextDependencies,
-    'cursor-trail': cursorTrailDependencies,
     'click-ripple': clickRippleDependencies,
     'aurora-cursor': auroraCursorDependencies,
-    'distorted-glass-sphere': distortedGlassSphereDependencies,
-
-    'magnetic-button': [],
-    'particle-wave': [],
-    'elastic-curve': elasticCurveDependencies,
 }
 
 export const componentUsageCodes: Record<string, string> = {
-    'circular-gallery': circularGalleryUsageCode,
     'shatter-text': shatterTextUsageCode,
     'content-reveal-card': contentRevealCardUsageCode,
     'split-text-reveal': splitTextRevealUsageCode,
@@ -521,12 +442,6 @@ export const componentUsageCodes: Record<string, string> = {
     'sparkles-text': sparklesTextUsageCode,
     'rubber-band-text': rubberBandTextUsageCode,
     'spotlight-text': spotlightTextUsageCode,
-    'cursor-trail': cursorTrailUsageCode,
     'click-ripple': clickRippleUsageCode,
     'aurora-cursor': auroraCursorUsageCode,
-    'distorted-glass-sphere': distortedGlassSphereUsageCode,
-
-    'magnetic-button': magneticButtonUsageCode,
-    'particle-wave': particleWaveUsageCode,
-    'elastic-curve': elasticCurveUsageCode,
 }

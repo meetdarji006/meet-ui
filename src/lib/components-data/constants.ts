@@ -31,13 +31,9 @@ export const sidebarCategories = [
         label: 'Components',
         components: [
             { name: 'Magnetic Cursor', slug: 'magnetic-cursor' },
-            { name: 'Cursor Trail', slug: 'cursor-trail' },
             { name: 'Click Ripple', slug: 'click-ripple' },
             { name: 'Aurora Cursor', slug: 'aurora-cursor' },
             { name: 'Content Reveal Card', slug: 'content-reveal-card' },
-            { name: 'Circular Gallery', slug: 'circular-gallery' },
-            { name: 'Distorted Glass Sphere', slug: 'distorted-glass-sphere' },
-            { name: 'Magnetic Button', slug: 'magnetic-button' },
             { name: 'Particle Wave', slug: 'particle-wave' },
             { name: 'Glass Toggle', slug: 'glass-toggle' },
             { name: 'Cloth Effect', slug: 'cloth-effect' },
