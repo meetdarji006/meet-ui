@@ -13,6 +13,7 @@ export const sidebarCategories = [
         id: 'text-animations',
         label: 'Text Animations',
         components: [
+            { name: 'Draw Underline', slug: 'draw-underline' },
             { name: 'Split Text Reveal', slug: 'split-text-reveal' },
             { name: 'Typewriter Text', slug: 'typewriter-text' },
             { name: 'Blur Reveal', slug: 'blur-reveal' },

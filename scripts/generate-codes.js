@@ -26,6 +26,8 @@ const componentSlugs = [
     'click-ripple',
     'aurora-cursor',
     'glass-toggle',
+    // 'draw-underline',
+    'text-underline',
 
 
 ]

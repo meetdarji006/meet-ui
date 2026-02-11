@@ -185,6 +185,7 @@ import {
 } from './content-reveal-card'
 
 
+
 import {
     particleWaveMeta,
     particleWavePreview,
@@ -193,6 +194,18 @@ import {
     particleWaveEditableProps,
     particleWaveUsageCode
 } from './particle-wave'
+
+// DrawUnderline removed
+
+import {
+    textUnderlineMeta,
+    textUnderlinePreview,
+    textUnderlineDynamicPreview,
+    textUnderlineTableProps,
+    textUnderlineEditableProps,
+    textUnderlineDependencies,
+    textUnderlineUsageCode
+} from './text-underline'
 
 
 
@@ -314,7 +327,11 @@ export const componentsList: ComponentEntry[] = [
         ...particleWaveMeta,
         preview: particleWavePreview,
     },
-
+    // DrawUnderline removed
+    {
+        ...textUnderlineMeta,
+        preview: textUnderlinePreview,
+    },
 ]
 
 // ============================================
@@ -343,6 +360,8 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
     'click-ripple': clickRippleDynamicPreview,
     'aurora-cursor': auroraCursorDynamicPreview,
     'content-reveal-card': contentRevealCardDynamicPreview,
+    // 'draw-underline': drawUnderlineDynamicPreview,
+    'text-underline': textUnderlineDynamicPreview,
 }
 
 // ============================================
@@ -371,7 +390,8 @@ export const componentProps: Record<string, { name: string; type: string; defaul
     'click-ripple': clickRippleTableProps,
     'aurora-cursor': auroraCursorTableProps,
     'content-reveal-card': contentRevealCardTableProps,
-
+    // 'draw-underline': drawUnderlineTableProps,
+    'text-underline': textUnderlineTableProps,
 }
 
 export const editableProps: Record<string, PropConfig[]> = {
@@ -396,8 +416,8 @@ export const editableProps: Record<string, PropConfig[]> = {
     'click-ripple': clickRippleEditableProps,
     'aurora-cursor': auroraCursorEditableProps,
     'content-reveal-card': contentRevealCardEditableProps,
-
-
+    // 'draw-underline': drawUnderlineEditableProps,
+    'text-underline': textUnderlineEditableProps,
 }
 
 export const componentDependencies: Record<string, string[]> = {
@@ -421,6 +441,8 @@ export const componentDependencies: Record<string, string[]> = {
     'spotlight-text': spotlightTextDependencies,
     'click-ripple': clickRippleDependencies,
     'aurora-cursor': auroraCursorDependencies,
+    // 'draw-underline': drawUnderlineDependencies,
+    'text-underline': textUnderlineDependencies,
 }
 
 export const componentUsageCodes: Record<string, string> = {
@@ -444,4 +466,6 @@ export const componentUsageCodes: Record<string, string> = {
     'spotlight-text': spotlightTextUsageCode,
     'click-ripple': clickRippleUsageCode,
     'aurora-cursor': auroraCursorUsageCode,
+    // 'draw-underline': drawUnderlineUsageCode,
+    'text-underline': textUnderlineUsageCode,
 }
