@@ -52,7 +52,7 @@ export const stretchTextUsageCode = `<StretchText
   text="STRETCH"
   stretchIntensity={1.5}
   stretchRange={200}
-  className="text-4xl font-bold"
+  className="text-4xl md:text-5xl font-heading font-black tracking-tight"
 />`
 
 // Small preview for components listing grid
@@ -61,7 +61,7 @@ export const stretchTextPreview = () => (
         text="HOVER"
         stretchIntensity={1.4}
         stretchRange={100}
-        className="text-4xl font-black text-white tracking-tight"
+        className="text-4xl font-heading font-black text-white tracking-tight"
     />
 )
 
@@ -71,6 +71,6 @@ export const stretchTextDynamicPreview = (props: Record<string, any>) => (
         text={props.text || "STRETCH ME"}
         stretchIntensity={props.stretchIntensity ?? 1.5}
         stretchRange={props.stretchRange ?? 200}
-        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight"
+        className="text-4xl md:text-5xl font-heading font-black text-white tracking-tight"
     />
 )

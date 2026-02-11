@@ -31,7 +31,7 @@ export const shatterTextUsageCode = `<ShatterText
   text="EXPLODE"
   duration={0.8}
   scatter={100}
-  className="text-5xl font-bold"
+  className="text-4xl md:text-5xl font-heading font-black tracking-tight"
 />`
 
 export const shatterTextPreview = () => (
@@ -39,7 +39,7 @@ export const shatterTextPreview = () => (
         text="SHATTER"
         scatter={60}
         duration={0.6}
-        className="text-3xl font-black text-white tracking-tight"
+        className="text-4xl font-heading font-black text-white tracking-tight"
     />
 )
 
@@ -50,6 +50,6 @@ export const shatterTextDynamicPreview = (props: any) => (
         duration={props.duration ?? 0.8}
         scatter={props.scatter ?? 100}
         once={props.once ?? false}
-        className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tight"
+        className="text-4xl md:text-5xl font-heading font-black text-white tracking-tight"
     />
 )

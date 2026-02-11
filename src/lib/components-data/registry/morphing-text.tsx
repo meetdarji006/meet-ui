@@ -27,11 +27,11 @@ export const morphingTextUsageCode = `<MorphingText
   words={["CREATIVE", "DYNAMIC", "POWERFUL"]}
   interval={3000}
   morphDuration={1.2}
-  className="text-purple-400 font-bold"
+  className="text-purple-400 text-4xl md:text-5xl font-heading font-black tracking-tight"
 />`
 
 export const morphingTextPreview = () => (
-    <div className="flex items-center gap-2 text-2xl font-bold text-white tracking-tight">
+    <div className="flex items-center gap-2 text-4xl font-heading font-black text-white tracking-tight">
         <span>We are</span>
         <MorphingText
             words={["CREATIVE", "DYNAMIC", "BOLD"]}
@@ -43,7 +43,7 @@ export const morphingTextPreview = () => (
 )
 
 export const morphingTextDynamicPreview = (props: any) => (
-    <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">
+    <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-4xl md:text-5xl font-heading font-black text-white tracking-tight">
         <span>We are</span>
         <MorphingText
             words={["CREATIVE", "DYNAMIC", "POWERFUL", "UNIQUE"]}

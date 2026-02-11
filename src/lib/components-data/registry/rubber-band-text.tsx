@@ -31,13 +31,13 @@ export const rubberBandTextUsageCode = `<RubberBandText
   textColor="#ffffff"
   hoverColor="#667eea"
   duration={0.8}
-  className="text-4xl font-bold"
+  className="text-4xl md:text-5xl font-heading font-black tracking-tight"
 />`
 
 export const rubberBandTextPreview = () => (
     <RubberBandText
         text="Hover Me"
-        className="text-4xl font-bold"
+        className="text-4xl font-heading font-black tracking-tight"
     />
 )
 
@@ -48,6 +48,6 @@ export const rubberBandTextDynamicPreview = (props: any) => (
         hoverColor={props.hoverColor}
         textColor={props.textColor}
         duration={props.duration}
-        className="text-4xl sm:text-5xl font-bold"
+        className="text-4xl md:text-5xl font-heading font-black tracking-tight"
     />
 )

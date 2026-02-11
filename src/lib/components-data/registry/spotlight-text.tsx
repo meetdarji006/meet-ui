@@ -31,13 +31,13 @@ export const spotlightTextUsageCode = `<SpotlightText
   spotlightSize={100}
   litColor="#ffffff"
   dimColor="rgba(255, 255, 255, 0.2)"
-  className="text-4xl font-bold"
+  className="text-4xl md:text-5xl font-heading font-black tracking-tight"
 />`
 
 export const spotlightTextPreview = () => (
     <SpotlightText
         text="Reveal Me"
-        className="text-4xl font-bold"
+        className="text-4xl font-heading font-black tracking-tight"
     />
 )
 
@@ -48,6 +48,6 @@ export const spotlightTextDynamicPreview = (props: any) => (
         spotlightSize={props.spotlightSize ?? 100}
         litColor={props.litColor}
         dimColor={props.dimColor}
-        className="text-4xl sm:text-6xl font-bold"
+        className="text-4xl md:text-5xl font-heading font-black tracking-tight"
     />
 )

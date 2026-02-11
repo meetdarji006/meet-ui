@@ -25,7 +25,7 @@ export const typewriterTextEditableProps = [
     { name: 'speed', type: 'number' as const, default: 100, min: 10, max: 500, step: 10, description: 'Typing speed (ms)' },
     { name: 'waitTime', type: 'number' as const, default: 2000, min: 500, max: 5000, step: 100, description: 'Wait before deleting (ms)' },
     { name: 'loop', type: 'boolean' as const, default: true, description: 'Loop animation' },
-    { name: 'className', type: 'string' as const, default: 'text-4xl font-bold', description: 'Tailwind classes' },
+    { name: 'className', type: 'string' as const, default: 'text-4xl md:text-5xl font-heading font-black tracking-tight', description: 'Tailwind classes' },
 ]
 
 export const typewriterTextDependencies = ["framer-motion"]
@@ -36,10 +36,11 @@ export const typewriterTextUsageCode = `<TypewriterText
   waitTime={2000}
   loop={true}
   cursor={true}
+  className="text-4xl md:text-5xl font-heading font-black tracking-tight"
 />`
 
 export const typewriterTextPreview = () => (
-    <TypewriterText text={["Typewriter Text", "Animated Typing", "React Component"]} className="text-4xl font-bold" />
+    <TypewriterText text={["Typewriter Text", "Animated Typing", "React Component"]} className="text-4xl font-heading font-black tracking-tight justify-center" />
 )
 
 export const typewriterTextDynamicPreview = (props: any) => (
@@ -48,6 +49,6 @@ export const typewriterTextDynamicPreview = (props: any) => (
         speed={props.speed}
         waitTime={props.waitTime}
         loop={props.loop}
-        className={props.className}
+        className={`${props.className} justify-center`}
     />
 )

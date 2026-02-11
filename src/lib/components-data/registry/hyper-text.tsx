@@ -19,25 +19,25 @@ export const hyperTextTableProps = [
 export const hyperTextEditableProps = [
     { name: 'text', type: 'string' as const, default: 'Hyper Text', description: 'Text to display' },
     { name: 'duration', type: 'number' as const, default: 800, min: 100, max: 5000, step: 100, description: 'Animation duration (ms)' },
-    { name: 'className', type: 'string' as const, default: 'text-4xl font-bold', description: 'Tailwind classes' },
+    { name: 'className', type: 'string' as const, default: 'text-4xl md:text-5xl font-heading font-black tracking-tight', description: 'Tailwind classes' },
 ]
 
 export const hyperTextDependencies = ["framer-motion"]
 
 export const hyperTextUsageCode = `<HyperText
   text="Hyper Text"
-  className="text-4xl font-bold"
+  className="text-4xl md:text-5xl font-heading font-black tracking-tight"
   duration={800}
 />`
 
 export const hyperTextPreview = () => (
-    <HyperText text="Hyper Text" className="text-4xl font-bold" />
+    <HyperText text="Hyper Text" className="text-4xl font-heading font-black tracking-tight justify-center" />
 )
 
 export const hyperTextDynamicPreview = (props: any) => (
     <HyperText
         text={props.text || "Hyper Text"}
         duration={props.duration}
-        className={props.className}
+        className={`${props.className} justify-center`}
     />
 )

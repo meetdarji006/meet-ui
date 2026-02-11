@@ -9,17 +9,17 @@ export const textUnderlineMeta = {
 };
 
 export const textUnderlinePreview = () => (
-    <TextUnderline variant="scribble1" color="#4f46e5" fontSize="3rem" strokeWidth={12}>
+    <TextUnderline variant="scribble1" color="#667eea" fontSize="2.25rem" strokeWidth={12} className="font-heading font-black tracking-tight">
         Scribble
     </TextUnderline>
-
 );
 
 export const textUnderlineDynamicPreview = (props: any) => (
-
-    <TextUnderline {...props}>
-        {props.text || "Hover me"}
-    </TextUnderline>
+    <div className="flex items-center justify-center bg-white dark:bg-black w-full h-full">
+        <TextUnderline {...props} className="font-heading font-bold text-foreground" fontSize={props.fontSize || "3rem"}>
+            {props.text || "Hover me"}
+        </TextUnderline>
+    </div>
 );
 
 export const textUnderlineTableProps = [
@@ -54,6 +54,6 @@ export const textUnderlineDependencies = ["gsap", "react"];
 
 export const textUnderlineUsageCode = `import TextUnderline from "@/components/ui/text-underline";
 
-<TextUnderline variant="wave1" color="#667eea">
+<TextUnderline variant="wave1" color="#667eea" fontSize="3rem" className="font-heading font-black tracking-tight">
   Hover me
 </TextUnderline>`;

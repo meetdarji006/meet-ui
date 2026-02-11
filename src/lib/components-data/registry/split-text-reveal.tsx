@@ -63,14 +63,14 @@ export const splitTextRevealUsageCode = `<SplitTextReveal
   text="ELEGANT"
   duration={1.5}
   stagger={0.05}
-  className="text-4xl font-bold"
+  className="text-4xl md:text-5xl font-heading font-black tracking-tight"
 />`
 
 // Small preview for grid
 export const splitTextRevealPreview = () => (
     <SplitTextReveal
         text="ELEGANT"
-        className="text-4xl font-black font-sans text-white tracking-tighter"
+        className="text-4xl font-heading font-black text-white tracking-tight"
         delay={0.2}
     />
 )
@@ -80,7 +80,7 @@ export const splitTextRevealDynamicPreview = (props: any) => (
     <SplitTextReveal
         key={props.once ? 'once-true' : 'once-false'}
         text={props.text || "ELEGANT"}
-        className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black font-sans text-white tracking-tighter uppercase"
+        className="text-4xl md:text-5xl font-heading font-black text-white tracking-tight uppercase"
         duration={props.duration || 1.5}
         delay={props.delay || 0.2}
         stagger={props.stagger || 0.05}

@@ -21,7 +21,7 @@ export const blurRevealEditableProps = [
     { name: 'text', type: 'string' as const, default: 'Blur Reveal Animation', description: 'Text to display' },
     { name: 'duration', type: 'number' as const, default: 0.8, min: 0.2, max: 3, step: 0.1, description: 'Animation duration (s)' },
     { name: 'blur', type: 'string' as const, default: '10px', description: 'Initial blur amount' },
-    { name: 'className', type: 'string' as const, default: 'text-4xl font-bold', description: 'Container classes' },
+    { name: 'className', type: 'string' as const, default: 'text-4xl md:text-5xl font-heading font-black tracking-tight', description: 'Container classes' },
 ]
 
 export const blurRevealDependencies = ["framer-motion"]
@@ -30,11 +30,11 @@ export const blurRevealUsageCode = `<BlurReveal
   text="Blur Reveal"
   duration={0.8}
   blur="10px"
-  className="text-4xl font-bold"
+  className="text-4xl md:text-5xl font-heading font-black tracking-tight"
 />`
 
 export const blurRevealPreview = () => (
-    <BlurReveal text="Blur Reveal Animation" className="text-4xl font-bold justify-center" />
+    <BlurReveal text="Blur Reveal Animation" className="text-4xl font-heading font-black tracking-tight justify-center" />
 )
 
 export const blurRevealDynamicPreview = (props: any) => (

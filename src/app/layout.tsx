@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { DM_Sans, Montserrat, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 
-const inter = Inter({
+const dmSans = DM_Sans({
     subsets: ["latin"],
     variable: "--font-sans",
     display: "swap",
 });
 
-const plusJakarta = Plus_Jakarta_Sans({
+const montserrat = Montserrat({
     subsets: ["latin"],
     variable: "--font-heading",
     display: "swap",
-    weight: ["300", "400", "500", "600", "700", "800"],
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -38,7 +38,7 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <body
                 suppressHydrationWarning
-                className={`${inter.variable} ${plusJakarta.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-foreground selection:bg-primary/20`}
+                className={`${dmSans.variable} ${montserrat.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-foreground selection:bg-primary/20`}
             >
                 <ThemeProvider
                     attribute="class"

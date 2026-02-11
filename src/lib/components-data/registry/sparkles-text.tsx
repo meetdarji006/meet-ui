@@ -26,13 +26,13 @@ export const sparklesTextDependencies = ["framer-motion"]
 export const sparklesTextUsageCode = `<SparklesText
   text="Magic Effect"
   sparklesCount={10}
-  className="text-4xl font-bold"
+  className="text-4xl md:text-5xl font-heading font-black tracking-tight"
 />`
 
 export const sparklesTextPreview = () => (
     <SparklesText
         text="Magic Effect"
-        className="text-4xl font-bold text-foreground"
+        className="text-4xl font-heading font-black tracking-tight text-foreground"
     />
 )
 
@@ -41,6 +41,6 @@ export const sparklesTextDynamicPreview = (props: any) => (
         key={`${props.text}-${props.sparklesCount}`}
         text={props.text || "Magic Effect"}
         sparklesCount={props.sparklesCount ?? 10}
-        className="text-4xl sm:text-5xl font-bold text-foreground"
+        className="text-4xl md:text-5xl font-heading font-black tracking-tight text-foreground"
     />
 )
