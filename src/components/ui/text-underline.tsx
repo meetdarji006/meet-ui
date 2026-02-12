@@ -76,7 +76,7 @@ export default function TextUnderline({
     bottomOffset = "0.25em",
     direction = "right",
     className = "",
-    fontSize = "1em",
+    fontSize,
     lineHeight = 0.8
 }: TextUnderlineProps) {
     const boxRef = useRef<HTMLSpanElement>(null)

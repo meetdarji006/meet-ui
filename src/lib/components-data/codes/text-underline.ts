@@ -79,7 +79,7 @@ export default function TextUnderline({
     bottomOffset = "0.25em",
     direction = "right",
     className = "",
-    fontSize = "1em",
+    fontSize,
     lineHeight = 0.8
 }: TextUnderlineProps) {
     const boxRef = useRef<HTMLSpanElement>(null)
@@ -246,7 +246,7 @@ const SVG_VARIANTS = {
     </svg>
   \`
 };
-export default function TextUnderline({ children, variant = "wave1", color = "#667eea", strokeWidth = 8, duration = 0.6, height = "0.7em", bottomOffset = "0.25em", direction = "right", className = "", fontSize = "1em", lineHeight = 0.8 }) {
+export default function TextUnderline({ children, variant = "wave1", color = "#667eea", strokeWidth = 8, duration = 0.6, height = "0.7em", bottomOffset = "0.25em", direction = "right", className = "", fontSize, lineHeight = 0.8 }) {
     const boxRef = useRef(null);
     const textRef = useRef(null);
     const enterTween = useRef(null);
