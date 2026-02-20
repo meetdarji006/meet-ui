@@ -41,6 +41,7 @@ export const sidebarCategories = [
             { name: 'Cloth Effect', slug: 'cloth-effect' },
             { name: 'Signal Lines', slug: 'signal-lines' },
             { name: 'Elastic Curve', slug: 'elastic-curve' },
+            { name: 'Animated Counter', slug: 'animated-counter' },
         ]
     },
 ]

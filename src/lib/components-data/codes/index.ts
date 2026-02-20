@@ -19,6 +19,7 @@ import { auroraCursorCodeTS, auroraCursorCodeJS } from './aurora-cursor'
 import { glassToggleCodeTS, glassToggleCodeJS } from './glass-toggle'
 import { textUnderlineCodeTS, textUnderlineCodeJS } from './text-underline'
 import { loopingWordsCodeTS, loopingWordsCodeJS } from './looping-words'
+import { animatedCounterCodeTS, animatedCounterCodeJS } from './animated-counter'
 
 export interface ComponentCode {
     ts: string
@@ -45,6 +46,7 @@ export const componentCodes: Record<string, ComponentCode> = {
     'glass-toggle': { ts: glassToggleCodeTS, js: glassToggleCodeJS },
     'text-underline': { ts: textUnderlineCodeTS, js: textUnderlineCodeJS },
     'looping-words': { ts: loopingWordsCodeTS, js: loopingWordsCodeJS },
+    'animated-counter': { ts: animatedCounterCodeTS, js: animatedCounterCodeJS },
 }
 
 // Also export individual codes for direct import
@@ -85,4 +87,6 @@ export {
     textUnderlineCodeJS,
     loopingWordsCodeTS,
     loopingWordsCodeJS,
+    animatedCounterCodeTS,
+    animatedCounterCodeJS,
 }

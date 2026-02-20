@@ -13,10 +13,14 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
     const [installTab, setInstallTab] = useState<'npm' | 'yarn' | 'pnpm' | 'bun'>('npm')
     const [language, setLanguage] = useState<'ts' | 'js'>('ts')
     const [previewKey, setPreviewKey] = useState(0)
+    const [loading, setLoading] = useState(true)
 
-    // Scroll to top on slug change
+    // Scroll to top on slug change and show skeleton
     useEffect(() => {
         window.scrollTo(0, 0)
+        setLoading(true)
+        const timer = setTimeout(() => setLoading(false), 500)
+        return () => clearTimeout(timer)
     }, [slug])
 
     // Dynamic props state
@@ -56,6 +60,88 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
                         <Sparkles className="w-7 h-7 text-neutral-500" />
                     </div>
                     <p className="text-neutral-400 font-heading text-lg">Component not found</p>
+                </div>
+            </div>
+        )
+    }
+
+    // Skeleton loading state
+    if (loading) {
+        return (
+            <div className="animate-pulse">
+                {/* Breadcrumb skeleton */}
+                <div className="flex items-center gap-2 mb-8">
+                    <div className="h-4 w-24 rounded-md bg-white/[0.06]" />
+                    <div className="h-3 w-3 rounded bg-white/[0.04]" />
+                    <div className="h-4 w-32 rounded-md bg-white/[0.08]" />
+                </div>
+
+                {/* Title skeleton */}
+                <div className="mb-10">
+                    <div className="flex items-center gap-4 mb-4">
+                        <div className="h-10 w-64 rounded-xl bg-white/[0.06]" />
+                        <div className="h-7 w-24 rounded-full bg-indigo-500/10" />
+                    </div>
+                    <div className="h-5 w-96 rounded-md bg-white/[0.04]" />
+                </div>
+
+                {/* Tab bar skeleton */}
+                <div className="flex items-center gap-4 mb-8 border-b border-white/[0.06] pb-3">
+                    <div className="h-5 w-20 rounded-md bg-white/[0.06]" />
+                    <div className="h-5 w-16 rounded-md bg-white/[0.04]" />
+                </div>
+
+                {/* Preview area skeleton */}
+                <div className="rounded-2xl border border-white/[0.08] bg-[#040008] overflow-hidden">
+                    <div className="min-h-[460px] flex items-center justify-center">
+                        <div className="flex flex-col items-center gap-4">
+                            <div className="w-16 h-16 rounded-2xl bg-white/[0.04] border border-white/[0.06]" />
+                            <div className="h-4 w-40 rounded-md bg-white/[0.04]" />
+                        </div>
+                    </div>
+                </div>
+
+                {/* Playground skeleton */}
+                <div className="mt-8 rounded-2xl border border-white/[0.08] bg-white/[0.02] overflow-hidden">
+                    <div className="px-6 py-4 border-b border-white/[0.06] bg-white/[0.02] flex items-center gap-2.5">
+                        <div className="w-7 h-7 rounded-lg bg-indigo-500/10" />
+                        <div className="h-4 w-24 rounded-md bg-white/[0.06]" />
+                    </div>
+                    <div className="p-6 grid grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                            <div className="h-3 w-16 rounded bg-white/[0.06]" />
+                            <div className="h-10 w-full rounded-lg bg-white/[0.04]" />
+                        </div>
+                        <div className="space-y-2">
+                            <div className="h-3 w-20 rounded bg-white/[0.06]" />
+                            <div className="h-10 w-full rounded-lg bg-white/[0.04]" />
+                        </div>
+                        <div className="space-y-2">
+                            <div className="h-3 w-14 rounded bg-white/[0.06]" />
+                            <div className="h-10 w-full rounded-lg bg-white/[0.04]" />
+                        </div>
+                        <div className="space-y-2">
+                            <div className="h-3 w-18 rounded bg-white/[0.06]" />
+                            <div className="h-10 w-full rounded-lg bg-white/[0.04]" />
+                        </div>
+                    </div>
+                </div>
+
+                {/* Props table skeleton */}
+                <div className="mt-14">
+                    <div className="flex items-center gap-3 mb-6">
+                        <div className="w-9 h-9 rounded-xl bg-indigo-500/10" />
+                        <div className="h-5 w-16 rounded-md bg-white/[0.06]" />
+                    </div>
+                    <div className="space-y-2">
+                        {[1, 2, 3, 4].map((i) => (
+                            <div key={i} className="grid grid-cols-3 gap-4 px-5 py-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                                <div className="h-4 w-20 rounded bg-white/[0.06]" />
+                                <div className="h-4 w-16 rounded bg-white/[0.04]" />
+                                <div className="h-4 w-24 rounded bg-white/[0.04]" />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         )

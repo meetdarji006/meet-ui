@@ -4,7 +4,7 @@
 export const shatterTextCodeTS = `"use client"
 
 import { motion, useInView } from "framer-motion"
-import { useRef, useState, useEffect } from "react"
+import { useRef, useState, useLayoutEffect } from "react"
 import { cn } from "@/lib/utils"
 
 interface ShatterTextProps {
@@ -37,9 +37,7 @@ export const ShatterText = ({
 
     const characters = text.split("")
 
-    // Generate random transforms only on client side to avoid hydration mismatch
-    useEffect(() => {
-        setIsClient(true)
+    useLayoutEffect(() => {
         const newTransforms = characters.map(() => {
             const angle = Math.random() * 360
             const radians = (angle * Math.PI) / 180
@@ -53,6 +51,7 @@ export const ShatterText = ({
             }
         })
         setTransforms(newTransforms)
+        setIsClient(true)
     }, [text, scatter])
 
     return (
@@ -104,7 +103,7 @@ export const ShatterText = ({
 
 export const shatterTextCodeJS = `"use client";
 import { motion, useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 import { cn } from "@/lib/utils";
 export const ShatterText = ({ text = "SHATTER", duration = 0.8, scatter = 100, delay = 0, once = false, className }) => {
     const ref = useRef(null);
@@ -112,9 +111,7 @@ export const ShatterText = ({ text = "SHATTER", duration = 0.8, scatter = 100, d
     const [isClient, setIsClient] = useState(false);
     const [transforms, setTransforms] = useState([]);
     const characters = text.split("");
-    // Generate random transforms only on client side to avoid hydration mismatch
-    useEffect(() => {
-        setIsClient(true);
+    useLayoutEffect(() => {
         const newTransforms = characters.map(() => {
             const angle = Math.random() * 360;
             const radians = (angle * Math.PI) / 180;
@@ -127,6 +124,7 @@ export const ShatterText = ({ text = "SHATTER", duration = 0.8, scatter = 100, d
             };
         });
         setTransforms(newTransforms);
+        setIsClient(true);
     }, [text, scatter]);
     return (<motion.span ref={ref} className={cn("inline-flex flex-wrap justify-center", className)} initial="hidden" animate={isClient && isInView ? "visible" : "hidden"}>
             {characters.map((char, i) => {

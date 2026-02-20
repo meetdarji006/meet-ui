@@ -217,6 +217,16 @@ import {
     loopingWordsUsageCode
 } from './looping-words'
 
+import {
+    animatedCounterMeta,
+    animatedCounterPreview,
+    animatedCounterDynamicPreview,
+    animatedCounterTableProps,
+    animatedCounterEditableProps,
+    animatedCounterDependencies,
+    animatedCounterUsageCode
+} from './animated-counter'
+
 
 
 
@@ -346,6 +356,10 @@ export const componentsList: ComponentEntry[] = [
         ...loopingWordsMeta,
         preview: loopingWordsPreview,
     },
+    {
+        ...animatedCounterMeta,
+        preview: animatedCounterPreview,
+    },
 ]
 
 // ============================================
@@ -377,6 +391,7 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
     // 'draw-underline': drawUnderlineDynamicPreview,
     'text-underline': textUnderlineDynamicPreview,
     'looping-words': loopingWordsDynamicPreview,
+    'animated-counter': animatedCounterDynamicPreview,
 }
 
 // ============================================
@@ -408,6 +423,7 @@ export const componentProps: Record<string, { name: string; type: string; defaul
     // 'draw-underline': drawUnderlineTableProps,
     'text-underline': textUnderlineTableProps,
     'looping-words': loopingWordsTableProps,
+    'animated-counter': animatedCounterTableProps,
 }
 
 export const editableProps: Record<string, PropConfig[]> = {
@@ -435,6 +451,7 @@ export const editableProps: Record<string, PropConfig[]> = {
     // 'draw-underline': drawUnderlineEditableProps,
     'text-underline': textUnderlineEditableProps,
     'looping-words': loopingWordsEditableProps,
+    'animated-counter': animatedCounterEditableProps,
 }
 
 export const componentDependencies: Record<string, string[]> = {
@@ -461,6 +478,7 @@ export const componentDependencies: Record<string, string[]> = {
     // 'draw-underline': drawUnderlineDependencies,
     'text-underline': textUnderlineDependencies,
     'looping-words': loopingWordsDependencies,
+    'animated-counter': animatedCounterDependencies,
 }
 
 export const componentUsageCodes: Record<string, string> = {
@@ -487,4 +505,5 @@ export const componentUsageCodes: Record<string, string> = {
     // 'draw-underline': drawUnderlineUsageCode,
     'text-underline': textUnderlineUsageCode,
     'looping-words': loopingWordsUsageCode,
+    'animated-counter': animatedCounterUsageCode,
 }
