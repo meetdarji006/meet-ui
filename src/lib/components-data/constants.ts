@@ -21,6 +21,7 @@ export const sidebarCategories = [
             { name: 'Shatter Text', slug: 'shatter-text' },
             { name: 'Morphing Text', slug: 'morphing-text' },
             { name: 'Text Underline', slug: 'text-underline' },
+            { name: 'Looping Words', slug: 'looping-words' },
             { name: 'Sparkles Text', slug: 'sparkles-text' },
             { name: 'Rubber Band Text', slug: 'rubber-band-text' },
             { name: 'Spotlight Text', slug: 'spotlight-text' },

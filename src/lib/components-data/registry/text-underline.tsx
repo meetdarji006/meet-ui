@@ -15,11 +15,14 @@ export const textUnderlinePreview = () => (
 );
 
 export const textUnderlineDynamicPreview = (props: any) => (
-
-    <TextUnderline {...props} className={`font-heading font-bold text-foreground ${props.className || ""}`} fontSize={props.fontSize}>
-        {props.text || "Hover me"}
-    </TextUnderline>
-
+    <div className="w-full h-full flex flex-col items-center justify-center gap-8">
+        <TextUnderline {...props} className={`font-heading font-bold text-foreground ${props.className || ""}`} fontSize={props.fontSize}>
+            {props.text || "Hover me"}
+        </TextUnderline>
+        <p className="text-sm text-muted-foreground/50 font-mono text-center absolute bottom-4">
+            Try changing variants in controls
+        </p>
+    </div>
 );
 
 export const textUnderlineTableProps = [

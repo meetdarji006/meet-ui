@@ -207,6 +207,16 @@ import {
     textUnderlineUsageCode
 } from './text-underline'
 
+import {
+    loopingWordsMeta,
+    loopingWordsPreview,
+    loopingWordsDynamicPreview,
+    loopingWordsTableProps,
+    loopingWordsEditableProps,
+    loopingWordsDependencies,
+    loopingWordsUsageCode
+} from './looping-words'
+
 
 
 
@@ -332,6 +342,10 @@ export const componentsList: ComponentEntry[] = [
         ...textUnderlineMeta,
         preview: textUnderlinePreview,
     },
+    {
+        ...loopingWordsMeta,
+        preview: loopingWordsPreview,
+    },
 ]
 
 // ============================================
@@ -362,6 +376,7 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
     'content-reveal-card': contentRevealCardDynamicPreview,
     // 'draw-underline': drawUnderlineDynamicPreview,
     'text-underline': textUnderlineDynamicPreview,
+    'looping-words': loopingWordsDynamicPreview,
 }
 
 // ============================================
@@ -392,6 +407,7 @@ export const componentProps: Record<string, { name: string; type: string; defaul
     'content-reveal-card': contentRevealCardTableProps,
     // 'draw-underline': drawUnderlineTableProps,
     'text-underline': textUnderlineTableProps,
+    'looping-words': loopingWordsTableProps,
 }
 
 export const editableProps: Record<string, PropConfig[]> = {
@@ -418,6 +434,7 @@ export const editableProps: Record<string, PropConfig[]> = {
     'content-reveal-card': contentRevealCardEditableProps,
     // 'draw-underline': drawUnderlineEditableProps,
     'text-underline': textUnderlineEditableProps,
+    'looping-words': loopingWordsEditableProps,
 }
 
 export const componentDependencies: Record<string, string[]> = {
@@ -443,6 +460,7 @@ export const componentDependencies: Record<string, string[]> = {
     'aurora-cursor': auroraCursorDependencies,
     // 'draw-underline': drawUnderlineDependencies,
     'text-underline': textUnderlineDependencies,
+    'looping-words': loopingWordsDependencies,
 }
 
 export const componentUsageCodes: Record<string, string> = {
@@ -468,4 +486,5 @@ export const componentUsageCodes: Record<string, string> = {
     'aurora-cursor': auroraCursorUsageCode,
     // 'draw-underline': drawUnderlineUsageCode,
     'text-underline': textUnderlineUsageCode,
+    'looping-words': loopingWordsUsageCode,
 }
