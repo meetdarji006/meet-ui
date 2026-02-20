@@ -227,6 +227,18 @@ import {
     animatedCounterUsageCode
 } from './animated-counter'
 
+import {
+    marqueeMeta,
+    marqueePreview,
+    marqueeDynamicPreview,
+    marqueeTableProps,
+    marqueeEditableProps,
+    marqueeDependencies,
+    marqueeUsageCode
+} from './marquee'
+
+
+
 
 
 
@@ -360,6 +372,10 @@ export const componentsList: ComponentEntry[] = [
         ...animatedCounterMeta,
         preview: animatedCounterPreview,
     },
+    {
+        ...marqueeMeta,
+        preview: marqueePreview,
+    },
 ]
 
 // ============================================
@@ -392,6 +408,7 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
     'text-underline': textUnderlineDynamicPreview,
     'looping-words': loopingWordsDynamicPreview,
     'animated-counter': animatedCounterDynamicPreview,
+    'marquee': marqueeDynamicPreview,
 }
 
 // ============================================
@@ -424,6 +441,7 @@ export const componentProps: Record<string, { name: string; type: string; defaul
     'text-underline': textUnderlineTableProps,
     'looping-words': loopingWordsTableProps,
     'animated-counter': animatedCounterTableProps,
+    'marquee': marqueeTableProps,
 }
 
 export const editableProps: Record<string, PropConfig[]> = {
@@ -452,6 +470,7 @@ export const editableProps: Record<string, PropConfig[]> = {
     'text-underline': textUnderlineEditableProps,
     'looping-words': loopingWordsEditableProps,
     'animated-counter': animatedCounterEditableProps,
+    'marquee': marqueeEditableProps,
 }
 
 export const componentDependencies: Record<string, string[]> = {
@@ -479,6 +498,7 @@ export const componentDependencies: Record<string, string[]> = {
     'text-underline': textUnderlineDependencies,
     'looping-words': loopingWordsDependencies,
     'animated-counter': animatedCounterDependencies,
+    'marquee': marqueeDependencies,
 }
 
 export const componentUsageCodes: Record<string, string> = {
@@ -506,4 +526,5 @@ export const componentUsageCodes: Record<string, string> = {
     'text-underline': textUnderlineUsageCode,
     'looping-words': loopingWordsUsageCode,
     'animated-counter': animatedCounterUsageCode,
+    'marquee': marqueeUsageCode,
 }
