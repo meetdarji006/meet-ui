@@ -35,7 +35,6 @@ export default function Marquee({
         <div
             className={cn(
                 "relative flex w-full overflow-hidden",
-                pauseOnHover && "group",
                 className
             )}
         >
@@ -47,15 +46,12 @@ export default function Marquee({
             {[0, 1].map((i) => (
                 <div
                     key={i}
-                    className={cn(
-                        "flex shrink-0 items-center",
-                        pauseOnHover && "group-hover:[animation-play-state:paused]"
-                    )}
+                    className="marquee-track flex shrink-0 items-center"
                     style={{
                         gap: `${gap}px`,
                         paddingRight: `${gap}px`,
-                        animation: `marqueeScroll ${duration}s linear infinite`,
-                        animationDirection: direction === "right" ? "reverse" : "normal",
+                        ["--duration" as string]: `${duration}s`,
+                        ["--direction" as string]: direction === "right" ? "reverse" : "normal",
                     }}
                     aria-hidden={i === 1}
                 >
@@ -67,6 +63,13 @@ export default function Marquee({
                 @keyframes marqueeScroll {
                     from { transform: translateX(0); }
                     to { transform: translateX(-100%); }
+                }
+                .marquee-track {
+                    animation: marqueeScroll var(--duration) linear infinite;
+                    animation-direction: var(--direction);
+                }
+                div:hover > .marquee-track {
+                    animation-play-state: ${pauseOnHover ? "paused" : "running"};
                 }
             `}</style>
         </div>

@@ -26,6 +26,7 @@ export const sidebarCategories = [
             { name: 'Rubber Band Text', slug: 'rubber-band-text' },
             { name: 'Spotlight Text', slug: 'spotlight-text' },
             { name: 'Hyper Text', slug: 'hyper-text' },
+            { name: 'Stacked Block Text', slug: 'stacked-block-text' },
         ]
     },
     {
@@ -36,7 +37,6 @@ export const sidebarCategories = [
             { name: 'Click Ripple', slug: 'click-ripple' },
             { name: 'Aurora Cursor', slug: 'aurora-cursor' },
             { name: 'Content Reveal Card', slug: 'content-reveal-card' },
-            { name: 'Particle Wave', slug: 'particle-wave' },
             { name: 'Glass Toggle', slug: 'glass-toggle' },
             { name: 'Cloth Effect', slug: 'cloth-effect' },
             { name: 'Signal Lines', slug: 'signal-lines' },
@@ -45,6 +45,13 @@ export const sidebarCategories = [
             { name: 'Marquee', slug: 'marquee' },
         ]
     },
+    {
+        id: 'buttons',
+        label: 'Buttons',
+        components: [
+            { name: 'Shiny CTA', slug: 'shiny-cta' }
+        ]
+    }
 ]
 
 // Flat list for backward compatibility

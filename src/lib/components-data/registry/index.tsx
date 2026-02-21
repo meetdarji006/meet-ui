@@ -50,6 +50,29 @@ import {
     elasticCurveUsageCode
 } from './elastic-curve'
 
+import {
+    shinyCtaMeta,
+    shinyCtaPreview,
+    shinyCtaDynamicPreview,
+    shinyCtaTableProps,
+    shinyCtaEditableProps,
+    shinyCtaDependencies,
+    shinyCtaUsageCode
+} from './shiny-cta'
+
+import {
+    stackedBlockTextMeta,
+    stackedBlockTextPreview,
+    stackedBlockTextDynamicPreview,
+    stackedBlockTextTableProps,
+    stackedBlockTextEditableProps,
+    stackedBlockTextDependencies,
+    stackedBlockTextUsageCode
+} from './stacked-block-text'
+
+
+
+
 
 
 
@@ -186,15 +209,6 @@ import {
 
 
 
-import {
-    particleWaveMeta,
-    particleWavePreview,
-    particleWaveDynamicPreview,
-    particleWaveTableProps,
-    particleWaveEditableProps,
-    particleWaveUsageCode
-} from './particle-wave'
-
 // DrawUnderline removed
 
 import {
@@ -235,7 +249,12 @@ import {
     marqueeEditableProps,
     marqueeDependencies,
     marqueeUsageCode
-} from './marquee'
+}
+    from './marquee'
+
+
+
+
 
 
 
@@ -355,10 +374,7 @@ export const componentsList: ComponentEntry[] = [
     },
 
 
-    {
-        ...particleWaveMeta,
-        preview: particleWavePreview,
-    },
+
     // DrawUnderline removed
     {
         ...textUnderlineMeta,
@@ -376,6 +392,16 @@ export const componentsList: ComponentEntry[] = [
         ...marqueeMeta,
         preview: marqueePreview,
     },
+    {
+        ...shinyCtaMeta,
+        preview: shinyCtaPreview,
+    },
+    {
+        ...stackedBlockTextMeta,
+        preview: stackedBlockTextPreview,
+    },
+
+
 ]
 
 // ============================================
@@ -409,6 +435,9 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
     'looping-words': loopingWordsDynamicPreview,
     'animated-counter': animatedCounterDynamicPreview,
     'marquee': marqueeDynamicPreview,
+    'shiny-cta': shinyCtaDynamicPreview,
+    'stacked-block-text': stackedBlockTextDynamicPreview,
+
 }
 
 // ============================================
@@ -442,6 +471,9 @@ export const componentProps: Record<string, { name: string; type: string; defaul
     'looping-words': loopingWordsTableProps,
     'animated-counter': animatedCounterTableProps,
     'marquee': marqueeTableProps,
+    'shiny-cta': shinyCtaTableProps,
+    'stacked-block-text': stackedBlockTextTableProps,
+
 }
 
 export const editableProps: Record<string, PropConfig[]> = {
@@ -471,6 +503,9 @@ export const editableProps: Record<string, PropConfig[]> = {
     'looping-words': loopingWordsEditableProps,
     'animated-counter': animatedCounterEditableProps,
     'marquee': marqueeEditableProps,
+    'shiny-cta': shinyCtaEditableProps,
+    'stacked-block-text': stackedBlockTextEditableProps,
+
 }
 
 export const componentDependencies: Record<string, string[]> = {
@@ -499,6 +534,9 @@ export const componentDependencies: Record<string, string[]> = {
     'looping-words': loopingWordsDependencies,
     'animated-counter': animatedCounterDependencies,
     'marquee': marqueeDependencies,
+    'shiny-cta': shinyCtaDependencies,
+    'stacked-block-text': stackedBlockTextDependencies,
+
 }
 
 export const componentUsageCodes: Record<string, string> = {
@@ -527,4 +565,7 @@ export const componentUsageCodes: Record<string, string> = {
     'looping-words': loopingWordsUsageCode,
     'animated-counter': animatedCounterUsageCode,
     'marquee': marqueeUsageCode,
+    'shiny-cta': shinyCtaUsageCode,
+    'stacked-block-text': stackedBlockTextUsageCode,
+
 }

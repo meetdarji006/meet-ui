@@ -38,7 +38,7 @@ export const marqueeTableProps = [
 export const marqueeEditableProps = [
     { name: "speed", type: "number" as const, default: 40, min: 10, max: 200, step: 10 },
     { name: "gap", type: "number" as const, default: 16, min: 8, max: 80, step: 4 },
-    { name: "direction", type: "string" as const, default: "left", options: ["left", "right"] },
+    { name: "direction", type: "select" as const, default: "left", options: ["left", "right"] },
     { name: "pauseOnHover", type: "boolean" as const, default: true },
 ]
 
