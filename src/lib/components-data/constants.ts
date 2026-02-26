@@ -38,18 +38,29 @@ export const sidebarCategories = [
             { name: 'Aurora Cursor', slug: 'aurora-cursor' },
             { name: 'Content Reveal Card', slug: 'content-reveal-card' },
             { name: 'Glass Toggle', slug: 'glass-toggle' },
-            { name: 'Cloth Effect', slug: 'cloth-effect' },
             { name: 'Signal Lines', slug: 'signal-lines' },
             { name: 'Elastic Curve', slug: 'elastic-curve' },
             { name: 'Animated Counter', slug: 'animated-counter' },
             { name: 'Marquee', slug: 'marquee' },
+            { name: 'Stacked Carousel', slug: 'stacked-carousel' },
+            { name: 'Highlight Gallery', slug: 'highlight-gallery' },
+            { name: 'Stacked Info Cards', slug: 'stacked-info-cards' },
+            { name: 'Bouncing Loader', slug: 'bouncing-loader' },
+            { name: 'Glow Card', slug: 'glow-card' },
+            { name: 'Wave Card', slug: 'wave-card' },
+            { name: 'Luminous Card', slug: 'luminous-card' },
+            { name: 'Social Clock', slug: 'social-clock' },
+            { name: 'Follow Eyes', slug: 'follow-eyes' },
+            { name: 'Floating Tech Stack', slug: 'floating-tech-stack' },
         ]
     },
     {
         id: 'buttons',
         label: 'Buttons',
         components: [
-            { name: 'Shiny CTA', slug: 'shiny-cta' }
+            { name: 'Shiny Button', slug: 'shiny-cta' },
+            { name: 'Drawer Button', slug: 'drawer-button' },
+            { name: 'Splash Button', slug: 'splash-button' },
         ]
     }
 ]

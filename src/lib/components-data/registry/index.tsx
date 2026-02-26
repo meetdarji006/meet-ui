@@ -11,6 +11,16 @@ import {
 } from './split-text-reveal'
 
 import {
+    stackedCarouselMeta,
+    stackedCarouselPreview,
+    stackedCarouselDynamicPreview,
+    stackedCarouselTableProps,
+    stackedCarouselEditableProps,
+    stackedCarouselDependencies,
+    stackedCarouselUsageCode
+} from './stacked-carousel'
+
+import {
     glassToggleMeta,
     glassTogglePreview,
     glassToggleDynamicPreview,
@@ -20,15 +30,7 @@ import {
     glassToggleUsageCode
 } from './glass-toggle'
 
-import {
-    clothEffectMeta,
-    clothEffectPreview,
-    clothEffectDynamicPreview,
-    clothEffectTableProps,
-    clothEffectEditableProps,
-    clothEffectDependencies,
-    clothEffectUsageCode
-} from './cloth-effect'
+
 
 import {
     signalLinesMeta,
@@ -69,12 +71,6 @@ import {
     stackedBlockTextDependencies,
     stackedBlockTextUsageCode
 } from './stacked-block-text'
-
-
-
-
-
-
 
 import {
     stretchTextMeta,
@@ -251,11 +247,105 @@ import {
     marqueeUsageCode
 }
     from './marquee'
-
-
-
-
-
+import {
+    highlightGalleryMeta,
+    highlightGalleryPreview,
+    highlightGalleryDynamicPreview,
+    highlightGalleryTableProps,
+    highlightGalleryEditableProps,
+    highlightGalleryDependencies,
+    highlightGalleryUsageCode
+} from './highlight-gallery'
+import {
+    stackedInfoCardsMeta,
+    stackedInfoCardsPreview,
+    stackedInfoCardsDynamicPreview,
+    stackedInfoCardsTableProps,
+    stackedInfoCardsEditableProps,
+    stackedInfoCardsDependencies,
+    stackedInfoCardsUsageCode
+} from './stacked-info-cards'
+import {
+    drawerButtonMeta,
+    drawerButtonPreview,
+    drawerButtonDynamicPreview,
+    drawerButtonTableProps,
+    drawerButtonEditableProps,
+    drawerButtonDependencies,
+    drawerButtonUsageCode
+} from './drawer-button'
+import {
+    splashButtonMeta,
+    splashButtonPreview,
+    splashButtonDynamicPreview,
+    splashButtonTableProps,
+    splashButtonEditableProps,
+    splashButtonDependencies,
+    splashButtonUsageCode
+} from './splash-button'
+import {
+    bouncingLoaderMeta,
+    bouncingLoaderPreview,
+    bouncingLoaderDynamicPreview,
+    bouncingLoaderTableProps,
+    bouncingLoaderEditableProps,
+    bouncingLoaderDependencies,
+    bouncingLoaderUsageCode
+} from './bouncing-loader'
+import {
+    glowCardMeta,
+    glowCardPreview,
+    glowCardDynamicPreview,
+    glowCardTableProps,
+    glowCardEditableProps,
+    glowCardDependencies,
+    glowCardUsageCode
+} from './glow-card'
+import {
+    waveCardMeta,
+    waveCardPreview,
+    waveCardDynamicPreview,
+    waveCardTableProps,
+    waveCardEditableProps,
+    waveCardDependencies,
+    waveCardUsageCode
+} from './wave-card'
+import {
+    luminousCardMeta,
+    luminousCardPreview,
+    luminousCardDynamicPreview,
+    luminousCardTableProps,
+    luminousCardEditableProps,
+    luminousCardDependencies,
+    luminousCardUsageCode
+} from './luminous-card'
+import {
+    socialClockMeta,
+    socialClockPreview,
+    socialClockDynamicPreview,
+    socialClockTableProps,
+    socialClockEditableProps,
+    socialClockDependencies,
+    socialClockUsageCode
+} from './social-clock'
+import {
+    followEyesMeta,
+    followEyesPreview,
+    followEyesDynamicPreview,
+    followEyesTableProps,
+    followEyesEditableProps,
+    followEyesDependencies,
+    followEyesUsageCode
+} from './follow-eyes'
+import {
+    floatingTechStackMeta,
+    floatingTechStackPreview,
+    floatingTechStackDynamicPreview,
+    floatingTechStackTableProps,
+    floatingTechStackEditableProps,
+    floatingTechStackDependencies,
+    floatingTechStackUsageCode
+} from './floating-tech-stack'
 
 
 
@@ -268,7 +358,7 @@ import {
 export interface ComponentMeta {
     name: string
     slug: string
-    category: 'ui' | '3d' | 'gsap'
+    category: 'ui' | '3d' | 'gsap' | 'interaction'
     description: string
     tags: string[]
 }
@@ -300,10 +390,6 @@ export const componentsList: ComponentEntry[] = [
     {
         ...glassToggleMeta,
         preview: glassTogglePreview,
-    },
-    {
-        ...clothEffectMeta,
-        preview: clothEffectPreview,
     },
     {
         ...signalLinesMeta,
@@ -400,7 +486,54 @@ export const componentsList: ComponentEntry[] = [
         ...stackedBlockTextMeta,
         preview: stackedBlockTextPreview,
     },
-
+    {
+        ...stackedCarouselMeta,
+        preview: stackedCarouselPreview,
+    },
+    {
+        ...highlightGalleryMeta,
+        preview: highlightGalleryPreview,
+    },
+    {
+        ...stackedInfoCardsMeta,
+        preview: stackedInfoCardsPreview,
+    },
+    {
+        ...drawerButtonMeta,
+        preview: drawerButtonPreview,
+    },
+    {
+        ...splashButtonMeta,
+        preview: splashButtonPreview,
+    },
+    {
+        ...bouncingLoaderMeta,
+        preview: bouncingLoaderPreview,
+    },
+    {
+        ...glowCardMeta,
+        preview: glowCardPreview,
+    },
+    {
+        ...waveCardMeta,
+        preview: waveCardPreview,
+    },
+    {
+        ...luminousCardMeta,
+        preview: luminousCardPreview,
+    },
+    {
+        ...socialClockMeta,
+        preview: socialClockPreview,
+    },
+    {
+        ...followEyesMeta,
+        preview: followEyesPreview,
+    },
+    {
+        ...floatingTechStackMeta,
+        preview: floatingTechStackPreview,
+    },
 
 ]
 
@@ -411,7 +544,6 @@ export const componentsList: ComponentEntry[] = [
 export const dynamicPreviews: Record<string, (props: Record<string, any>) => React.ReactNode> = {
     'split-text-reveal': splitTextRevealDynamicPreview,
     'glass-toggle': glassToggleDynamicPreview,
-    'cloth-effect': clothEffectDynamicPreview,
     'signal-lines': signalLinesDynamicPreview,
 
 
@@ -437,6 +569,18 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
     'marquee': marqueeDynamicPreview,
     'shiny-cta': shinyCtaDynamicPreview,
     'stacked-block-text': stackedBlockTextDynamicPreview,
+    'stacked-carousel': stackedCarouselDynamicPreview,
+    'highlight-gallery': highlightGalleryDynamicPreview,
+    'stacked-info-cards': stackedInfoCardsDynamicPreview,
+    'drawer-button': drawerButtonDynamicPreview,
+    'splash-button': splashButtonDynamicPreview,
+    'bouncing-loader': bouncingLoaderDynamicPreview,
+    'glow-card': glowCardDynamicPreview,
+    'wave-card': waveCardDynamicPreview,
+    'luminous-card': luminousCardDynamicPreview,
+    'social-clock': socialClockDynamicPreview,
+    'follow-eyes': followEyesDynamicPreview,
+    'floating-tech-stack': floatingTechStackDynamicPreview,
 
 }
 
@@ -447,7 +591,6 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
 export const componentProps: Record<string, { name: string; type: string; default: string }[]> = {
     'split-text-reveal': splitTextRevealTableProps,
     'glass-toggle': glassToggleTableProps,
-    'cloth-effect': clothEffectTableProps,
     'signal-lines': signalLinesTableProps,
 
 
@@ -473,13 +616,24 @@ export const componentProps: Record<string, { name: string; type: string; defaul
     'marquee': marqueeTableProps,
     'shiny-cta': shinyCtaTableProps,
     'stacked-block-text': stackedBlockTextTableProps,
+    'stacked-carousel': stackedCarouselTableProps,
+    'highlight-gallery': highlightGalleryTableProps,
+    'stacked-info-cards': stackedInfoCardsTableProps,
+    'drawer-button': drawerButtonTableProps,
+    'splash-button': splashButtonTableProps,
+    'bouncing-loader': bouncingLoaderTableProps,
+    'glow-card': glowCardTableProps,
+    'wave-card': waveCardTableProps,
+    'luminous-card': luminousCardTableProps,
+    'social-clock': socialClockTableProps,
+    'follow-eyes': followEyesTableProps,
+    'floating-tech-stack': floatingTechStackTableProps,
 
 }
 
 export const editableProps: Record<string, PropConfig[]> = {
     'split-text-reveal': splitTextRevealEditableProps,
     'glass-toggle': glassToggleEditableProps,
-    'cloth-effect': clothEffectEditableProps,
     'signal-lines': signalLinesEditableProps,
 
 
@@ -505,6 +659,18 @@ export const editableProps: Record<string, PropConfig[]> = {
     'marquee': marqueeEditableProps,
     'shiny-cta': shinyCtaEditableProps,
     'stacked-block-text': stackedBlockTextEditableProps,
+    'stacked-carousel': stackedCarouselEditableProps,
+    'highlight-gallery': highlightGalleryEditableProps,
+    'stacked-info-cards': stackedInfoCardsEditableProps,
+    'drawer-button': drawerButtonEditableProps,
+    'splash-button': splashButtonEditableProps,
+    'bouncing-loader': bouncingLoaderEditableProps,
+    'glow-card': glowCardEditableProps,
+    'wave-card': waveCardEditableProps,
+    'luminous-card': luminousCardEditableProps,
+    'social-clock': socialClockEditableProps,
+    'follow-eyes': followEyesEditableProps,
+    'floating-tech-stack': floatingTechStackEditableProps,
 
 }
 
@@ -513,7 +679,6 @@ export const componentDependencies: Record<string, string[]> = {
     'content-reveal-card': contentRevealCardDependencies,
     'split-text-reveal': splitTextRevealDependencies,
     'glass-toggle': glassToggleDependencies,
-    'cloth-effect': clothEffectDependencies,
     'signal-lines': signalLinesDependencies,
 
 
@@ -536,6 +701,18 @@ export const componentDependencies: Record<string, string[]> = {
     'marquee': marqueeDependencies,
     'shiny-cta': shinyCtaDependencies,
     'stacked-block-text': stackedBlockTextDependencies,
+    'stacked-carousel': stackedCarouselDependencies,
+    'highlight-gallery': highlightGalleryDependencies,
+    'stacked-info-cards': stackedInfoCardsDependencies,
+    'drawer-button': drawerButtonDependencies,
+    'splash-button': splashButtonDependencies,
+    'bouncing-loader': bouncingLoaderDependencies,
+    'glow-card': glowCardDependencies,
+    'wave-card': waveCardDependencies,
+    'luminous-card': luminousCardDependencies,
+    'social-clock': socialClockDependencies,
+    'follow-eyes': followEyesDependencies,
+    'floating-tech-stack': floatingTechStackDependencies,
 
 }
 
@@ -544,7 +721,6 @@ export const componentUsageCodes: Record<string, string> = {
     'content-reveal-card': contentRevealCardUsageCode,
     'split-text-reveal': splitTextRevealUsageCode,
     'glass-toggle': glassToggleUsageCode,
-    'cloth-effect': clothEffectUsageCode,
     'signal-lines': signalLinesUsageCode,
 
 
@@ -567,5 +743,17 @@ export const componentUsageCodes: Record<string, string> = {
     'marquee': marqueeUsageCode,
     'shiny-cta': shinyCtaUsageCode,
     'stacked-block-text': stackedBlockTextUsageCode,
+    'stacked-carousel': stackedCarouselUsageCode,
+    'highlight-gallery': highlightGalleryUsageCode,
+    'stacked-info-cards': stackedInfoCardsUsageCode,
+    'drawer-button': drawerButtonUsageCode,
+    'splash-button': splashButtonUsageCode,
+    'bouncing-loader': bouncingLoaderUsageCode,
+    'glow-card': glowCardUsageCode,
+    'wave-card': waveCardUsageCode,
+    'luminous-card': luminousCardUsageCode,
+    'social-clock': socialClockUsageCode,
+    'follow-eyes': followEyesUsageCode,
+    'floating-tech-stack': floatingTechStackUsageCode,
 
 }

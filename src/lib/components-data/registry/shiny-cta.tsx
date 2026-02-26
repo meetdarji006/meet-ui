@@ -2,7 +2,7 @@ import { ShinyCTA } from '@/components/ui/shiny-cta'
 import { ComponentCode, PropConfig } from './index'
 
 export const shinyCtaMeta = {
-    name: 'Shiny CTA',
+    name: 'Shiny Button',
     slug: 'shiny-cta',
     category: 'buttons',
     description: 'A glowing, animated call-to-action button with a shimmering gradient rim.',

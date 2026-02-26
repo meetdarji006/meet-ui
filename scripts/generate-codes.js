@@ -28,7 +28,20 @@ const componentSlugs = [
     'glass-toggle',
     // 'draw-underline',
     'text-underline',
-
+    'stacked-block-text',
+    'shiny-cta',
+    'stacked-carousel',
+    'highlight-gallery',
+    'stacked-info-cards',
+    'drawer-button',
+    'splash-button',
+    'bouncing-loader',
+    'glow-card',
+    'wave-card',
+    'luminous-card',
+    'social-clock',
+    'follow-eyes',
+    'floating-tech-stack',
 
 ]
 

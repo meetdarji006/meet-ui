@@ -1,3 +1,6 @@
+// Auto-generated from stacked-block-text.tsx
+// Run: npm run generate-codes
+
 export const stackedBlockTextCodeTS = `import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -35,7 +38,7 @@ export function StackedText({
             y: 0,
             transition: {
                 duration: duration,
-                ease: [0.16, 1, 0.3, 1]
+                ease: [0.16, 1, 0.3, 1] as any
             }
         })
     };
@@ -76,19 +79,12 @@ export function StackedText({
         </motion.div>
     );
 }
-`;
+`
 
 export const stackedBlockTextCodeJS = `import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-
-export function StackedText({
-    text = "Brutalism",
-    className,
-    animationDelay = 0,
-    duration = 0.8,
-    stagger = 0.15
-}) {
+export function StackedText({ text = "Brutalism", className, animationDelay = 0, duration = 0.8, stagger = 0.15 }) {
     const containerVariants = {
         hidden: {},
         visible: {
@@ -98,7 +94,6 @@ export function StackedText({
             }
         }
     };
-
     const itemVariants = {
         hidden: { height: 0, opacity: 0, y: -10 },
         visible: (custom) => ({
@@ -111,7 +106,6 @@ export function StackedText({
             }
         })
     };
-
     const heights = [
         "0.9em",
         "calc(0.9em * 0.667)",
@@ -119,32 +113,13 @@ export function StackedText({
         "calc(0.9em * 0.296)",
         "calc(0.9em * 0.198)"
     ];
-
     const opacities = [1, 0.8, 0.6, 0.4, 0.2];
-
-    return (
-        <motion.div
-            className={cn(
-                "relative flex flex-col items-center gap-0 text-7xl md:text-[8rem] font-bold uppercase",
-                className
-            )}
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-        >
-            {[0, 1, 2, 3, 4].map((i) => (
-                <motion.div
-                    key={i}
-                    custom={{ height: heights[i], opacity: opacities[i] }}
-                    variants={itemVariants}
-                    className="overflow-hidden flex items-end leading-[0.8]"
-                >
+    return (<motion.div key={\`\${text}-\${duration}-\${stagger}-\${animationDelay}\`} className={cn("relative flex flex-col items-center gap-0 text-7xl md:text-[8rem] font-bold uppercase", className)} variants={containerVariants} initial="hidden" animate="visible">
+            {[0, 1, 2, 3, 4].map((i) => (<motion.div key={i} custom={{ height: heights[i], opacity: opacities[i] }} variants={itemVariants} className="overflow-hidden flex items-end leading-[0.8]">
                     <em className="whitespace-nowrap not-italic block">
                         {text}
                     </em>
-                </motion.div>
-            ))}
-        </motion.div>
-    );
+                </motion.div>))}
+        </motion.div>);
 }
-`;
+`

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .test {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 400px;
+            background: red;
+            margin: calc(-1 * 400px / 2) 0 0 calc(-1 * 300px / 2);
+            /* try the calc transform */
+            transform: translate(calc(0.5 * 800%), calc(0.5 * 200%)) rotate(calc(0.5 * 120deg));
+        }
+    </style>
+</head>
+<body>
+    <div class="test"></div>
+</body>
+</html>

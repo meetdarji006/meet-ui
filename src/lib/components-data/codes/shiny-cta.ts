@@ -1,3 +1,6 @@
+// Auto-generated from shiny-cta.tsx
+// Run: npm run generate-codes
+
 export const shinyCtaCodeTS = `import React from 'react';
 import { cn } from '@/lib/utils';
 
@@ -206,14 +209,12 @@ export function ShinyCTA({ children, className, ...props }: ShinyCTAProps) {
         </>
     );
 }
-`;
+`
 
 export const shinyCtaCodeJS = `import React from 'react';
 import { cn } from '@/lib/utils';
-
 export function ShinyCTA({ children, className, ...props }) {
-    return (
-        <>
+    return (<>
             <style>
                 {\`
                 :root {
@@ -408,7 +409,6 @@ export function ShinyCTA({ children, className, ...props }) {
             <button className={cn("shiny-cta", className)} {...props}>
                 <span>{children}</span>
             </button>
-        </>
-    );
+        </>);
 }
-`;
+`
