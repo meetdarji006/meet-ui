@@ -27,6 +27,7 @@ export const sidebarCategories = [
             { name: 'Spotlight Text', slug: 'spotlight-text' },
             { name: 'Hyper Text', slug: 'hyper-text' },
             { name: 'Stacked Block Text', slug: 'stacked-block-text' },
+            { name: 'Liquid Text Hover', slug: 'liquid-text-hover' },
         ]
     },
     {
@@ -52,6 +53,10 @@ export const sidebarCategories = [
             { name: 'Social Clock', slug: 'social-clock' },
             { name: 'Follow Eyes', slug: 'follow-eyes' },
             { name: 'Floating Tech Stack', slug: 'floating-tech-stack' },
+            { name: 'Shooting Star', slug: 'shooting-star' },
+            { name: 'Ring Cursor', slug: 'ring-cursor' },
+            { name: 'Full Screen Menu', slug: 'full-screen-menu' },
+            { name: 'Text Image Reveal', slug: 'text-image-reveal' },
         ]
     },
     {

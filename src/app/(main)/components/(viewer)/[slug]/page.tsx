@@ -259,7 +259,7 @@ export default function ComponentViewerPage({ params }: { params: Promise<{ slug
                                     <RotateCw className="w-4 h-4" />
                                 </button>
 
-                                <div className="relative z-10 w-full flex items-center justify-center py-16" key={previewKey}>
+                                <div className="relative z-10 w-full flex items-center justify-center" key={previewKey}>
                                     {DynamicPreview ? DynamicPreview(propValues) : <component.preview />}
                                 </div>
                             </div>

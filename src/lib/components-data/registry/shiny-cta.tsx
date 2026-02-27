@@ -1,5 +1,5 @@
 import { ShinyCTA } from '@/components/ui/shiny-cta'
-import { ComponentCode, PropConfig } from './index'
+import { PropConfig } from './index'
 
 export const shinyCtaMeta = {
     name: 'Shiny Button',
@@ -24,7 +24,7 @@ export const shinyCtaDynamicPreview = (props: any) => (
 export const shinyCtaTableProps: PropConfig[] = [
     {
         name: 'children',
-        type: 'React.ReactNode',
+        type: 'string',
         default: 'undefined',
         description: 'The content of the button.',
     },

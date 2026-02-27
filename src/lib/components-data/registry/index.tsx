@@ -11,6 +11,16 @@ import {
 } from './split-text-reveal'
 
 import {
+    textImageRevealMeta,
+    textImageRevealPreview,
+    textImageRevealDynamicPreview,
+    textImageRevealTableProps,
+    textImageRevealEditableProps,
+    textImageRevealDependencies,
+    textImageRevealUsageCode
+} from './text-image-reveal'
+
+import {
     stackedCarouselMeta,
     stackedCarouselPreview,
     stackedCarouselDynamicPreview,
@@ -347,9 +357,45 @@ import {
     floatingTechStackUsageCode
 } from './floating-tech-stack'
 
+import {
+    shootingStarMeta,
+    shootingStarPreview,
+    shootingStarDynamicPreview,
+    shootingStarTableProps,
+    shootingStarEditableProps,
+    shootingStarDependencies,
+    shootingStarUsageCode
+} from './shooting-star'
 
+import {
+    ringCursorMeta,
+    ringCursorPreview,
+    ringCursorDynamicPreview,
+    ringCursorTableProps,
+    ringCursorEditableProps,
+    ringCursorDependencies,
+    ringCursorUsageCode
+} from './ring-cursor'
 
+import {
+    fullScreenMenuMeta,
+    fullScreenMenuPreview,
+    fullScreenMenuDynamicPreview,
+    fullScreenMenuTableProps,
+    fullScreenMenuEditableProps,
+    fullScreenMenuDependencies,
+    fullScreenMenuUsageCode
+} from './full-screen-menu'
 
+import {
+    liquidTextHoverMeta,
+    liquidTextHoverPreview,
+    liquidTextHoverDynamicPreview,
+    liquidTextHoverTableProps,
+    liquidTextHoverEditableProps,
+    liquidTextHoverDependencies,
+    liquidTextHoverUsageCode
+} from './liquid-text-hover'
 
 // ============================================
 // COMPONENT TYPES
@@ -358,7 +404,7 @@ import {
 export interface ComponentMeta {
     name: string
     slug: string
-    category: 'ui' | '3d' | 'gsap' | 'interaction'
+    category: string
     description: string
     tags: string[]
 }
@@ -383,6 +429,10 @@ export interface PropConfig {
 // ============================================
 
 export const componentsList: ComponentEntry[] = [
+    {
+        ...textImageRevealMeta,
+        preview: textImageRevealPreview,
+    },
     {
         ...splitTextRevealMeta,
         preview: splitTextRevealPreview,
@@ -534,7 +584,22 @@ export const componentsList: ComponentEntry[] = [
         ...floatingTechStackMeta,
         preview: floatingTechStackPreview,
     },
-
+    {
+        ...shootingStarMeta,
+        preview: shootingStarPreview,
+    },
+    {
+        ...ringCursorMeta,
+        preview: ringCursorPreview,
+    },
+    {
+        ...fullScreenMenuMeta,
+        preview: fullScreenMenuPreview,
+    },
+    {
+        ...liquidTextHoverMeta,
+        preview: liquidTextHoverPreview,
+    }
 ]
 
 // ============================================
@@ -542,6 +607,7 @@ export const componentsList: ComponentEntry[] = [
 // ============================================
 
 export const dynamicPreviews: Record<string, (props: Record<string, any>) => React.ReactNode> = {
+    'text-image-reveal': textImageRevealDynamicPreview,
     'split-text-reveal': splitTextRevealDynamicPreview,
     'glass-toggle': glassToggleDynamicPreview,
     'signal-lines': signalLinesDynamicPreview,
@@ -581,7 +647,10 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
     'social-clock': socialClockDynamicPreview,
     'follow-eyes': followEyesDynamicPreview,
     'floating-tech-stack': floatingTechStackDynamicPreview,
-
+    'shooting-star': shootingStarDynamicPreview,
+    'ring-cursor': ringCursorDynamicPreview,
+    'full-screen-menu': fullScreenMenuDynamicPreview,
+    'liquid-text-hover': liquidTextHoverDynamicPreview,
 }
 
 // ============================================
@@ -589,6 +658,7 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
 // ============================================
 
 export const componentProps: Record<string, { name: string; type: string; default: string }[]> = {
+    'text-image-reveal': textImageRevealTableProps,
     'split-text-reveal': splitTextRevealTableProps,
     'glass-toggle': glassToggleTableProps,
     'signal-lines': signalLinesTableProps,
@@ -628,10 +698,14 @@ export const componentProps: Record<string, { name: string; type: string; defaul
     'social-clock': socialClockTableProps,
     'follow-eyes': followEyesTableProps,
     'floating-tech-stack': floatingTechStackTableProps,
-
+    'shooting-star': shootingStarTableProps,
+    'ring-cursor': ringCursorTableProps,
+    'full-screen-menu': fullScreenMenuTableProps,
+    'liquid-text-hover': liquidTextHoverTableProps,
 }
 
 export const editableProps: Record<string, PropConfig[]> = {
+    'text-image-reveal': textImageRevealEditableProps,
     'split-text-reveal': splitTextRevealEditableProps,
     'glass-toggle': glassToggleEditableProps,
     'signal-lines': signalLinesEditableProps,
@@ -671,10 +745,14 @@ export const editableProps: Record<string, PropConfig[]> = {
     'social-clock': socialClockEditableProps,
     'follow-eyes': followEyesEditableProps,
     'floating-tech-stack': floatingTechStackEditableProps,
-
+    'shooting-star': shootingStarEditableProps,
+    'ring-cursor': ringCursorEditableProps,
+    'full-screen-menu': fullScreenMenuEditableProps,
+    'liquid-text-hover': liquidTextHoverEditableProps,
 }
 
 export const componentDependencies: Record<string, string[]> = {
+    'text-image-reveal': textImageRevealDependencies,
     'shatter-text': shatterTextDependencies,
     'content-reveal-card': contentRevealCardDependencies,
     'split-text-reveal': splitTextRevealDependencies,
@@ -713,10 +791,14 @@ export const componentDependencies: Record<string, string[]> = {
     'social-clock': socialClockDependencies,
     'follow-eyes': followEyesDependencies,
     'floating-tech-stack': floatingTechStackDependencies,
-
+    'shooting-star': shootingStarDependencies,
+    'ring-cursor': ringCursorDependencies,
+    'full-screen-menu': fullScreenMenuDependencies,
+    'liquid-text-hover': liquidTextHoverDependencies,
 }
 
 export const componentUsageCodes: Record<string, string> = {
+    'text-image-reveal': textImageRevealUsageCode,
     'shatter-text': shatterTextUsageCode,
     'content-reveal-card': contentRevealCardUsageCode,
     'split-text-reveal': splitTextRevealUsageCode,
@@ -755,5 +837,8 @@ export const componentUsageCodes: Record<string, string> = {
     'social-clock': socialClockUsageCode,
     'follow-eyes': followEyesUsageCode,
     'floating-tech-stack': floatingTechStackUsageCode,
-
+    'shooting-star': shootingStarUsageCode,
+    'ring-cursor': ringCursorUsageCode,
+    'full-screen-menu': fullScreenMenuUsageCode,
+    'liquid-text-hover': liquidTextHoverUsageCode,
 }

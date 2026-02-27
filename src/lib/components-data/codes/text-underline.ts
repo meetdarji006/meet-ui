@@ -133,6 +133,7 @@ export default function TextUnderline({
         //     duration,
         //     ease: "power2.inOut"
         // });
+        if (!path) return;
         gsap.fromTo(path, { strokeDasharray: 1000, strokeDashoffset: 1000 }, { strokeDashoffset: 0, duration, ease: "power2.inOut" });
     };
 
@@ -291,6 +292,8 @@ export default function TextUnderline({ children, variant = "wave1", color = "#6
         //     duration,
         //     ease: "power2.inOut"
         // });
+        if (!path)
+            return;
         gsap.fromTo(path, { strokeDasharray: 1000, strokeDashoffset: 1000 }, { strokeDashoffset: 0, duration, ease: "power2.inOut" });
     };
     const onLeave = () => {

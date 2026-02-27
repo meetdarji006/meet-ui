@@ -16,9 +16,6 @@ src/lib/components-data/
 ├── registry/                   # Component entries (meta + props + grid preview)
 │   ├── index.tsx
 │   └── [component-slug].tsx
-└── previews/                   # Full preview pages for component viewer
-    ├── index.tsx
-    └── [component-slug].tsx
 ```
 
 ---

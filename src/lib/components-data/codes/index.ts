@@ -32,6 +32,11 @@ import { luminousCardCodeTS, luminousCardCodeJS } from './luminous-card'
 import { socialClockCodeTS, socialClockCodeJS } from './social-clock'
 import { followEyesCodeTS, followEyesCodeJS } from './follow-eyes'
 import { floatingTechStackCodeTS, floatingTechStackCodeJS } from './floating-tech-stack'
+import { shootingStarCodeTS, shootingStarCodeJS } from './shooting-star'
+import { ringCursorCodeTS, ringCursorCodeJS } from './ring-cursor'
+import { fullScreenMenuCodeTS, fullScreenMenuCodeJS } from './full-screen-menu'
+import { liquidTextHoverCodeTS, liquidTextHoverCodeJS } from './liquid-text-hover'
+import { textImageRevealCodeTS, textImageRevealCodeJS } from './text-image-reveal'
 
 export interface ComponentCode {
     ts: string
@@ -71,6 +76,11 @@ export const componentCodes: Record<string, ComponentCode> = {
     'social-clock': { ts: socialClockCodeTS, js: socialClockCodeJS },
     'follow-eyes': { ts: followEyesCodeTS, js: followEyesCodeJS },
     'floating-tech-stack': { ts: floatingTechStackCodeTS, js: floatingTechStackCodeJS },
+    'shooting-star': { ts: shootingStarCodeTS, js: shootingStarCodeJS },
+    'ring-cursor': { ts: ringCursorCodeTS, js: ringCursorCodeJS },
+    'full-screen-menu': { ts: fullScreenMenuCodeTS, js: fullScreenMenuCodeJS },
+    'liquid-text-hover': { ts: liquidTextHoverCodeTS, js: liquidTextHoverCodeJS },
+    'text-image-reveal': { ts: textImageRevealCodeTS, js: textImageRevealCodeJS },
 }
 
 // Also export individual codes for direct import
@@ -137,4 +147,14 @@ export {
     followEyesCodeJS,
     floatingTechStackCodeTS,
     floatingTechStackCodeJS,
+    shootingStarCodeTS,
+    shootingStarCodeJS,
+    ringCursorCodeTS,
+    ringCursorCodeJS,
+    fullScreenMenuCodeTS,
+    fullScreenMenuCodeJS,
+    liquidTextHoverCodeTS,
+    liquidTextHoverCodeJS,
+    textImageRevealCodeTS,
+    textImageRevealCodeJS,
 }
