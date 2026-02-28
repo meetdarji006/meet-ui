@@ -215,8 +215,6 @@ import {
 
 
 
-// DrawUnderline removed
-
 import {
     textUnderlineMeta,
     textUnderlinePreview,
@@ -358,6 +356,46 @@ import {
 } from './floating-tech-stack'
 
 import {
+    isometricTechGridMetadata,
+    isometricTechGridPreview,
+    isometricTechGridDynamicPreview,
+    isometricTechGridTableProps,
+    isometricTechGridEditableProps,
+    isometricTechGridDependencies,
+    isometricTechGridUsageCode
+} from './isometric-tech-grid'
+
+import {
+    hoverNameGalleryMetadata,
+    hoverNameGalleryPreview,
+    hoverNameGalleryDynamicPreview,
+    hoverNameGalleryTableProps,
+    hoverNameGalleryEditableProps,
+    hoverNameGalleryDependencies,
+    hoverNameGalleryUsageCode
+} from './hover-name-gallery'
+
+import {
+    socialIconHoverMetadata,
+    socialIconHoverPreview,
+    socialIconHoverDynamicPreview,
+    socialIconHoverTableProps,
+    socialIconHoverEditableProps,
+    socialIconHoverDependencies,
+    socialIconHoverUsageCode
+} from './social-icon-hover'
+
+import {
+    floatingTiltTagsMetadata,
+    floatingTiltTagsPreview,
+    floatingTiltTagsDynamicPreview,
+    floatingTiltTagsTableProps,
+    floatingTiltTagsEditableProps,
+    floatingTiltTagsDependencies,
+    floatingTiltTagsUsageCode
+} from './floating-tilt-tags'
+
+import {
     shootingStarMeta,
     shootingStarPreview,
     shootingStarDynamicPreview,
@@ -396,6 +434,52 @@ import {
     liquidTextHoverDependencies,
     liquidTextHoverUsageCode
 } from './liquid-text-hover'
+
+import {
+    heroTextHoverMeta,
+    heroTextHoverPreview,
+    heroTextHoverDynamicPreview,
+    heroTextHoverTableProps,
+    heroTextHoverEditableProps,
+    heroTextHoverDependencies,
+    heroTextHoverUsageCode
+} from './hero-text-hover'
+
+import {
+    interactiveHoverMenuMeta,
+    interactiveHoverMenuPreview,
+    interactiveHoverMenuDynamicPreview,
+    interactiveHoverMenuTableProps,
+    interactiveHoverMenuEditableProps,
+    interactiveHoverMenuDependencies,
+    interactiveHoverMenuUsageCode
+} from './interactive-hover-menu'
+
+import {
+    zajnoTextHoverMeta,
+    zajnoTextHoverPreview,
+    zajnoTextHoverDynamicPreview,
+    zajnoTextHoverTableProps,
+    zajnoTextHoverEditableProps,
+    zajnoTextHoverDependencies,
+    zajnoTextHoverUsageCode
+} from './zajno-text-hover'
+
+import {
+    gooeyTextMeta,
+    gooeyTextPreview,
+    gooeyTextDynamicPreview,
+    gooeyTextEditableProps,
+    gooeyTextUsageCode
+} from './gooey-text'
+
+import {
+    staggeredTestimonialsMeta,
+    staggeredTestimonialsPreview,
+    staggeredTestimonialsDynamicPreview,
+    staggeredTestimonialsEditableProps,
+    staggeredTestimonialsUsageCode
+} from './staggered-testimonials'
 
 // ============================================
 // COMPONENT TYPES
@@ -455,8 +539,22 @@ export const componentsList: ComponentEntry[] = [
         preview: stretchTextPreview,
     },
     {
+        ...hoverNameGalleryMetadata,
+        slug: 'hover-name-gallery',
+        category: 'Components',
+        tags: ['Gallery', 'Hover', 'Naming', 'Interactive', 'Images'],
+        preview: hoverNameGalleryPreview
+    },
+    {
         ...hyperTextMeta,
         preview: hyperTextPreview,
+    },
+    {
+        ...isometricTechGridMetadata,
+        slug: 'isometric-tech-grid',
+        category: 'Components',
+        tags: ['Isometric', '3D', 'Grid', 'Tech Stack', 'Hover'],
+        preview: isometricTechGridPreview
     },
     {
         ...scrollFillTextMeta,
@@ -517,6 +615,10 @@ export const componentsList: ComponentEntry[] = [
         preview: textUnderlinePreview,
     },
     {
+        ...gooeyTextMeta,
+        preview: gooeyTextPreview,
+    },
+    {
         ...loopingWordsMeta,
         preview: loopingWordsPreview,
     },
@@ -543,6 +645,10 @@ export const componentsList: ComponentEntry[] = [
     {
         ...highlightGalleryMeta,
         preview: highlightGalleryPreview,
+    },
+    {
+        ...staggeredTestimonialsMeta,
+        preview: staggeredTestimonialsPreview,
     },
     {
         ...stackedInfoCardsMeta,
@@ -599,6 +705,26 @@ export const componentsList: ComponentEntry[] = [
     {
         ...liquidTextHoverMeta,
         preview: liquidTextHoverPreview,
+    },
+    {
+        ...heroTextHoverMeta,
+        preview: heroTextHoverPreview,
+    },
+    {
+        ...interactiveHoverMenuMeta,
+        preview: interactiveHoverMenuPreview,
+    },
+    {
+        ...zajnoTextHoverMeta,
+        preview: zajnoTextHoverPreview,
+    },
+    {
+        ...socialIconHoverMetadata,
+        preview: socialIconHoverPreview,
+    },
+    {
+        ...floatingTiltTagsMetadata,
+        preview: floatingTiltTagsPreview,
     }
 ]
 
@@ -630,12 +756,14 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
     'content-reveal-card': contentRevealCardDynamicPreview,
     // 'draw-underline': drawUnderlineDynamicPreview,
     'text-underline': textUnderlineDynamicPreview,
+    'gooey-text': gooeyTextDynamicPreview,
     'looping-words': loopingWordsDynamicPreview,
     'animated-counter': animatedCounterDynamicPreview,
     'marquee': marqueeDynamicPreview,
     'shiny-cta': shinyCtaDynamicPreview,
     'stacked-block-text': stackedBlockTextDynamicPreview,
     'stacked-carousel': stackedCarouselDynamicPreview,
+    'staggered-testimonials': staggeredTestimonialsDynamicPreview,
     'highlight-gallery': highlightGalleryDynamicPreview,
     'stacked-info-cards': stackedInfoCardsDynamicPreview,
     'drawer-button': drawerButtonDynamicPreview,
@@ -651,6 +779,11 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
     'ring-cursor': ringCursorDynamicPreview,
     'full-screen-menu': fullScreenMenuDynamicPreview,
     'liquid-text-hover': liquidTextHoverDynamicPreview,
+    'hero-text-hover': heroTextHoverDynamicPreview,
+    'interactive-hover-menu': interactiveHoverMenuDynamicPreview,
+    'zajno-text-hover': zajnoTextHoverDynamicPreview,
+    'social-icon-hover': socialIconHoverDynamicPreview,
+    'floating-tilt-tags': floatingTiltTagsDynamicPreview,
 }
 
 // ============================================
@@ -698,10 +831,17 @@ export const componentProps: Record<string, { name: string; type: string; defaul
     'social-clock': socialClockTableProps,
     'follow-eyes': followEyesTableProps,
     'floating-tech-stack': floatingTechStackTableProps,
+    'isometric-tech-grid': isometricTechGridTableProps,
+    'hover-name-gallery': hoverNameGalleryTableProps,
+    'social-icon-hover': socialIconHoverTableProps,
+    'floating-tilt-tags': floatingTiltTagsTableProps,
     'shooting-star': shootingStarTableProps,
     'ring-cursor': ringCursorTableProps,
     'full-screen-menu': fullScreenMenuTableProps,
     'liquid-text-hover': liquidTextHoverTableProps,
+    'hero-text-hover': heroTextHoverTableProps,
+    'interactive-hover-menu': interactiveHoverMenuTableProps,
+    'zajno-text-hover': zajnoTextHoverTableProps,
 }
 
 export const editableProps: Record<string, PropConfig[]> = {
@@ -733,8 +873,9 @@ export const editableProps: Record<string, PropConfig[]> = {
     'marquee': marqueeEditableProps,
     'shiny-cta': shinyCtaEditableProps,
     'stacked-block-text': stackedBlockTextEditableProps,
-    'stacked-carousel': stackedCarouselEditableProps,
-    'highlight-gallery': highlightGalleryEditableProps,
+    "stacked-carousel": stackedCarouselEditableProps,
+    "staggered-testimonials": staggeredTestimonialsEditableProps,
+    "highlight-gallery": highlightGalleryEditableProps,
     'stacked-info-cards': stackedInfoCardsEditableProps,
     'drawer-button': drawerButtonEditableProps,
     'splash-button': splashButtonEditableProps,
@@ -745,10 +886,17 @@ export const editableProps: Record<string, PropConfig[]> = {
     'social-clock': socialClockEditableProps,
     'follow-eyes': followEyesEditableProps,
     'floating-tech-stack': floatingTechStackEditableProps,
+    'isometric-tech-grid': isometricTechGridEditableProps,
+    'hover-name-gallery': hoverNameGalleryEditableProps,
+    'social-icon-hover': socialIconHoverEditableProps,
+    'floating-tilt-tags': floatingTiltTagsEditableProps,
     'shooting-star': shootingStarEditableProps,
     'ring-cursor': ringCursorEditableProps,
     'full-screen-menu': fullScreenMenuEditableProps,
     'liquid-text-hover': liquidTextHoverEditableProps,
+    'hero-text-hover': heroTextHoverEditableProps,
+    'interactive-hover-menu': interactiveHoverMenuEditableProps,
+    'zajno-text-hover': zajnoTextHoverEditableProps,
 }
 
 export const componentDependencies: Record<string, string[]> = {
@@ -791,10 +939,17 @@ export const componentDependencies: Record<string, string[]> = {
     'social-clock': socialClockDependencies,
     'follow-eyes': followEyesDependencies,
     'floating-tech-stack': floatingTechStackDependencies,
+    'isometric-tech-grid': isometricTechGridDependencies,
+    'hover-name-gallery': hoverNameGalleryDependencies,
+    'social-icon-hover': socialIconHoverDependencies,
+    'floating-tilt-tags': floatingTiltTagsDependencies,
     'shooting-star': shootingStarDependencies,
     'ring-cursor': ringCursorDependencies,
     'full-screen-menu': fullScreenMenuDependencies,
     'liquid-text-hover': liquidTextHoverDependencies,
+    'hero-text-hover': heroTextHoverDependencies,
+    'interactive-hover-menu': interactiveHoverMenuDependencies,
+    'zajno-text-hover': zajnoTextHoverDependencies,
 }
 
 export const componentUsageCodes: Record<string, string> = {
@@ -825,8 +980,9 @@ export const componentUsageCodes: Record<string, string> = {
     'marquee': marqueeUsageCode,
     'shiny-cta': shinyCtaUsageCode,
     'stacked-block-text': stackedBlockTextUsageCode,
-    'stacked-carousel': stackedCarouselUsageCode,
-    'highlight-gallery': highlightGalleryUsageCode,
+    "stacked-carousel": stackedCarouselUsageCode,
+    "staggered-testimonials": staggeredTestimonialsUsageCode,
+    "highlight-gallery": highlightGalleryUsageCode,
     'stacked-info-cards': stackedInfoCardsUsageCode,
     'drawer-button': drawerButtonUsageCode,
     'splash-button': splashButtonUsageCode,
@@ -837,8 +993,14 @@ export const componentUsageCodes: Record<string, string> = {
     'social-clock': socialClockUsageCode,
     'follow-eyes': followEyesUsageCode,
     'floating-tech-stack': floatingTechStackUsageCode,
+    'isometric-tech-grid': isometricTechGridUsageCode,
+    'hover-name-gallery': hoverNameGalleryUsageCode,
+    'social-icon-hover': socialIconHoverUsageCode,
+    'floating-tilt-tags': floatingTiltTagsUsageCode,
     'shooting-star': shootingStarUsageCode,
     'ring-cursor': ringCursorUsageCode,
     'full-screen-menu': fullScreenMenuUsageCode,
     'liquid-text-hover': liquidTextHoverUsageCode,
+    'hero-text-hover': heroTextHoverUsageCode,
+    'interactive-hover-menu': interactiveHoverMenuUsageCode,
 }

@@ -33,7 +33,7 @@ export const textImageRevealPreview = () => (
 
 export const textImageRevealDynamicPreview = (props: any) => {
     return (
-        <div className="w-full relative overflow-hidden bg-neutral-100 dark:bg-neutral-900 flex flex-col items-center justify-center rounded-xl border border-neutral-200 dark:border-neutral-800 py-20 min-h-[600px]">
+        <div className="w-full relative overflow-hidden flex flex-col items-center justify-center py-20">
             <React.Suspense fallback={<div className="text-neutral-500">Loading...</div>}>
                 {React.createElement(
                     React.lazy(() => import('@/components/ui/text-image-reveal').then(mod => ({ default: mod.TextImageReveal }))),

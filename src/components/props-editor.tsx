@@ -30,7 +30,7 @@ export function PropsEditor({ props, values, onChange }: PropsEditorProps) {
                     {prop.type === 'string' && (
                         <input
                             type="text"
-                            value={values[prop.name] ?? prop.default}
+                            value={values[prop.name] ?? prop.default ?? ''}
                             onChange={(e) => onChange(prop.name, e.target.value)}
                             className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white text-sm font-mono focus:outline-none focus:border-indigo-500/40 focus:ring-1 focus:ring-indigo-500/20 transition-all placeholder:text-neutral-600"
                         />
@@ -43,7 +43,7 @@ export function PropsEditor({ props, values, onChange }: PropsEditorProps) {
                                 min={prop.min ?? 0}
                                 max={prop.max ?? 100}
                                 step={prop.step ?? 1}
-                                value={values[prop.name] ?? prop.default}
+                                value={values[prop.name] ?? prop.default ?? 0}
                                 onChange={(e) => onChange(prop.name, parseFloat(e.target.value))}
                                 className="flex-1 custom-slider"
                             />
@@ -56,14 +56,14 @@ export function PropsEditor({ props, values, onChange }: PropsEditorProps) {
                     {prop.type === 'boolean' && (
                         <div className="flex items-center h-[42px]">
                             <button
-                                onClick={() => onChange(prop.name, !(values[prop.name] ?? prop.default))}
-                                className={`relative w-12 h-7 rounded-full transition-all duration-200 ${(values[prop.name] ?? prop.default)
+                                onClick={() => onChange(prop.name, !(values[prop.name] ?? prop.default ?? false))}
+                                className={`relative w-12 h-7 rounded-full transition-all duration-200 ${(values[prop.name] ?? prop.default ?? false)
                                     ? 'bg-gradient-to-r from-indigo-500 to-purple-500 shadow-lg shadow-indigo-500/25'
                                     : 'bg-white/10 border border-white/10'
                                     }`}
                             >
                                 <span
-                                    className={`absolute top-1 left-1 w-5 h-5 rounded-full bg-white shadow-md transition-transform duration-200 ${(values[prop.name] ?? prop.default)
+                                    className={`absolute top-1 left-1 w-5 h-5 rounded-full bg-white shadow-md transition-transform duration-200 ${(values[prop.name] ?? prop.default ?? false)
                                         ? 'translate-x-5'
                                         : 'translate-x-0'
                                         }`}
@@ -75,7 +75,7 @@ export function PropsEditor({ props, values, onChange }: PropsEditorProps) {
 
                     {prop.type === 'select' && prop.options && (
                         <select
-                            value={values[prop.name] ?? prop.default}
+                            value={values[prop.name] ?? prop.default ?? ''}
                             onChange={(e) => onChange(prop.name, e.target.value)}
                             className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white text-sm font-mono focus:outline-none focus:border-indigo-500/40 focus:ring-1 focus:ring-indigo-500/20 transition-all appearance-none cursor-pointer"
                         >

@@ -42,11 +42,20 @@ const componentSlugs = [
     'social-clock',
     'follow-eyes',
     'floating-tech-stack',
+    'isometric-tech-grid',
+    'hover-name-gallery',
+    'social-icon-hover',
+    'floating-tilt-tags',
     'shooting-star',
     'ring-cursor',
     'full-screen-menu',
     'liquid-text-hover',
     'text-image-reveal',
+    'hero-text-hover',
+    'interactive-hover-menu',
+    'zajno-text-hover',
+    'gooey-text',
+    'staggered-testimonials',
 ]
 
 const componentsDir = path.join(__dirname, '../src/components/ui')

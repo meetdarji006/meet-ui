@@ -21,6 +21,7 @@ export const sidebarCategories = [
             { name: 'Shatter Text', slug: 'shatter-text' },
             { name: 'Morphing Text', slug: 'morphing-text' },
             { name: 'Text Underline', slug: 'text-underline' },
+            { name: 'Gooey Text', slug: 'gooey-text' },
             { name: 'Looping Words', slug: 'looping-words' },
             { name: 'Sparkles Text', slug: 'sparkles-text' },
             { name: 'Rubber Band Text', slug: 'rubber-band-text' },
@@ -28,6 +29,8 @@ export const sidebarCategories = [
             { name: 'Hyper Text', slug: 'hyper-text' },
             { name: 'Stacked Block Text', slug: 'stacked-block-text' },
             { name: 'Liquid Text Hover', slug: 'liquid-text-hover' },
+            { name: 'Hero Text Hover', slug: 'hero-text-hover' },
+            { name: 'Zajno Text Hover', slug: 'zajno-text-hover' },
         ]
     },
     {
@@ -38,6 +41,7 @@ export const sidebarCategories = [
             { name: 'Click Ripple', slug: 'click-ripple' },
             { name: 'Aurora Cursor', slug: 'aurora-cursor' },
             { name: 'Content Reveal Card', slug: 'content-reveal-card' },
+            { name: 'Staggered Testimonials', slug: 'staggered-testimonials' },
             { name: 'Glass Toggle', slug: 'glass-toggle' },
             { name: 'Signal Lines', slug: 'signal-lines' },
             { name: 'Elastic Curve', slug: 'elastic-curve' },
@@ -53,12 +57,18 @@ export const sidebarCategories = [
             { name: 'Social Clock', slug: 'social-clock' },
             { name: 'Follow Eyes', slug: 'follow-eyes' },
             { name: 'Floating Tech Stack', slug: 'floating-tech-stack' },
+            { name: 'Isometric Tech Grid', slug: 'isometric-tech-grid' },
+            { name: 'Hover Name Gallery', slug: 'hover-name-gallery' },
+            { name: 'Social Icon Hover', slug: 'social-icon-hover' },
             { name: 'Shooting Star', slug: 'shooting-star' },
             { name: 'Ring Cursor', slug: 'ring-cursor' },
-            { name: 'Full Screen Menu', slug: 'full-screen-menu' },
             { name: 'Text Image Reveal', slug: 'text-image-reveal' },
+            { name: 'Full Screen Menu', slug: 'full-screen-menu' },
+            { name: 'Interactive Hover Menu', slug: 'interactive-hover-menu' },
+            { name: 'Floating Tilt Tags', slug: 'floating-tilt-tags' },
         ]
     },
+
     {
         id: 'buttons',
         label: 'Buttons',

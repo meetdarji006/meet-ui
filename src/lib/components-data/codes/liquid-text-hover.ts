@@ -37,8 +37,10 @@ export function LiquidTextHover({
         if (!containerRef.current) return
 
         const update = () => {
-            const rect = containerRef.current!.getBoundingClientRect()
-            const computed = window.getComputedStyle(containerRef.current!)
+            if (!containerRef.current) return;
+
+            const rect = containerRef.current.getBoundingClientRect()
+            const computed = window.getComputedStyle(containerRef.current)
 
             setSvgSize({
                 width: rect.width,
@@ -301,6 +303,8 @@ export function LiquidTextHover({ text, textureUrl = '', blobColor = 'hsl(var(--
         if (!containerRef.current)
             return;
         const update = () => {
+            if (!containerRef.current)
+                return;
             const rect = containerRef.current.getBoundingClientRect();
             const computed = window.getComputedStyle(containerRef.current);
             setSvgSize({

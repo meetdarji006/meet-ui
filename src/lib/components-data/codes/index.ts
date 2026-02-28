@@ -32,11 +32,19 @@ import { luminousCardCodeTS, luminousCardCodeJS } from './luminous-card'
 import { socialClockCodeTS, socialClockCodeJS } from './social-clock'
 import { followEyesCodeTS, followEyesCodeJS } from './follow-eyes'
 import { floatingTechStackCodeTS, floatingTechStackCodeJS } from './floating-tech-stack'
+import { isometricTechGridCodeTS, isometricTechGridCodeJS } from './isometric-tech-grid'
+import { hoverNameGalleryCodeTS, hoverNameGalleryCodeJS } from './hover-name-gallery'
+import { socialIconHoverCodeTS, socialIconHoverCodeJS } from './social-icon-hover'
+import { floatingTiltTagsCodeTS, floatingTiltTagsCodeJS } from './floating-tilt-tags'
 import { shootingStarCodeTS, shootingStarCodeJS } from './shooting-star'
 import { ringCursorCodeTS, ringCursorCodeJS } from './ring-cursor'
 import { fullScreenMenuCodeTS, fullScreenMenuCodeJS } from './full-screen-menu'
 import { liquidTextHoverCodeTS, liquidTextHoverCodeJS } from './liquid-text-hover'
 import { textImageRevealCodeTS, textImageRevealCodeJS } from './text-image-reveal'
+import { heroTextHoverCodeTS, heroTextHoverCodeJS } from './hero-text-hover'
+import { interactiveHoverMenuCodeTS, interactiveHoverMenuCodeJS } from './interactive-hover-menu'
+import { zajnoTextHoverCodeTS, zajnoTextHoverCodeJS } from './zajno-text-hover'
+import { gooeyTextCodeTS, gooeyTextCodeJS } from './gooey-text'
 
 export interface ComponentCode {
     ts: string
@@ -76,11 +84,19 @@ export const componentCodes: Record<string, ComponentCode> = {
     'social-clock': { ts: socialClockCodeTS, js: socialClockCodeJS },
     'follow-eyes': { ts: followEyesCodeTS, js: followEyesCodeJS },
     'floating-tech-stack': { ts: floatingTechStackCodeTS, js: floatingTechStackCodeJS },
+    'isometric-tech-grid': { ts: isometricTechGridCodeTS, js: isometricTechGridCodeJS },
+    'hover-name-gallery': { ts: hoverNameGalleryCodeTS, js: hoverNameGalleryCodeJS },
+    'social-icon-hover': { ts: socialIconHoverCodeTS, js: socialIconHoverCodeJS },
+    'floating-tilt-tags': { ts: floatingTiltTagsCodeTS, js: floatingTiltTagsCodeJS },
     'shooting-star': { ts: shootingStarCodeTS, js: shootingStarCodeJS },
     'ring-cursor': { ts: ringCursorCodeTS, js: ringCursorCodeJS },
     'full-screen-menu': { ts: fullScreenMenuCodeTS, js: fullScreenMenuCodeJS },
     'liquid-text-hover': { ts: liquidTextHoverCodeTS, js: liquidTextHoverCodeJS },
     'text-image-reveal': { ts: textImageRevealCodeTS, js: textImageRevealCodeJS },
+    'hero-text-hover': { ts: heroTextHoverCodeTS, js: heroTextHoverCodeJS },
+    'interactive-hover-menu': { ts: interactiveHoverMenuCodeTS, js: interactiveHoverMenuCodeJS },
+    'zajno-text-hover': { ts: zajnoTextHoverCodeTS, js: zajnoTextHoverCodeJS },
+    'gooey-text': { ts: gooeyTextCodeTS, js: gooeyTextCodeJS },
 }
 
 // Also export individual codes for direct import
@@ -147,6 +163,14 @@ export {
     followEyesCodeJS,
     floatingTechStackCodeTS,
     floatingTechStackCodeJS,
+    isometricTechGridCodeTS,
+    isometricTechGridCodeJS,
+    hoverNameGalleryCodeTS,
+    hoverNameGalleryCodeJS,
+    socialIconHoverCodeTS,
+    socialIconHoverCodeJS,
+    floatingTiltTagsCodeTS,
+    floatingTiltTagsCodeJS,
     shootingStarCodeTS,
     shootingStarCodeJS,
     ringCursorCodeTS,
@@ -157,4 +181,12 @@ export {
     liquidTextHoverCodeJS,
     textImageRevealCodeTS,
     textImageRevealCodeJS,
+    heroTextHoverCodeTS,
+    heroTextHoverCodeJS,
+    interactiveHoverMenuCodeTS,
+    interactiveHoverMenuCodeJS,
+    zajnoTextHoverCodeTS,
+    zajnoTextHoverCodeJS,
+    gooeyTextCodeTS,
+    gooeyTextCodeJS,
 }
