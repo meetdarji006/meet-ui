@@ -2,10 +2,12 @@
 
 import Link from "next/link"
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { ArrowUpRight, Sparkles } from "lucide-react"
 import { componentFilters, componentsList } from "@/lib/components-data"
 
 export default function ComponentsPage() {
+    const router = useRouter()
     const [activeFilter, setActiveFilter] = useState('all')
     const filteredComponents = activeFilter === 'all'
         ? componentsList
@@ -56,11 +58,16 @@ export default function ComponentsPage() {
                 {/* Components Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {filteredComponents.map((item) => (
-                        <Link
-                            href={`/components/${item.slug}`}
+                        <div
+                            onClick={() => router.push(`/components/${item.slug}`)}
                             key={item.slug}
-                            className="group relative overflow-hidden rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.06] hover:border-indigo-500/40 transition-all duration-300"
+                            className="group relative overflow-hidden rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.06] hover:border-indigo-500/40 transition-all duration-300 cursor-pointer"
                         >
+                            {/* Hidden link for SEO and accessibility */}
+                            <Link href={`/components/${item.slug}`} className="hidden" aria-hidden="true" tabIndex={-1}>
+                                {item.name}
+                            </Link>
+
                             {/* Top glow line */}
                             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -110,7 +117,7 @@ export default function ComponentsPage() {
                                     </div>
                                 </div>
                             </div>
-                        </Link>
+                        </div>
                     ))}
                 </div>
 

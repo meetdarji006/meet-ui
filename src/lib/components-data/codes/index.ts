@@ -45,6 +45,7 @@ import { heroTextHoverCodeTS, heroTextHoverCodeJS } from './hero-text-hover'
 import { interactiveHoverMenuCodeTS, interactiveHoverMenuCodeJS } from './interactive-hover-menu'
 import { zajnoTextHoverCodeTS, zajnoTextHoverCodeJS } from './zajno-text-hover'
 import { gooeyTextCodeTS, gooeyTextCodeJS } from './gooey-text'
+import { staggeredTestimonialsCodeTS, staggeredTestimonialsCodeJS } from './staggered-testimonials'
 
 export interface ComponentCode {
     ts: string
@@ -97,6 +98,7 @@ export const componentCodes: Record<string, ComponentCode> = {
     'interactive-hover-menu': { ts: interactiveHoverMenuCodeTS, js: interactiveHoverMenuCodeJS },
     'zajno-text-hover': { ts: zajnoTextHoverCodeTS, js: zajnoTextHoverCodeJS },
     'gooey-text': { ts: gooeyTextCodeTS, js: gooeyTextCodeJS },
+    'staggered-testimonials': { ts: staggeredTestimonialsCodeTS, js: staggeredTestimonialsCodeJS },
 }
 
 // Also export individual codes for direct import
@@ -189,4 +191,6 @@ export {
     zajnoTextHoverCodeJS,
     gooeyTextCodeTS,
     gooeyTextCodeJS,
+    staggeredTestimonialsCodeTS,
+    staggeredTestimonialsCodeJS,
 }

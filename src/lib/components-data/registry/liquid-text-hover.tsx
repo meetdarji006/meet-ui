@@ -70,15 +70,18 @@ export const liquidTextHoverTableProps = [
 export const liquidTextHoverEditableProps: PropConfig[] = [
     {
         name: 'text',
-        label: 'Text',
-        type: 'text',
+        type: 'string',
         default: 'EDSTAL'
     },
     {
-        name: 'blobColor',
-        label: 'Blob Color',
-        type: 'color',
-        default: '#6366f1'
+        name: 'fontFamily',
+        type: 'string',
+        default: 'Inter, sans-serif'
+    },
+    {
+        name: 'liquidColor',
+        type: 'string',
+        default: '#fff'
     }
 ]
 

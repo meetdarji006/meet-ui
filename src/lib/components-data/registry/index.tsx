@@ -1,6 +1,32 @@
 "use client"
 // Import all component registries
 import {
+    patternTextMeta,
+    patternTextPreview,
+    patternTextDynamicPreview,
+    patternTextTableProps,
+    patternTextEditableProps
+} from './pattern-text'
+
+import {
+    morphingCardStackMeta,
+    morphingCardStackPreview,
+    morphingCardStackDynamicPreview,
+    morphingCardStackTableProps,
+    morphingCardStackEditableProps,
+    morphingCardStackDependencies,
+    morphingCardStackUsageCode,
+} from './morphing-card-stack'
+
+// Use a fallback empty array since we missed defining it in pattern-text.tsx
+const patternTextDependencies: string[] = []
+const patternTextUsageCode = `import { PatternText } from "@/components/ui/pattern-text"
+
+export default function App() {
+  return <PatternText text="Hello" />
+}`
+
+import {
     splitTextRevealMeta,
     splitTextRevealPreview,
     splitTextRevealDynamicPreview,
@@ -137,6 +163,24 @@ import {
     auroraCursorDependencies,
     auroraCursorUsageCode
 } from './aurora-cursor'
+import {
+    pixelCursorTrailMeta,
+    pixelCursorTrailPreview,
+    pixelCursorTrailDynamicPreview,
+    pixelCursorTrailTableProps,
+    pixelCursorTrailEditableProps,
+    pixelCursorTrailDependencies,
+    pixelCursorTrailUsageCode
+} from './pixel-cursor-trail'
+import {
+    testimonialsSplitMeta,
+    testimonialsSplitPreview,
+    testimonialsSplitDynamicPreview,
+    testimonialsSplitTableProps,
+    testimonialsSplitEditableProps,
+    testimonialsSplitDependencies,
+    testimonialsSplitUsageCode
+} from './testimonials-split'
 
 import {
     scrollFillTextMeta,
@@ -603,8 +647,16 @@ export const componentsList: ComponentEntry[] = [
         preview: auroraCursorPreview,
     },
     {
+        ...pixelCursorTrailMeta,
+        preview: pixelCursorTrailPreview,
+    },
+    {
         ...contentRevealCardMeta,
         preview: contentRevealCardPreview,
+    },
+    {
+        ...testimonialsSplitMeta,
+        preview: testimonialsSplitPreview,
     },
 
 
@@ -725,6 +777,14 @@ export const componentsList: ComponentEntry[] = [
     {
         ...floatingTiltTagsMetadata,
         preview: floatingTiltTagsPreview,
+    },
+    {
+        ...patternTextMeta,
+        preview: patternTextPreview,
+    },
+    {
+        ...morphingCardStackMeta,
+        preview: morphingCardStackPreview,
     }
 ]
 
@@ -784,6 +844,10 @@ export const dynamicPreviews: Record<string, (props: Record<string, any>) => Rea
     'zajno-text-hover': zajnoTextHoverDynamicPreview,
     'social-icon-hover': socialIconHoverDynamicPreview,
     'floating-tilt-tags': floatingTiltTagsDynamicPreview,
+    'pattern-text': patternTextDynamicPreview,
+    'morphing-card-stack': morphingCardStackDynamicPreview,
+    'pixel-cursor-trail': pixelCursorTrailDynamicPreview,
+    'testimonials-split': testimonialsSplitDynamicPreview,
 }
 
 // ============================================
@@ -842,6 +906,10 @@ export const componentProps: Record<string, { name: string; type: string; defaul
     'hero-text-hover': heroTextHoverTableProps,
     'interactive-hover-menu': interactiveHoverMenuTableProps,
     'zajno-text-hover': zajnoTextHoverTableProps,
+    'pattern-text': patternTextTableProps,
+    'morphing-card-stack': morphingCardStackTableProps,
+    'pixel-cursor-trail': pixelCursorTrailTableProps,
+    'testimonials-split': testimonialsSplitTableProps,
 }
 
 export const editableProps: Record<string, PropConfig[]> = {
@@ -897,6 +965,10 @@ export const editableProps: Record<string, PropConfig[]> = {
     'hero-text-hover': heroTextHoverEditableProps,
     'interactive-hover-menu': interactiveHoverMenuEditableProps,
     'zajno-text-hover': zajnoTextHoverEditableProps,
+    'pattern-text': patternTextEditableProps,
+    'morphing-card-stack': morphingCardStackEditableProps,
+    'pixel-cursor-trail': pixelCursorTrailEditableProps,
+    'testimonials-split': testimonialsSplitEditableProps,
 }
 
 export const componentDependencies: Record<string, string[]> = {
@@ -950,6 +1022,10 @@ export const componentDependencies: Record<string, string[]> = {
     'hero-text-hover': heroTextHoverDependencies,
     'interactive-hover-menu': interactiveHoverMenuDependencies,
     'zajno-text-hover': zajnoTextHoverDependencies,
+    'pattern-text': patternTextDependencies,
+    'morphing-card-stack': morphingCardStackDependencies,
+    'pixel-cursor-trail': pixelCursorTrailDependencies,
+    'testimonials-split': testimonialsSplitDependencies,
 }
 
 export const componentUsageCodes: Record<string, string> = {
@@ -1003,4 +1079,7 @@ export const componentUsageCodes: Record<string, string> = {
     'liquid-text-hover': liquidTextHoverUsageCode,
     'hero-text-hover': heroTextHoverUsageCode,
     'interactive-hover-menu': interactiveHoverMenuUsageCode,
+    'morphing-card-stack': morphingCardStackUsageCode,
+    'pixel-cursor-trail': pixelCursorTrailUsageCode,
+    'testimonials-split': testimonialsSplitUsageCode,
 }

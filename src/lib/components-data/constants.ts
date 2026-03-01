@@ -31,6 +31,7 @@ export const sidebarCategories = [
             { name: 'Liquid Text Hover', slug: 'liquid-text-hover' },
             { name: 'Hero Text Hover', slug: 'hero-text-hover' },
             { name: 'Zajno Text Hover', slug: 'zajno-text-hover' },
+            { name: 'Pattern Text', slug: 'pattern-text' },
         ]
     },
     {
@@ -66,6 +67,9 @@ export const sidebarCategories = [
             { name: 'Full Screen Menu', slug: 'full-screen-menu' },
             { name: 'Interactive Hover Menu', slug: 'interactive-hover-menu' },
             { name: 'Floating Tilt Tags', slug: 'floating-tilt-tags' },
+            { name: 'Morphing Card Stack', slug: 'morphing-card-stack' },
+            { name: 'Pixel Cursor Trail', slug: 'pixel-cursor-trail' },
+            { name: 'Testimonials Split', slug: 'testimonials-split' },
         ]
     },
 

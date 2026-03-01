@@ -126,6 +126,12 @@
 
     --animate-marquee: marquee 40s linear infinite;
     --animate-gradient: gradient 3s ease infinite;
+
+    @keyframes shadanim {
+        0% { background-position: 0 0; }
+        100% { background-position: 100% 100%; }
+    }
+    --animate-shadanim: shadanim 2s linear infinite;
 }
 
 html {
