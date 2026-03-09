@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    /* Pure Black #000000 */
+    --background: 0 0% 0%;
+    --foreground: 210 40% 98%;
+
+    --card: 264 60% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 264 60% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Brand Purple #512FEB */
+    --primary: 251 83% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 264 40% 10%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 264 40% 8%;
+    --muted-foreground: 264 20% 60%;
+
+    --accent: 264 40% 12%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 264 30% 12%;
+    --input: 264 30% 12%;
+    --ring: 236 100% 70%;
+    --radius: 1rem;
+}
+
+/* Force dark mode variables even without class for this design */
+.dark {
+    --background: 0 0% 0%;
+    --foreground: 210 40% 98%;
+    --card: 264 60% 6%;
+    --card-foreground: 210 40% 98%;
+    --primary: 251 83% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 264 40% 10%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 264 40% 8%;
+    --muted-foreground: 264 20% 60%;
+    --accent: 264 40% 12%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 264 30% 12%;
+    --input: 264 30% 12%;
+    --ring: 236 100% 70%;
+}
+
+@theme inline {
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+    --color-card: hsl(var(--card));
+    --color-card-foreground: hsl(var(--card-foreground));
+    --color-popover: hsl(var(--popover));
+    --color-popover-foreground: hsl(var(--popover-foreground));
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-foreground: hsl(var(--secondary-foreground));
+    --color-muted: hsl(var(--muted));
+    --color-muted-foreground: hsl(var(--muted-foreground));
+    --color-accent: hsl(var(--accent));
+    --color-accent-foreground: hsl(var(--accent-foreground));
+    --color-destructive: hsl(var(--destructive));
+    --color-destructive-foreground: hsl(var(--destructive-foreground));
+    --color-border: hsl(var(--border));
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    --font-heading: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+    --font-mono: var(--font-mono), ui-monospace, monospace;
+
+    --animate-beam: beam 10s ease-in-out infinite;
+    --animate-float: float 6s ease-in-out infinite;
+
+    @keyframes beam {
+
+        0%,
+        100% {
+            transform: translateY(0) scale(1);
+            opacity: 0.1;
+        }
+
+        50% {
+            transform: translateY(-20px) scale(1.1);
+            opacity: 0.3;
+        }
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0px)
+        }
+
+        50% {
+            transform: translateY(-20px)
+        }
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    --animate-marquee: marquee 40s linear infinite;
+    --animate-gradient: gradient 3s ease infinite;
+
+    @keyframes shadanim {
+        0% {
+            background-position: 0 0;
+        }
+
+        100% {
+            background-position: 100% 100%;
+        }
+    }
+
+    --animate-shadanim: shadanim 2s linear infinite;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @apply bg-background text-foreground antialiased font-sans selection:bg-primary/30;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Custom Utilities */
+.bg-glow-purple {
+    background: radial-gradient(circle at center, rgba(81, 47, 235, 0.15) 0%, transparent 70%);
+}
+
+.text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70;
+}
+
+.shadow-radison {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0.706592px 0.706592px -0.625px, rgba(0, 0, 0, 0.145) 0px 1.80656px 1.80656px -1.25px, rgba(0, 0, 0, 0.137) 0px 3.62176px 3.62176px -1.875px, rgba(0, 0, 0, 0.125) 0px 6.8656px 6.8656px -2.5px, rgba(0, 0, 0, 0.106) 0px 13.6468px 13.6468px -3.125px, rgba(0, 0, 0, 0.05) 0px 30px 30px -3.75px;
+}
+
+.section-badge {
+    @apply inline-flex items-center justify-center px-4 py-1.5 rounded-[6px] border border-white/10 bg-white/[0.02] text-white/50 text-sm font-medium tracking-wide mb-8 backdrop-blur-sm self-center;
+}
+
+.glass-card {
+    @apply bg-white/[0.03] border border-white/[0.08] backdrop-blur-md;
+}
+
+/* Dot Grid Background */
+.dot-grid {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* Custom Range Slider */
+input[type="range"].custom-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3));
+    outline: none;
+    transition: background 0.2s;
+}
+
+input[type="range"].custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #818cf8, #a78bfa);
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+input[type="range"].custom-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 18px rgba(99, 102, 241, 0.6);
+}
+
+input[type="range"].custom-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #818cf8, #a78bfa);
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+}
+
+/* Custom Thin Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.15);
+}

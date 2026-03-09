@@ -1,0 +1,32 @@
+{
+    "name": "@meet-darji/meetui",
+    "version": "1.0.5",
+    "description": "CLI for MeetUI component library",
+    "main": "dist/index.js",
+    "bin": {
+        "meetui": "dist/index.js"
+    },
+    "scripts": {
+        "build": "tsup",
+        "dev": "tsup --watch",
+        "clean": "rm -rf dist"
+    },
+    "dependencies": {
+        "chalk": "^5.6.2",
+        "commander": "^12.1.0",
+        "execa": "^9.6.1",
+        "framer-motion": "^12.35.1",
+        "node-fetch": "^3.3.2",
+        "ora": "^8.2.0",
+        "prompts": "^2.4.2",
+        "react": "^19.2.4",
+        "zod": "^3.25.76"
+    },
+    "devDependencies": {
+        "@types/node": "^20.11.24",
+        "@types/prompts": "^2.4.9",
+        "tsup": "^8.0.2",
+        "typescript": "^5.3.3"
+    },
+    "type": "module"
+}
