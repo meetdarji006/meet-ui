@@ -25,20 +25,47 @@ export function About() {
     const text = "We are Meetui, we help developers like you to build beautiful and interactive user interfaces with ease using our premium animated components.";
     const words = text.split(" ");
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.3,
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }
+        },
+    };
+
     return (
-        <section ref={containerRef} className="relative py-16 md:py-24 px-4">
+        <motion.section
+            ref={containerRef}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="relative py-16 md:py-24 px-4"
+        >
             <GlowingBeam />
             <div className="max-w-5xl mx-auto text-center relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                    viewport={{ once: true }}
+                    variants={itemVariants}
                     className="section-badge mb-12"
                 >
                     Who We Are
                 </motion.div>
-                <h2 className="relative leading-[1.1] max-w-4xl w-full mx-auto">
+                <motion.h2
+                    variants={itemVariants}
+                    className="relative leading-[1.1] max-w-4xl w-full mx-auto"
+                >
                     {words.map((word, i) => {
                         const start = i / words.length;
                         const end = start + 1 / words.length;
@@ -48,15 +75,9 @@ export function About() {
                             </Word>
                         );
                     })}
-                    {/* <div
-                        style={{
-                            background: "linear-gradient(90deg, rgba(79, 26, 214, 0) 0%, rgb(79, 26, 214) 50%, rgba(79, 26, 214, 0) 100%)"
-                        }}
-                        className='absolute h-px w-full -bottom-12 left-1/2 -translate-x-1/2'
-                    /> */}
-                </h2>
+                </motion.h2>
             </div>
-        </section>
+        </motion.section>
     );
 };
 
